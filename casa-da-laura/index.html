@@ -1,0 +1,1609 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0c5952" />
+<meta name="robots" content="noindex, nofollow" />
+<title>CASA DA LAURA · Performance Email Marketing · abril 2026</title>
+<!--
+  Relatório mensal Casa da Laura · abril 2026 · primeiro ciclo completo no Klaviyo.
+  Base no template V3 (folha branca sobre fundo verde).
+  Tipografia oficial nss-design-system: Rockwell Nova · Neulis Sans · Arimo.
+-->
+<style>
+  /* =============================================================
+     FONTES OFICIAIS DA MARCA (brandbook · estúdio Rima 2025)
+     ============================================================= */
+  /* ROCKWELL NOVA — Títulos com presença (serifada geométrica) */
+  @font-face{
+    font-family:"Rockwell Nova";
+    src:url("fonts/RockwellNova-Regular.ttf") format("truetype");
+    font-weight:400; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Rockwell Nova";
+    src:url("fonts/RockwellNova-Bold.ttf") format("truetype");
+    font-weight:700; font-style:normal; font-display:swap;
+  }
+  /* NEULIS SANS — Títulos modernos (sans contemporânea) */
+  @font-face{
+    font-family:"Neulis Sans";
+    src:url("fonts/NeulisSans-Regular.otf") format("opentype");
+    font-weight:400; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Neulis Sans";
+    src:url("fonts/NeulisSans-Medium.otf") format("opentype");
+    font-weight:500; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Neulis Sans";
+    src:url("fonts/NeulisSans-SemiBold.otf") format("opentype");
+    font-weight:600; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Neulis Sans";
+    src:url("fonts/NeulisSans-Bold.otf") format("opentype");
+    font-weight:700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Neulis Sans";
+    src:url("fonts/NeulisSans-ExtraBold.otf") format("opentype");
+    font-weight:800; font-style:normal; font-display:swap;
+  }
+  /* ARIMO — Corpo de texto (sans humanista) */
+  @font-face{
+    font-family:"Arimo";
+    src:url("fonts/Arimo-Regular.ttf") format("truetype");
+    font-weight:400; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Arimo";
+    src:url("fonts/Arimo-Italic.ttf") format("truetype");
+    font-weight:400; font-style:italic; font-display:swap;
+  }
+  @font-face{
+    font-family:"Arimo";
+    src:url("fonts/Arimo-Bold.ttf") format("truetype");
+    font-weight:700; font-style:normal; font-display:swap;
+  }
+  @font-face{
+    font-family:"Arimo";
+    src:url("fonts/Arimo-BoldItalic.ttf") format("truetype");
+    font-weight:700; font-style:italic; font-display:swap;
+  }
+  /* =============================================================
+     notspam.studio — Tokens canónicos
+     ============================================================= */
+  :root{
+    /* --- Paleta canónica (7 cores) --- */
+    --ns-laranja:#e14c22;
+    --ns-azul:#4f67b1;
+    --ns-verde:#0c5952;
+    --ns-lilas:#bf90c6;
+    --ns-amarelo:#d7d55c;
+    --ns-branco:#e6e6e6;
+    --ns-preto:#0d0d0d;
+
+    /* Variações utilitárias */
+    --ns-verde-deep:#08423d;
+    --ns-branco-pure:#ffffff;
+    --ns-bege-quente:#ede9dd;
+    --ns-rule:rgba(13,13,13,0.10);
+    --ns-rule-dark:rgba(230,230,230,0.18);
+
+    /* Status (mantidos do sheet canónico) */
+    --good-bg:#d9e7d1;   --good-fg:#2e5d22;
+    --bom-bg:#edf1d5;    --bom-fg:#566b33;
+    --warn-bg:#f5e79c;   --warn-fg:#7a5a00;
+    --reg-bg:#f8d4b8;    --reg-fg:#8c3e12;
+    --bad-bg:#f1b7a3;    --bad-fg:#8c2310;
+    --seg-bg:#dcc8e3;    --seg-fg:#4e2a65;
+    --sun-bg:#e5e2d6;    --sun-fg:#555045;
+
+    /* --- Tipografia oficial nss-design-system --- */
+    --font-display-serif:"Rockwell Nova",Georgia,serif;
+    --font-display-sans:"Neulis Sans",system-ui,sans-serif;
+    --font-body:"Arimo",system-ui,sans-serif;
+
+    /* --- Type scale --- */
+    --type-hero:72px;
+    --type-h1:48px;
+    --type-h2:36px;
+    --type-h3:24px;
+    --type-body:16px;
+    --type-small:14px;
+    --type-eyebrow:12px;
+
+    /* --- Spacing (8px base) --- */
+    --sp-1:4px; --sp-2:8px; --sp-3:16px;
+    --sp-4:24px; --sp-5:32px; --sp-6:48px;
+    --sp-7:64px; --sp-8:96px;
+
+    /* --- Radii --- */
+    --r-soft:8px;
+    --r-card:16px;
+    --r-sheet:28px;
+    --r-pill:999px;
+
+    /* --- Strokes --- */
+    --stroke-thin:1px;
+    --stroke-med:1.5px;
+    --stroke-bold:2px;
+
+    /* --- Easing --- */
+    --ease-out:cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-snap:cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);
+
+    --t-fast:140ms; --t-med:240ms; --t-slow:380ms;
+
+    /* --- Page background (controlado pelo switcher) --- */
+    --page-bg:var(--ns-verde);
+    --page-bg-meta:#0c5952;
+  }
+
+  /* Variantes de fundo via classe no body */
+  body.bg-verde   { --page-bg:var(--ns-verde);        --page-bg-meta:#0c5952; }
+  body.bg-lilas   { --page-bg:var(--ns-lilas);        --page-bg-meta:#bf90c6; }
+  body.bg-amarelo { --page-bg:var(--ns-amarelo);      --page-bg-meta:#d7d55c; }
+  body.bg-bege    { --page-bg:var(--ns-bege-quente);  --page-bg-meta:#ede9dd; }
+
+  /* =============================================================
+     RESET + BASE
+     ============================================================= */
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--page-bg);
+    color:var(--ns-preto);
+    font-family:var(--font-body);
+    font-weight:400;
+    font-size:var(--type-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    padding:var(--sp-5) var(--sp-4);
+    transition:background var(--t-slow) var(--ease-out);
+    min-height:100vh;
+  }
+  ::selection{background:var(--ns-amarelo);color:var(--ns-preto)}
+
+  /* Skip link */
+  .skip{position:absolute;left:-9999px;background:var(--ns-preto);color:var(--ns-branco);padding:10px 14px;font-weight:700;z-index:200}
+  .skip:focus{left:16px;top:16px;outline:none}
+
+  a{color:inherit}
+  *:focus-visible{
+    outline:none;
+    box-shadow:0 0 0 2px var(--ns-branco-pure), 0 0 0 4px var(--ns-laranja);
+    border-radius:2px;
+  }
+
+  /* Tabular numbers */
+  .tnum, table.t td, table.t th, .kpi .value, .chip strong{
+    font-variant-numeric:tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  /* =============================================================
+     FOLHA BRANCA (a "white page" do sketch)
+     Contém todas as 3 camadas. Cantos arredondados + sombra subtil.
+     ============================================================= */
+  .sheet{
+    max-width:1180px;
+    margin:0 auto;
+    background:var(--ns-branco-pure);
+    border-radius:var(--r-sheet);
+    overflow:hidden;
+    box-shadow:
+      0 75px 150px -25px rgba(0,0,0,0.50),
+      0 40px 80px -12px rgba(0,0,0,0.35),
+      0 16px 36px -6px rgba(0,0,0,0.22),
+      0 5px 12px rgba(0,0,0,0.13);
+    position:relative;
+    isolation:isolate;
+  }
+
+  /* =============================================================
+     SWITCHER DE CORES (canto superior direito · só no ecrã)
+     ============================================================= */
+  .bg-switch{
+    position:fixed;
+    top:16px; right:16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    padding:8px 10px;
+    border-radius:var(--r-pill);
+    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.08);
+    z-index:150;
+    font-family:var(--font-body);
+  }
+  .bg-switch .label{
+    font-family:var(--font-display-sans);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ns-preto);
+    opacity:.6;
+    margin-right:4px;
+    white-space:nowrap;
+  }
+  .bg-switch button{
+    width:24px;height:24px;
+    border-radius:50%;
+    border:2px solid transparent;
+    cursor:pointer;
+    padding:0;
+    background-clip:padding-box;
+    transition:transform var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out);
+    position:relative;
+  }
+  .bg-switch button:hover{transform:scale(1.12)}
+  .bg-switch button.active{
+    border-color:var(--ns-preto);
+    transform:scale(1.08);
+  }
+  .bg-switch button.b-verde   {background:var(--ns-verde)}
+  .bg-switch button.b-lilas   {background:var(--ns-lilas)}
+  .bg-switch button.b-amarelo {background:var(--ns-amarelo)}
+  .bg-switch button.b-bege    {background:var(--ns-bege-quente); border-color:rgba(0,0,0,0.1)}
+  .bg-switch button.b-bege.active{border-color:var(--ns-preto)}
+
+  /* Esconde o switcher no print */
+  @media print { .bg-switch{display:none!important} }
+
+  /* =============================================================
+     TIPOGRAFIA BASE
+     ============================================================= */
+  h1,.h1{
+    font-family:var(--font-display-serif);
+    font-weight:700;
+    font-size:clamp(40px,5vw,var(--type-hero));
+    line-height:1.0;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  h2,.h2{
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    font-size:clamp(28px,3.6vw,var(--type-h1));
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  h3,.h3{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:var(--type-h3);
+    line-height:1.2;
+    margin:0;
+  }
+  p{font-family:var(--font-body);font-weight:400;font-size:var(--type-body);line-height:1.6;margin:0}
+
+  /* Eyebrow canónico */
+  .eyebrow{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:var(--type-eyebrow);
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin:0;
+  }
+
+  /* Pílula canónica */
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    padding:var(--sp-2) var(--sp-3);
+    border-radius:var(--r-pill);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:var(--type-small);
+    border:var(--stroke-med) solid currentColor;
+    line-height:1;
+    background:transparent;
+    transition:transform var(--t-fast) var(--ease-out);
+  }
+  .pill--solid{background:currentColor}
+  .pill--solid > *{color:var(--ns-branco)}
+  .pill--small{padding:6px 12px;font-size:12px}
+  @media (hover:hover) and (pointer:fine){
+    .pill:hover{transform:translateY(-1px)}
+  }
+
+  /* =============================================================
+     CAMADA 1 — HERO VERDE
+     ============================================================= */
+  .hero{
+    background:var(--ns-verde);
+    color:var(--ns-branco);
+    padding:var(--sp-6) var(--sp-5) var(--sp-7);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(circle at 1px 1px, rgba(230,230,230,0.06) 1px, transparent 0);
+    background-size:24px 24px;
+    pointer-events:none;
+  }
+  .hero-inner{
+    max-width:1180px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+  }
+  .hero-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:var(--sp-4);
+    margin-bottom:var(--sp-7);
+  }
+  .hero-logo{
+    display:inline-flex;
+    align-items:center;
+    height:44px;
+  }
+  .hero-logo img{
+    height:44px;width:auto;display:block;
+    transition:transform var(--t-med) var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){
+    .hero-logo:hover img{transform:scale(1.04)}
+  }
+  .hero-title-block{
+    display:grid;
+    gap:var(--sp-3);
+    max-width:880px;
+  }
+  .hero-eyebrow{
+    color:var(--ns-amarelo);
+    display:inline-flex;
+    align-items:center;
+    gap:var(--sp-2);
+  }
+  .hero-eyebrow .star{
+    color:var(--ns-amarelo);
+    font-size:14px;
+    line-height:1;
+  }
+  .hero h1{
+    color:var(--ns-branco);
+    margin-top:var(--sp-1);
+    font-size:clamp(32px,4.2vw,58px);
+    line-height:1.05;
+    white-space:nowrap;
+  }
+  @media (max-width:600px){
+    .hero h1{
+      white-space:normal;
+      font-size:clamp(26px,7vw,40px);
+    }
+  }
+  .hero .hero-sub{
+    font-family:var(--font-display-serif);
+    font-weight:400;
+    font-size:44px;
+    line-height:1.1;
+    color:var(--ns-branco);
+    opacity:.85;
+    margin-top:-4px;
+    letter-spacing:0.01em;
+  }
+  .hero .hero-sub em{
+    font-style:italic;
+    color:var(--ns-amarelo);
+    font-weight:700;
+    opacity:1;
+  }
+  .hero h1 .hero-date{
+    color:var(--ns-amarelo);
+    font-family:inherit;
+    font-weight:inherit;
+    font-size:inherit;
+    letter-spacing:inherit;
+    white-space:nowrap;
+  }
+  .hero h1 .hero-dot{
+    display:inline-block;
+    width:0.18em;
+    height:0.18em;
+    border-radius:50%;
+    background:var(--ns-amarelo);
+    vertical-align:middle;
+    position:relative;
+    top:-0.08em;
+    margin:0 0.12em;
+  }
+  .hero .deck{
+    font-family:var(--font-body);
+    font-size:18px;
+    line-height:1.5;
+    color:var(--ns-branco);
+    opacity:0.85;
+    max-width:60ch;
+    margin-top:var(--sp-2);
+  }
+  .hero .deck em{
+    font-style:italic;
+    font-family:var(--font-display-serif);
+    color:var(--ns-amarelo);
+  }
+  .hero-pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--sp-2);
+    margin-top:var(--sp-5);
+  }
+  .hero-pills .pill{
+    color:var(--ns-branco);
+    border-color:rgba(230,230,230,0.5);
+  }
+  .hero-pills .pill strong{
+    color:var(--ns-amarelo);
+    font-weight:800;
+    margin-right:6px;
+  }
+
+  /* =============================================================
+     CAMADA 2 — CORPO OFF-WHITE
+     ============================================================= */
+  .body{
+    background:var(--ns-branco);
+    padding:var(--sp-7) var(--sp-5) var(--sp-5);
+  }
+  .body-inner{
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  .section-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-4);
+    flex-wrap:wrap;
+    margin:var(--sp-7) 0 var(--sp-4);
+  }
+  .section-head:first-child{margin-top:0}
+  .section-head .eyebrow{
+    color:var(--ns-verde);
+    display:flex;align-items:center;gap:var(--sp-2);
+  }
+  .section-head .eyebrow::before{
+    content:"";
+    width:24px;height:1.5px;
+    background:var(--ns-verde);
+    display:inline-block;
+  }
+  .section-head .section-meta{
+    font-family:var(--font-display-serif);
+    font-style:italic;
+    font-size:14px;
+    color:var(--ns-preto);
+    opacity:.5;
+  }
+
+  /* =============================================================
+     KPI GRID
+     ============================================================= */
+  .kpis{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--sp-3);
+  }
+  @media (max-width:780px){.kpis{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.kpis{grid-template-columns:1fr}}
+
+  .kpi{
+    border-radius:var(--r-card);
+    padding:var(--sp-5);
+    display:flex;flex-direction:column;
+    gap:var(--sp-2);
+    min-height:180px;
+    color:var(--ns-branco);
+    transition:transform var(--t-med) var(--ease-out);
+    position:relative;
+    overflow:hidden;
+  }
+  @media (hover:hover) and (pointer:fine){
+    .kpi:hover{transform:translateY(-3px)}
+  }
+  .kpi .label{ color:inherit; opacity:0.95; }
+  .kpi .value{
+    font-family:var(--font-display-serif);
+    font-weight:700;
+    font-size:48px;
+    line-height:1;
+    letter-spacing:-0.02em;
+    margin-top:auto;
+  }
+  .kpi .delta{
+    font-family:var(--font-body);
+    font-size:13px;
+    font-weight:400;
+    margin-top:var(--sp-2);
+    opacity:.85;
+  }
+  .kpi.k-verde   {background:var(--ns-verde)}
+  .kpi.k-azul    {background:var(--ns-azul)}
+  .kpi.k-laranja {background:var(--ns-laranja)}
+  .kpi.k-lilas   {background:var(--ns-lilas)}
+  .kpi.k-preto   {background:var(--ns-preto)}
+  .kpi.k-amarelo {background:var(--ns-amarelo); color:var(--ns-preto)}
+  .kpi.k-amarelo .delta{opacity:.7}
+
+  /* Stagger entrance */
+  .stagger > *{
+    opacity:0;
+    transform:translateY(8px);
+    animation:enter var(--t-slow) var(--ease-out) forwards;
+  }
+  .stagger > *:nth-child(1){animation-delay:0ms}
+  .stagger > *:nth-child(2){animation-delay:60ms}
+  .stagger > *:nth-child(3){animation-delay:120ms}
+  .stagger > *:nth-child(4){animation-delay:180ms}
+  .stagger > *:nth-child(5){animation-delay:240ms}
+  .stagger > *:nth-child(6){animation-delay:300ms}
+  @keyframes enter{to{opacity:1;transform:translateY(0)}}
+
+  /* =============================================================
+     ANÁLISE
+     ============================================================= */
+  .analise{
+    background:var(--ns-branco-pure);
+    border-radius:var(--r-card);
+    padding:var(--sp-5) var(--sp-6);
+    position:relative;
+    overflow:hidden;
+  }
+  .analise::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:6px;
+    background:var(--ns-verde);
+  }
+  .analise p{
+    font-size:17px;
+    line-height:1.6;
+    max-width:none;
+    color:var(--ns-preto);
+  }
+  .analise .ic{
+    font-family:var(--font-display-serif);
+    font-style:italic;
+    color:var(--ns-laranja);
+    font-weight:700;
+  }
+
+  /* =============================================================
+     DESTAQUES
+     ============================================================= */
+  .destaques{display:grid;gap:var(--sp-3)}
+  .destaque{
+    display:grid;
+    grid-template-columns:88px 1fr;
+    background:var(--ns-branco-pure);
+    border-radius:var(--r-card);
+    overflow:hidden;
+    transition:transform var(--t-fast) var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){
+    .destaque:hover{transform:translateY(-2px)}
+  }
+  .destaque .badge{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ns-branco);
+    font-weight:800;
+    font-size:38px;
+    line-height:1;
+    font-family:var(--font-display-sans);
+  }
+  .destaque .badge.b-verde{background:var(--ns-verde)}
+  .destaque .badge.b-azul{background:var(--ns-azul)}
+  .destaque .badge.b-amarelo{background:var(--ns-amarelo);color:var(--ns-preto)}
+  .destaque .body-d{
+    padding:var(--sp-4) var(--sp-5);
+    display:flex;flex-direction:column;
+    gap:var(--sp-2);
+    justify-content:center;
+  }
+  .destaque h3{
+    color:var(--ns-preto);
+    font-weight:700;
+    font-size:18px;
+    line-height:1.3;
+  }
+  .destaque .sub{
+    font-family:var(--font-body);
+    font-style:italic;
+    font-size:14.5px;
+    color:var(--ns-preto);
+    opacity:0.65;
+    line-height:1.45;
+  }
+
+  /* =============================================================
+     COLLAPSIBLE SECTIONS
+     ============================================================= */
+  .toggle{
+    margin:0 0 var(--sp-3);
+    /* Pequena sombra para destacar cada secção do background do corpo
+       quando estão todas abertas. drop-shadow respeita os cantos
+       arredondados do summary + toggle-body como uma forma única.       */
+    filter:drop-shadow(0 6px 14px rgba(0,0,0,0.08)) drop-shadow(0 1px 2px rgba(0,0,0,0.04));
+  }
+  .toggle:last-of-type{margin-bottom:0}
+  .toggle > summary{
+    list-style:none;
+    cursor:pointer;
+    user-select:none;
+    background:var(--ns-verde-deep);
+    color:var(--ns-branco);
+    border-radius:var(--r-card);
+    padding:var(--sp-4) var(--sp-5);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-4);
+    transition:background var(--t-fast) var(--ease-out);
+  }
+  .toggle > summary::-webkit-details-marker{display:none}
+  .toggle > summary::marker{display:none;content:""}
+  @media (hover:hover) and (pointer:fine){
+    .toggle > summary:hover{background:var(--ns-verde)}
+  }
+  .toggle[open] > summary{
+    border-radius:var(--r-card) var(--r-card) 0 0;
+  }
+
+  .summary-left{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-3);
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .summary-eyebrow{ color:var(--ns-amarelo); }
+  .summary-title{
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    font-size:20px;
+    color:var(--ns-branco);
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  .summary-right{
+    display:inline-flex;
+    align-items:center;
+    gap:var(--sp-3);
+    flex-shrink:0;
+  }
+  .count-pill{
+    color:var(--ns-amarelo);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:12px;
+    padding:6px 12px;
+    border-radius:var(--r-pill);
+    border:var(--stroke-med) solid var(--ns-amarelo);
+    line-height:1;
+    white-space:nowrap;
+  }
+  .chev{
+    width:18px;height:18px;display:inline-block;
+    transition:transform var(--t-med) var(--ease-out);
+    flex-shrink:0;
+    color:var(--ns-amarelo);
+  }
+  .chev svg{width:100%;height:100%;display:block}
+  .toggle[open] > summary .chev{transform:rotate(180deg)}
+
+  .toggle-body{
+    background:var(--ns-branco-pure);
+    border-radius:0 0 var(--r-card) var(--r-card);
+    padding:var(--sp-3);
+  }
+  .toggle[open] > .toggle-body{
+    animation:toggleIn var(--t-slow) var(--ease-out);
+  }
+  @keyframes toggleIn{
+    from{opacity:0;transform:translateY(-4px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* =============================================================
+     TABLES
+     ============================================================= */
+  .table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:var(--ns-rule) transparent;
+  }
+  .table-wrap::-webkit-scrollbar{height:8px}
+  .table-wrap::-webkit-scrollbar-thumb{background:var(--ns-rule);border-radius:4px}
+
+  table.t{
+    width:100%;
+    border-collapse:collapse;
+    font-family:var(--font-body);
+    font-size:13px;
+    background:var(--ns-branco-pure);
+  }
+  table.t thead th{
+    background:var(--ns-verde);
+    color:var(--ns-branco);
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-align:center;
+    padding:14px 8px;
+    vertical-align:middle;
+    white-space:nowrap;
+    border-right:1px solid rgba(230,230,230,0.12);
+  }
+  table.t thead th:last-child{border-right:none}
+  table.t thead th:first-child{text-align:left;padding-left:14px}
+  table.t tbody td{
+    padding:11px 8px;
+    border-bottom:1px solid var(--ns-rule);
+    border-right:1px solid var(--ns-rule);
+    text-align:center;
+    vertical-align:middle;
+    color:var(--ns-preto);
+    transition:background var(--t-fast) var(--ease-out);
+  }
+  table.t tbody td:last-child{border-right:none}
+  table.t tbody tr:last-child td{border-bottom:none}
+  @media (hover:hover) and (pointer:fine){
+    table.t tbody tr:hover td:not([class*="c-"]){background:rgba(13,13,13,0.025)!important}
+  }
+  table.t tbody td.l{text-align:left;padding-left:14px}
+  table.t tbody td.subject{text-align:left;padding-left:14px;font-style:italic;font-weight:700;opacity:.85;font-size:12.5px}
+  table.t tbody td.note{text-align:left;padding-left:14px;font-size:12px;color:var(--ns-preto)}
+  table.t tbody tr.alt td{background:#f6f5f2}
+  table.t tbody tr td.col-mes{
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    text-align:left;
+    padding-left:14px;
+  }
+  /* Mês atual: pequeno text-shadow no nome do mês para destacar */
+  table.t tbody tr.is-current td.col-mes{
+    color:var(--ns-verde-deep);
+    text-shadow:0 2px 6px rgba(0,0,0,0.20), 0 1px 0 rgba(0,0,0,0.08);
+  }
+
+  table.t tbody tr.row-month-banner td{
+    background:var(--ns-laranja);
+    color:var(--ns-branco);
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    text-align:left;
+    padding:12px 14px;
+  }
+  table.t tbody tr.row-month-banner td::before{
+    content:"";
+    display:inline-block;
+    width:6px;height:6px;
+    background:var(--ns-amarelo);
+    border-radius:50%;
+    margin-right:10px;
+    vertical-align:middle;
+  }
+
+  /* =============================================================
+     MONTH TABS (selector de mês para Campanhas)
+     ============================================================= */
+  .month-tabs{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-2);
+    flex-wrap:wrap;
+    padding:0 var(--sp-2) var(--sp-3);
+  }
+  .month-tabs .label{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ns-preto);
+    opacity:.5;
+    margin-right:var(--sp-2);
+  }
+  .month-tab{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.02em;
+    padding:8px 18px;
+    border-radius:var(--r-pill);
+    border:var(--stroke-med) solid var(--ns-rule);
+    background:transparent;
+    color:var(--ns-preto);
+    cursor:pointer;
+    transition:all var(--t-fast) var(--ease-out);
+    line-height:1;
+  }
+  .month-tab:hover{
+    border-color:var(--ns-verde);
+    color:var(--ns-verde);
+    transform:translateY(-1px);
+  }
+  .month-tab.active{
+    background:var(--ns-verde);
+    border-color:var(--ns-verde);
+    color:var(--ns-branco);
+  }
+  .month-tab.active:hover{
+    background:var(--ns-verde-deep);
+    border-color:var(--ns-verde-deep);
+    color:var(--ns-branco);
+  }
+  .month-panel[hidden]{display:none}
+  .month-panel{
+    animation:panelIn var(--t-med) var(--ease-out);
+  }
+  @keyframes panelIn{
+    from{opacity:0;transform:translateY(4px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* =============================================================
+     HERO MONTH SWITCHER (selector global do relatório, top-right)
+     Controla TODO o conteúdo do mês (hero pills + KPIs + análise +
+     destaques + detalhe). A legenda fica fora — é fixa.
+     ============================================================= */
+  .hero-month-switcher{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-2);
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+  .hero-month-switcher .label{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ns-branco);
+    opacity:.55;
+    margin-right:var(--sp-2);
+  }
+  .hero-month{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.02em;
+    padding:8px 16px;
+    border-radius:var(--r-pill);
+    border:var(--stroke-med) solid rgba(230,230,230,0.4);
+    background:transparent;
+    color:var(--ns-branco);
+    cursor:pointer;
+    transition:all var(--t-fast) var(--ease-out);
+    line-height:1;
+    white-space:nowrap;
+  }
+  .hero-month:hover{
+    border-color:var(--ns-amarelo);
+    color:var(--ns-amarelo);
+    transform:translateY(-1px);
+  }
+  .hero-month.active{
+    background:var(--ns-amarelo);
+    border-color:var(--ns-amarelo);
+    color:var(--ns-verde-deep);
+  }
+  .hero-month.active:hover{
+    background:var(--ns-branco-pure);
+    border-color:var(--ns-branco-pure);
+    color:var(--ns-verde-deep);
+  }
+  [data-month-block][hidden]{display:none}
+  [data-month-block]{
+    animation:panelIn var(--t-med) var(--ease-out);
+  }
+
+  table.t tbody tr.row-total td{
+    background:rgba(12,89,82,0.04);
+    border-top:1.5px solid var(--ns-verde-deep);
+    border-bottom:none;
+    border-right:1px solid var(--ns-rule);
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    color:var(--ns-verde-deep);
+    padding-top:14px;
+    padding-bottom:14px;
+  }
+  table.t tbody tr.row-total td:last-child{border-right:none}
+  table.t tbody tr.row-total td.l{
+    font-family:var(--font-display-sans);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    font-size:11px;
+    color:var(--ns-preto);
+    opacity:.8;
+  }
+  table.t tbody tr.row-total td.note{
+    font-family:var(--font-body);
+    font-style:normal;
+    color:var(--ns-preto);
+    opacity:1;
+    font-weight:400;
+    font-size:12px;
+    text-transform:none;
+    letter-spacing:0;
+  }
+
+  td.c-good{background:var(--good-bg)!important;color:var(--good-fg);font-weight:700}
+  td.c-bom {background:var(--bom-bg)!important;color:var(--bom-fg);font-weight:700}
+  td.c-warn{background:var(--warn-bg)!important;color:var(--warn-fg);font-weight:700}
+  td.c-reg {background:var(--reg-bg)!important;color:var(--reg-fg);font-weight:700}
+  td.c-bad {background:var(--bad-bg)!important;color:var(--bad-fg);font-weight:700}
+
+  .status{
+    display:inline-flex;
+    align-items:center;
+    padding:5px 10px;
+    border-radius:var(--r-pill);
+    font-family:var(--font-body);
+    font-weight:700;
+    font-size:11px;
+    line-height:1;
+    white-space:nowrap;
+    border:var(--stroke-med) solid;
+  }
+  .st-good{background:var(--good-bg);border-color:var(--good-fg);color:var(--good-fg)}
+  .st-bom {background:var(--bom-bg); border-color:var(--bom-fg); color:var(--bom-fg)}
+  .st-warn{background:var(--warn-bg);border-color:var(--warn-fg);color:var(--warn-fg)}
+  .st-reg {background:var(--reg-bg); border-color:var(--reg-fg); color:var(--reg-fg)}
+  .st-bad {background:var(--bad-bg); border-color:var(--bad-fg); color:var(--bad-fg)}
+  .st-seg {background:var(--seg-bg); border-color:var(--seg-fg); color:var(--seg-fg)}
+  .st-sun {background:var(--sun-bg); border-color:var(--sun-fg); color:var(--sun-fg)}
+
+  /* =============================================================
+     LEGEND (versão minimalista — rodapé discreto)
+     ============================================================= */
+  .legenda-card{
+    margin-top:var(--sp-5);
+    padding:var(--sp-4) 0 0;
+    background:transparent;
+    border-top:1px solid var(--ns-rule);
+  }
+  .legenda-card h4{
+    font-family:var(--font-display-sans);
+    font-weight:600;
+    font-size:10px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ns-preto);
+    opacity:.45;
+    margin:0 0 var(--sp-3);
+  }
+  /* Lista de pares pílula + descrição. Cada linha é independente: a
+     descrição fica encostada ao seu próprio card (não há grelha global
+     que force colunas alinhadas).                                       */
+  .legenda-grid{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:560px;
+  }
+  .legenda-grid .row{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-2);
+    flex-wrap:wrap;
+  }
+  /* As pílulas da legenda usam exactamente a mesma .status das tabelas
+     (padding 5px 10px · font-size 11px · borda 1.5px).                 */
+  .legenda-grid .desc{
+    color:var(--ns-preto);
+    opacity:.6;
+    font-size:12px;
+    line-height:1.4;
+    font-family:var(--font-body);
+  }
+
+  /* =============================================================
+     CAMADA 3 — FOOTER PRETO
+     Composição on-brand: tagline serifada + estampa de olhos subtle
+     + faixa de paleta canónica + footer-rule do brandbook
+     ============================================================= */
+  .footer{
+    background:var(--ns-preto);
+    color:var(--ns-branco);
+    padding:var(--sp-6) var(--sp-5);
+    position:relative;
+    overflow:hidden;
+  }
+  /* Face do estúdio (3 círculos n/s amarelos) — sai pela borda direita */
+  .footer-face{
+    position:absolute;
+    right:-70px;
+    top:50%;
+    transform:translateY(-50%) rotate(-8deg);
+    height:auto;
+    width:280px;
+    z-index:2;
+    pointer-events:none;
+    transition:transform var(--t-slow) var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){
+    .footer:hover .footer-face{transform:translateY(-50%) rotate(2deg) scale(1.03)}
+  }
+  @media (max-width:780px){
+    .footer-face{
+      position:static;
+      transform:rotate(-6deg);
+      width:180px;
+      margin:var(--sp-4) auto 0;
+      display:block;
+    }
+  }
+
+  .footer-inner{
+    max-width:1180px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    gap:var(--sp-5);
+  }
+
+  /* Manifesto — Neulis Sans contemporâneo, contrasta com o serif da tagline */
+  .footer-manifesto{
+    font-family:var(--font-display-sans);
+    font-weight:500;
+    font-size:clamp(16px,1.6vw,20px);
+    line-height:1.45;
+    letter-spacing:-0.005em;
+    color:var(--ns-branco);
+    opacity:.85;
+    margin:0;
+    max-width:32ch;
+  }
+  .footer-manifesto em{
+    font-style:normal;
+    color:var(--ns-amarelo);
+    font-weight:700;
+  }
+
+  /* Tagline — Rockwell Nova com itálico amarelo */
+  .footer-tagline{
+    font-family:var(--font-display-serif);
+    font-weight:700;
+    font-size:clamp(32px,4vw,48px);
+    line-height:1;
+    letter-spacing:-0.02em;
+    color:var(--ns-branco);
+    margin:0;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:var(--sp-3);
+  }
+  .footer-tagline em{
+    font-style:italic;
+    color:var(--ns-amarelo);
+  }
+  /* Linha intermédia: logo + créditos */
+  .footer-mid{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:var(--sp-4);
+    flex-wrap:wrap;
+    margin:0;
+  }
+  .footer-logo{
+    display:inline-flex;
+    align-items:center;
+  }
+  .footer-logo img{
+    height:28px;width:auto;display:block;
+    transition:transform var(--t-med) var(--ease-out);
+  }
+  @media (hover:hover) and (pointer:fine){
+    .footer-logo:hover img{transform:scale(1.04)}
+  }
+  .footer-credits{
+    font-family:var(--font-body);
+    font-size:11.5px;
+    line-height:1.5;
+    color:var(--ns-branco);
+    opacity:.5;
+    text-align:right;
+    max-width:32ch;
+  }
+  @media (max-width:640px){
+    .footer-credits{text-align:left}
+  }
+
+  /* =============================================================
+     ACCESSIBILITY: REDUCED MOTION
+     ============================================================= */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:0.01ms!important;
+      animation-iteration-count:1!important;
+      transition-duration:0.01ms!important;
+      scroll-behavior:auto!important;
+    }
+    .stagger > *{opacity:1;transform:none}
+  }
+
+  /* =============================================================
+     PRINT
+     ============================================================= */
+  @media print{
+    body{background:#fff;padding:0}
+    .sheet{
+      max-width:none;
+      border-radius:0;
+      box-shadow:none;
+      overflow:visible;
+    }
+    .hero{padding:24px;background:var(--ns-verde)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .body{padding:24px 0}
+    .footer{padding:24px;background:var(--ns-preto)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .skip,.bg-switch{display:none}
+    .stagger > *{opacity:1;transform:none;animation:none}
+    .kpi,.destaque,.analise,.toggle,.legenda-card{
+      break-inside:avoid;
+      page-break-inside:avoid;
+      -webkit-print-color-adjust:exact;
+      print-color-adjust:exact;
+    }
+    @page{margin:12mm 10mm}
+  }
+</style>
+</head>
+<body class="bg-verde">
+
+<a href="#conteudo" class="skip">Saltar para o conteúdo</a>
+
+<!-- ============================================================
+     SWITCHER DE COR DE FUNDO (apenas para teste · não imprime)
+     ============================================================ -->
+<div class="bg-switch" role="group" aria-label="Trocar cor de fundo da página">
+  <span class="label">Fundo</span>
+  <button class="b-verde active"   data-bg="verde"   aria-label="Verde NSS"></button>
+  <button class="b-lilas"          data-bg="lilas"   aria-label="Lilás NSS"></button>
+  <button class="b-amarelo"        data-bg="amarelo" aria-label="Amarelo NSS"></button>
+  <button class="b-bege"           data-bg="bege"    aria-label="Bege quente"></button>
+</div>
+
+<!-- ============================================================
+     FOLHA BRANCA — contém todas as 3 camadas
+     ============================================================ -->
+<div class="sheet">
+
+  <!-- ============================================================
+       CAMADA 1 — HERO VERDE
+       ============================================================ -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+
+      <div class="hero-top">
+        <a class="hero-logo" href="https://notspam.studio" aria-label="notspam.studio">
+          <img src="logo-notspam-branco.png" alt="notspam.studio" />
+        </a>
+        <nav class="hero-month-switcher" aria-label="Selecionar mês do relatório">
+          <span class="label">Mês</span>
+          <button type="button" class="hero-month active" data-month="abr-2026" aria-current="true">Abril 2026</button>
+        </nav>
+      </div>
+
+      <div class="hero-title-block" data-month-block="abr-2026">
+        <p class="eyebrow hero-eyebrow"><span class="star">✦</span> Performance Email Marketing</p>
+        <h1>Relatório <span class="hero-dot" aria-hidden="true"></span> <span class="hero-date">abril 2026</span></h1>
+        <p class="hero-sub"><em>CASA DA LAURA</em></p>
+
+        <div class="hero-pills">
+          <span class="pill"><strong>6</strong>&nbsp;campanhas</span>
+          <span class="pill"><strong>4</strong>&nbsp;flows activos</span>
+          <span class="pill"><strong>4.197</strong>&nbsp;subscritores</span>
+          <span class="pill"><strong>10.563</strong>&nbsp;envios</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CAMADA 2 — CORPO OFF-WHITE
+       ============================================================ -->
+  <main class="body" id="conteudo">
+    <div class="body-inner">
+
+    <div data-month-block="abr-2026">
+
+      <!-- KPIs -->
+      <div class="section-head">
+        <p class="eyebrow">O mês em seis números</p>
+      </div>
+
+      <div class="kpis stagger" role="list">
+        <article class="kpi k-verde" role="listitem">
+          <p class="eyebrow label">Delivery rate</p>
+          <div class="value">99,56%</div>
+          <p class="delta">Primeiro ciclo completo no Klaviyo</p>
+        </article>
+        <article class="kpi k-lilas" role="listitem">
+          <p class="eyebrow label">Crescimento da base</p>
+          <div class="value">832</div>
+          <p class="delta">+24,7% · 4.197 subs.</p>
+        </article>
+        <article class="kpi k-azul" role="listitem">
+          <p class="eyebrow label">Taxa de abertura</p>
+          <div class="value">51,84%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-preto" role="listitem">
+          <p class="eyebrow label">Taxa de clique</p>
+          <div class="value">6,44%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-laranja" role="listitem">
+          <p class="eyebrow label">Conversões</p>
+          <div class="value">187</div>
+          <p class="delta">165 flows · 22 campanhas</p>
+        </article>
+        <article class="kpi k-amarelo" role="listitem">
+          <p class="eyebrow label">Receita atribuída</p>
+          <div class="value">21.551,62€</div>
+          <p class="delta">78% via flows · 22% via campanhas</p>
+        </article>
+      </div>
+
+      <!-- ANÁLISE -->
+      <div class="section-head">
+        <p class="eyebrow">O que dizem os números</p>
+      </div>
+      <div class="analise">
+        <p>Abril fecha como o <span class="ic">primeiro ciclo no Klaviyo</span>, ainda que incompleto. As campanhas tiveram boa performance, com 61,84% de abertura e 5,34% de cliques. Os automatismos respondem por 78% dos €21,5 K atribuídos, sinal de que a migração para o Klaviyo está saudável.</p>
+        <p style="margin-top:var(--sp-3)">O Dia da Mãe, em dois momentos (envio inicial e reforço), foi o que mais pesou na conversão das campanhas.</p>
+      </div>
+
+      <!-- DESTAQUES -->
+      <div class="section-head">
+        <p class="eyebrow">Destaques do mês</p>
+      </div>
+      <div class="destaques stagger">
+        <article class="destaque">
+          <div class="badge b-verde" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>Dia da Mãe foi o motor das campanhas</h3>
+            <p class="sub">Quatro envios PT+ES (vaga inicial + reforço a 27/04) somaram 22 encomendas e €2.238 em receita direta. Open rate médio acima de 60% em todos.</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-azul" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>Abandono de Checkout é o flow mais eficiente</h3>
+            <p class="sub">O Abandono PT+ES (568 destinatários) levou €9.869; o Welcome PT+ES (2.744 destinatários) ficou em €6.976.</p>
+            <p class="sub">Por contacto, o Abandono converte cerca de 6× mais: €18,74 e €12,25 (ES/PT) contra €2,96 e €1,80 do Welcome.<br>Justifica replicar este padrão noutros flows comerciais (Browse Abandonment, Post-Purchase).</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-amarelo" aria-hidden="true">↑</div>
+          <div class="body-d">
+            <h3>Base cresceu +832 inscritos via pop-up (+24,7%)</h3>
+            <p class="sub">550 ES e 282 PT em abril, num mês em que a base começou em 3.365 subscritores ativos.<br>PT converte mais (2,19% submit rate vs 1,78% ES), apesar de receber menos tráfego no formulário (13 K vs 31 K).</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- DETALHE -->
+      <div class="section-head">
+        <p class="eyebrow">Detalhe</p>
+      </div>
+
+      <details class="toggle" open>
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">01</span>
+            <span class="summary-title">Evolução mensal</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">1 mês · ponto de partida</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Evolução mensal">
+              <thead>
+                <tr>
+                  <th>Mês</th><th>Envios</th><th>Camp.</th><th>Entreg.</th>
+                  <th>OR</th><th>CR</th><th>Unsub</th><th>Subscrit.</th>
+                  <th>Crescim.</th><th>Receita</th><th>Conv.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-current"><td class="col-mes">abr. 2026</td><td>10.563</td><td>6</td><td>99,56%</td><td class="c-good">51,84%</td><td class="c-good">6,44%</td><td>0,55%</td><td>4.197</td><td class="c-good">+24,7%</td><td>21.551,62€</td><td>187</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- CAMPANHAS -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">02</span>
+            <span class="summary-title">Campanhas</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">6 campanhas · abril 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+
+          <div class="table-wrap">
+            <table class="t" aria-label="Campanhas de abril 2026">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Campanha</th>
+                  <th style="text-align:left;padding-left:14px">Subject Line</th>
+                  <th>Data</th><th>Envios</th><th>Entreg.</th>
+                  <th>OR</th><th>CR</th><th>Unsub</th><th>Spam</th>
+                  <th>Receita</th><th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">ES | 01'04 Primavera em casa</td><td class="subject">La primavera pide otros colores 🌸</td><td>16 abr.</td><td>1.023</td><td>99,41%</td><td class="c-good">62,63%</td><td class="c-good">6,59%</td><td>0,68%</td><td>0,00%</td><td>0,00€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">Engagement muito alto, 0 encomendas (peça editorial sem oferta directa)</td></tr>
+                <tr class="alt"><td class="l">PT | 01'04 Primavera em casa</td><td class="subject">A primavera pede outras cores 🌸</td><td>16 abr.</td><td>351</td><td>99,72%</td><td class="c-good">56,57%</td><td class="c-good">8,29%</td><td>0,57%</td><td>0,00%</td><td>131,85€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">1 encomenda. CR forte (8,29%)</td></tr>
+                <tr><td class="l">PT | 02'04 Dia da Mãe</td><td class="subject">Escolha algo que ela sinta 💞</td><td>20 abr.</td><td>690</td><td>100,00%</td><td class="c-good">61,01%</td><td class="c-good">4,49%</td><td>0,29%</td><td>0,00%</td><td>311,00€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">4 encomendas, AOV ~€78</td></tr>
+                <tr class="alt"><td class="l">ES | 02'04 Dia da Mãe</td><td class="subject">Encuentra el regalo perfecto 💞</td><td>20 abr.</td><td>2.045</td><td>99,76%</td><td class="c-good">66,67%</td><td class="c-good">6,42%</td><td>0,44%</td><td>0,10%</td><td>707,90€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">OR mais alto do mês. 7 encomendas</td></tr>
+                <tr><td class="l">PT | 02'04 Dia da Mãe (reforço)</td><td class="subject">Ainda vai a tempo ☺️</td><td>27 abr.</td><td>792</td><td>99,87%</td><td class="c-good">55,50%</td><td class="c-good">4,17%</td><td>0,13%</td><td>0,00%</td><td>352,50€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">Reforço de proximidade. +3 encomendas</td></tr>
+                <tr class="alt"><td class="l">ES | 02'04 Dia da Mãe (reforço)</td><td class="subject">Todavía está a tiempo ☺️</td><td>27 abr.</td><td>2.350</td><td>99,74%</td><td class="c-good">60,45%</td><td class="c-good">4,05%</td><td>0,38%</td><td>0,00%</td><td>735,20€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">Reforço gerou +€735. 7 encomendas adicionais</td></tr>
+                <tr class="row-total"><td class="l" colspan="3">Total Abril · 6 campanhas</td><td>7.251</td><td>99,74%</td><td>61,84%</td><td>5,34%</td><td>0,41%</td><td>0,03%</td><td>2.238,45€</td><td></td><td class="note">Receita Klaviyo atribuída (modelo multi-touch): €4.707,20</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </details>
+
+      <!-- AUTOMATISMOS · VISÃO GERAL -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">03</span>
+            <span class="summary-title">Automatismos · visão geral</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">8 métricas · abril 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Visão geral dos flows">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Métrica</th>
+                  <th>Abril 2026</th><th>Status</th><th>Benchmark</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Total Recipients</td><td>3.312</td><td><span class="status st-reg">→ Regular</span></td><td>—</td><td class="note">Primeiro mês completo dos flows</td></tr>
+                <tr class="alt"><td class="l">Entregabilidade</td><td>99,37%</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;99%</td><td class="note">Base saudável</td></tr>
+                <tr><td class="l">Open Rate</td><td>41,84%</td><td><span class="status st-bom">✓ Bom</span></td><td>40-50%</td><td class="note">Média simples dos 4 flows. Spread vai de 34,28% (ES Welcome) a 50,00% (PT Abandoned)</td></tr>
+                <tr class="alt"><td class="l">Click Rate</td><td>7,54%</td><td><span class="status st-good">✓ Excelente</span></td><td>2-3%</td><td class="note">Acima de benchmark</td></tr>
+                <tr><td class="l">Fulfilled Order Rate</td><td>5,01%</td><td><span class="status st-good">✓ Excelente</span></td><td>2-3%</td><td class="note">Conversão dos flows muito acima de benchmark</td></tr>
+                <tr class="alt"><td class="l">Spam Rate</td><td>0,03%</td><td><span class="status st-good">✓ Excelente</span></td><td>&lt;0,1%</td><td class="note">Dentro do benchmark</td></tr>
+                <tr><td class="l">Unsubscribe Rate</td><td>0,69%</td><td><span class="status st-bom">✓ Bom</span></td><td>&lt;1%</td><td class="note">Dentro do limite saudável</td></tr>
+                <tr class="alt"><td class="l">Receita atribuída</td><td>16.844,42€</td><td>—</td><td>—</td><td class="note">78% do total atribuído do mês</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- PERFORMANCE POR FLOW -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">04</span>
+            <span class="summary-title">Performance por flow</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">4 flows · abril 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Performance por flow">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Flow</th>
+                  <th>Recipientes</th><th>Entreg.</th><th>OR</th><th>CR</th>
+                  <th>Conv.</th><th>Receita</th><th>Rev / rec.</th>
+                  <th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">ES | Abandoned Checkout</td><td>458</td><td>99,56%</td><td class="c-good">48,68%</td><td class="c-good">8,33%</td><td class="c-good">85 (18,64%)</td><td>8.545,60€</td><td class="c-good">18,74€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">Top eficiência: €18,74 por destinatário, 18,64% de conversão. AOV €98,23</td></tr>
+                <tr class="alt"><td class="l">ES | Welcome Flow</td><td>1.797</td><td>99,50%</td><td class="c-warn">34,28%</td><td class="c-good">5,59%</td><td>49 (2,74%)</td><td>5.284,43€</td><td>2,96€</td><td><span class="status st-warn">↑ A Melhorar</span></td><td class="note">Volume alto, OR abaixo do benchmark; em aquecimento pós-migração. AOV €105,69</td></tr>
+                <tr><td class="l">PT | Abandoned Checkout</td><td>110</td><td>98,18%</td><td class="c-good">50,00%</td><td class="c-good">11,11%</td><td class="c-good">15 (13,89%)</td><td>1.323,00€</td><td class="c-good">12,25€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">Volume baixo, conversão muito alta (13,89%). AOV €82,69</td></tr>
+                <tr class="alt"><td class="l">PT | Welcome Flow</td><td>947</td><td>99,15%</td><td class="c-warn">34,40%</td><td class="c-good">5,11%</td><td>16 (1,70%)</td><td>1.691,39€</td><td>1,80€</td><td><span class="status st-warn">↑ A Melhorar</span></td><td class="note">Em aquecimento; €1,80 por destinatário e 1,70% de conversão. AOV €105,71</td></tr>
+                <tr class="row-total"><td class="l" colspan="2">Total Abril · 4 flows</td><td>99,37%</td><td>41,84%</td><td>7,54%</td><td>165 (5,01%)</td><td>16.844,42€</td><td>5,09€</td><td></td><td class="note">Abandoned Checkout converte 6× mais por contacto que Welcome</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /[data-month-block] -->
+
+      <!-- LEGENDA -->
+      <div class="legenda-card">
+        <h4>Chave de leitura</h4>
+        <div class="legenda-grid">
+          <div class="row">
+            <span class="status st-good">✓ Excelente</span>
+            <span class="desc">Acima do benchmark</span>
+          </div>
+          <div class="row">
+            <span class="status st-bom">✓ Bom</span>
+            <span class="desc">Dentro do benchmark</span>
+          </div>
+          <div class="row">
+            <span class="status st-warn">↑ A Melhorar</span>
+            <span class="desc">Margem clara para crescer</span>
+          </div>
+          <div class="row">
+            <span class="status st-reg">→ Regular</span>
+            <span class="desc">Aceitável, primeira leitura</span>
+          </div>
+          <div class="row">
+            <span class="status st-bad">✗ Fraco</span>
+            <span class="desc">Acção corretiva necessária</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       CAMADA 3 — FOOTER PRETO
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <h2 class="footer-tagline">
+        <span>Até ao <em>próximo mês!</em></span>
+      </h2>
+
+      <img class="footer-face" src="assets/face-notspam.png" alt="" aria-hidden="true">
+
+      <div class="footer-mid">
+        <a href="https://notspam.studio" class="footer-logo" aria-label="notspam.studio">
+          <img src="logo-notspam-branco.png" alt="notspam.studio" />
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</div><!-- /.sheet -->
+
+<script>
+  // Switcher de cor de fundo
+  (function(){
+    const btns = document.querySelectorAll('.bg-switch button');
+    btns.forEach(b => {
+      b.addEventListener('click', () => {
+        document.body.className = 'bg-' + b.dataset.bg;
+        btns.forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+        // Actualiza meta theme-color para a cor escolhida
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if(meta){
+          const cs = getComputedStyle(document.body).getPropertyValue('--page-bg-meta').trim();
+          if(cs) meta.setAttribute('content', cs);
+        }
+      });
+    });
+  })();
+
+  // Hero month switcher — controla TODO o conteúdo do mês
+  (function(){
+    const buttons = document.querySelectorAll('.hero-month');
+    if (!buttons.length) return;
+    const blocks = document.querySelectorAll('[data-month-block]');
+
+    function show(month){
+      buttons.forEach(b => {
+        const active = b.dataset.month === month;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+      blocks.forEach(el => {
+        el.hidden = el.dataset.monthBlock !== month;
+      });
+      // Fecha todos os details para o cliente entrar fresco no mês escolhido
+      document.querySelectorAll('details.toggle').forEach(d => { d.open = false; });
+      // Excepto a Evolução (primeiro detalhe), que abre por defeito
+      const first = document.querySelector('[data-month-block]:not([hidden]) details.toggle');
+      if (first) first.open = true;
+    }
+
+    buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.month)));
+  })();
+
+  // Month tabs (selector de mês nas Campanhas)
+  document.querySelectorAll('[data-month-tabs]').forEach(group => {
+    const tabs = group.querySelectorAll('.month-tab');
+    const panels = group.querySelectorAll('.month-panel');
+    tabs.forEach(t => {
+      t.addEventListener('click', () => {
+        const m = t.dataset.month;
+        tabs.forEach(x => {
+          const isActive = x === t;
+          x.classList.toggle('active', isActive);
+          x.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+        panels.forEach(p => p.hidden = p.dataset.month !== m);
+      });
+    });
+  });
+
+  // Toggles abrem todos automaticamente antes de imprimir / guardar PDF.
+  // Ao imprimir mostra todos os meses das Campanhas, restaura depois.
+  (function(){
+    const allDetails = () => document.querySelectorAll('details.toggle');
+    const allPanels  = () => document.querySelectorAll('.month-panel');
+    const allMonths  = () => document.querySelectorAll('[data-month-block]');
+    window.addEventListener('beforeprint', () => {
+      allDetails().forEach(d => { d.dataset.wasOpen = d.open ? '1' : '0'; d.open = true; });
+      allPanels().forEach(p => { p.dataset.wasHidden = p.hidden ? '1' : '0'; p.hidden = false; });
+      allMonths().forEach(m => { m.dataset.wasHidden = m.hidden ? '1' : '0'; m.hidden = false; });
+    });
+    window.addEventListener('afterprint', () => {
+      allDetails().forEach(d => { d.open = d.dataset.wasOpen === '1'; delete d.dataset.wasOpen; });
+      allPanels().forEach(p => { p.hidden = p.dataset.wasHidden === '1'; delete p.dataset.wasHidden; });
+      allMonths().forEach(m => { m.hidden = m.dataset.wasHidden === '1'; delete m.dataset.wasHidden; });
+    });
+  })();
+</script>
+
+</body>
+</html>
