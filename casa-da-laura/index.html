@@ -207,59 +207,6 @@
   }
 
   /* =============================================================
-     SWITCHER DE CORES (canto superior direito · só no ecrã)
-     ============================================================= */
-  .bg-switch{
-    position:fixed;
-    top:16px; right:16px;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    padding:8px 10px;
-    border-radius:var(--r-pill);
-    box-shadow:0 6px 20px rgba(0,0,0,0.18), 0 2px 6px rgba(0,0,0,0.08);
-    z-index:150;
-    font-family:var(--font-body);
-  }
-  .bg-switch .label{
-    font-family:var(--font-display-sans);
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--ns-preto);
-    opacity:.6;
-    margin-right:4px;
-    white-space:nowrap;
-  }
-  .bg-switch button{
-    width:24px;height:24px;
-    border-radius:50%;
-    border:2px solid transparent;
-    cursor:pointer;
-    padding:0;
-    background-clip:padding-box;
-    transition:transform var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out);
-    position:relative;
-  }
-  .bg-switch button:hover{transform:scale(1.12)}
-  .bg-switch button.active{
-    border-color:var(--ns-preto);
-    transform:scale(1.08);
-  }
-  .bg-switch button.b-verde   {background:var(--ns-verde)}
-  .bg-switch button.b-lilas   {background:var(--ns-lilas)}
-  .bg-switch button.b-amarelo {background:var(--ns-amarelo)}
-  .bg-switch button.b-bege    {background:var(--ns-bege-quente); border-color:rgba(0,0,0,0.1)}
-  .bg-switch button.b-bege.active{border-color:var(--ns-preto)}
-
-  /* Esconde o switcher no print */
-  @media print { .bg-switch{display:none!important} }
-
-  /* =============================================================
      TIPOGRAFIA BASE
      ============================================================= */
   h1,.h1{
@@ -1153,19 +1100,6 @@
     /* Body padding mais apertado */
     body{padding:var(--sp-3) var(--sp-3)}
 
-    /* Switcher de fundo: passa para o rodapé centrado, mais pequeno */
-    .bg-switch{
-      top:auto;
-      bottom:12px;
-      right:auto;
-      left:50%;
-      transform:translateX(-50%);
-      padding:6px 8px;
-      gap:5px;
-    }
-    .bg-switch .label{font-size:9px;margin-right:2px}
-    .bg-switch button{width:20px;height:20px}
-
     /* Hero e body: padding interno menor */
     .hero{padding:var(--sp-5) var(--sp-4) var(--sp-6)}
     .body{padding:var(--sp-6) var(--sp-4) var(--sp-4)}
@@ -1249,8 +1183,8 @@
     /* Toggle body padding */
     .toggle-body{padding:var(--sp-2)}
 
-    /* Footer: padding mais apertado e espaço para o switcher fixo */
-    .footer{padding:var(--sp-5) var(--sp-4) calc(var(--sp-7) + 24px)}
+    /* Footer: padding mais apertado */
+    .footer{padding:var(--sp-5) var(--sp-4) var(--sp-7)}
   }
 
   /* =============================================================
@@ -1280,7 +1214,7 @@
     .hero{padding:24px;background:var(--ns-verde)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .body{padding:24px 0}
     .footer{padding:24px;background:var(--ns-preto)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .skip,.bg-switch{display:none}
+    .skip{display:none}
     .stagger > *{opacity:1;transform:none;animation:none}
     .kpi,.destaque,.analise,.toggle,.legenda-card{
       break-inside:avoid;
@@ -1292,20 +1226,9 @@
   }
 </style>
 </head>
-<body class="bg-verde">
+<body class="bg-bege">
 
 <a href="#conteudo" class="skip">Saltar para o conteúdo</a>
-
-<!-- ============================================================
-     SWITCHER DE COR DE FUNDO (apenas para teste · não imprime)
-     ============================================================ -->
-<div class="bg-switch" role="group" aria-label="Trocar cor de fundo da página">
-  <span class="label">Fundo</span>
-  <button class="b-verde active"   data-bg="verde"   aria-label="Verde NSS"></button>
-  <button class="b-lilas"          data-bg="lilas"   aria-label="Lilás NSS"></button>
-  <button class="b-amarelo"        data-bg="amarelo" aria-label="Amarelo NSS"></button>
-  <button class="b-bege"           data-bg="bege"    aria-label="Bege quente"></button>
-</div>
 
 <!-- ============================================================
      FOLHA BRANCA — contém todas as 3 camadas
@@ -1633,24 +1556,6 @@
 </div><!-- /.sheet -->
 
 <script>
-  // Switcher de cor de fundo
-  (function(){
-    const btns = document.querySelectorAll('.bg-switch button');
-    btns.forEach(b => {
-      b.addEventListener('click', () => {
-        document.body.className = 'bg-' + b.dataset.bg;
-        btns.forEach(x => x.classList.remove('active'));
-        b.classList.add('active');
-        // Actualiza meta theme-color para a cor escolhida
-        const meta = document.querySelector('meta[name="theme-color"]');
-        if(meta){
-          const cs = getComputedStyle(document.body).getPropertyValue('--page-bg-meta').trim();
-          if(cs) meta.setAttribute('content', cs);
-        }
-      });
-    });
-  })();
-
   // Hero month switcher — controla TODO o conteúdo do mês
   (function(){
     const buttons = document.querySelectorAll('.hero-month');
