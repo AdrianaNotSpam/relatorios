@@ -20,3 +20,20 @@ $RECYCLE.BIN/
 *.tmp
 *.bak
 *.log
+
+# Segredos e credenciais (defesa em profundidade)
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+credentials*
+secrets*
+*.secret
+.aws/
+.npmrc
+.netrc
+config.local.*
