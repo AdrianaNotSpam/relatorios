@@ -4,7 +4,6 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="theme-color" content="#0c5952" />
-<meta name="robots" content="noindex, nofollow" />
 <title>CASA DA LAURA · Performance Email Marketing · abril 2026</title>
 <!--
   Relatório mensal Casa da Laura · abril 2026 · primeiro ciclo completo no Klaviyo.
@@ -1144,6 +1143,114 @@
   }
   @media (max-width:640px){
     .footer-credits{text-align:left}
+  }
+
+  /* =============================================================
+     MOBILE FIXES (max-width:600px)
+     Ajustes finos para iPhone e ecrãs pequenos.
+     ============================================================= */
+  @media (max-width:600px){
+    /* Body padding mais apertado */
+    body{padding:var(--sp-3) var(--sp-3)}
+
+    /* Switcher de fundo: passa para o rodapé centrado, mais pequeno */
+    .bg-switch{
+      top:auto;
+      bottom:12px;
+      right:auto;
+      left:50%;
+      transform:translateX(-50%);
+      padding:6px 8px;
+      gap:5px;
+    }
+    .bg-switch .label{font-size:9px;margin-right:2px}
+    .bg-switch button{width:20px;height:20px}
+
+    /* Hero e body: padding interno menor */
+    .hero{padding:var(--sp-5) var(--sp-4) var(--sp-6)}
+    .body{padding:var(--sp-6) var(--sp-4) var(--sp-4)}
+
+    /* Hero month switcher: full width abaixo do logo */
+    .hero-top{gap:var(--sp-3); margin-bottom:var(--sp-6)}
+    .hero-month-switcher{width:100%; justify-content:flex-start}
+    .hero-month-switcher .label{margin-right:var(--sp-1)}
+
+    /* KPI: número mais pequeno para não cortar */
+    .kpi{padding:var(--sp-4); min-height:140px}
+    .kpi .value{
+      font-size:clamp(28px, 8.5vw, 38px);
+      line-height:1.05;
+      word-break:break-word;
+      overflow-wrap:anywhere;
+    }
+    .kpi .delta{font-size:12px}
+
+    /* Análise: padding menor */
+    .analise{padding:var(--sp-4) var(--sp-4) var(--sp-4) var(--sp-5)}
+    .analise::before{width:4px}
+    .analise p{font-size:15.5px;line-height:1.55}
+
+    /* Destaques: badge empilhado em cima do texto (full width) */
+    .destaque{
+      grid-template-columns:1fr;
+      grid-template-rows:auto auto;
+    }
+    .destaque .badge{
+      min-height:64px;
+      height:auto;
+      padding:14px 0;
+      font-size:28px;
+    }
+    .destaque .body-d{
+      padding:var(--sp-3) var(--sp-4) var(--sp-4);
+    }
+
+    /* Toggle summary: empilhar título e contagem em duas linhas */
+    .toggle > summary{
+      flex-wrap:wrap;
+      padding:var(--sp-3) var(--sp-4);
+      gap:var(--sp-2);
+      align-items:flex-start;
+    }
+    .summary-left{
+      flex:1 1 100%;
+      gap:var(--sp-2);
+      align-items:flex-start;
+      flex-wrap:wrap;
+    }
+    .summary-title{
+      font-size:17px;
+      overflow-wrap:anywhere;
+      word-break:break-word;
+    }
+    .summary-right{
+      flex:1 1 100%;
+      justify-content:space-between;
+      gap:var(--sp-2);
+    }
+    .count-pill{
+      font-size:11px;
+      padding:5px 10px;
+      white-space:normal;
+      line-height:1.2;
+    }
+
+    /* Tabelas em mobile: cells mais apertados (já têm overflow-x:auto) */
+    table.t thead th{padding:10px 6px;font-size:10px}
+    table.t tbody td{padding:9px 6px;font-size:12px}
+    table.t tbody td.l,
+    table.t tbody td.subject,
+    table.t tbody td.note,
+    table.t tbody td.col-mes{padding-left:10px}
+
+    /* Section heads: spacing mais apertado */
+    .section-head{margin:var(--sp-6) 0 var(--sp-3); gap:var(--sp-2)}
+
+    /* Toggle body padding */
+    .toggle-body{padding:var(--sp-2)}
+
+    /* Footer: padding mais apertado e espaço para o switcher fixo */
+    .footer{padding:var(--sp-5) var(--sp-4) calc(var(--sp-7) + 24px)}
   }
 
   /* =============================================================
