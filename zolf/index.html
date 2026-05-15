@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0c5952" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/favicon.png" />
+<title>ZOLF · Performance Email Marketing · março 2026</title>
+<!--
+  Relatório mensal ZOLF · março 2026 · primeiro relatório.
+  Base no template V3 (folha branca sobre fundo bege).
+  Tipografia oficial nss-design-system: Rockwell Nova · Neulis Sans · Arimo.
+-->
+<style>
+  @font-face{font-family:"Rockwell Nova";src:url("fonts/RockwellNova-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Rockwell Nova";src:url("fonts/RockwellNova-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Neulis Sans";src:url("fonts/NeulisSans-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Neulis Sans";src:url("fonts/NeulisSans-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Neulis Sans";src:url("fonts/NeulisSans-SemiBold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Neulis Sans";src:url("fonts/NeulisSans-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Neulis Sans";src:url("fonts/NeulisSans-ExtraBold.otf") format("opentype");font-weight:800;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Arimo";src:url("fonts/Arimo-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Arimo";src:url("fonts/Arimo-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap;}
+  @font-face{font-family:"Arimo";src:url("fonts/Arimo-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap;}
+  @font-face{font-family:"Arimo";src:url("fonts/Arimo-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap;}
+
+  :root{
+    --ns-laranja:#e14c22;
+    --ns-azul:#4f67b1;
+    --ns-verde:#0c5952;
+    --ns-lilas:#bf90c6;
+    --ns-amarelo:#d7d55c;
+    --ns-branco:#e6e6e6;
+    --ns-preto:#0d0d0d;
+    --ns-verde-deep:#08423d;
+    --ns-branco-pure:#ffffff;
+    --ns-bege-quente:#ede9dd;
+    --ns-rule:rgba(13,13,13,0.10);
+    --ns-rule-dark:rgba(230,230,230,0.18);
+
+    --good-bg:#d9e7d1;   --good-fg:#2e5d22;
+    --bom-bg:#edf1d5;    --bom-fg:#566b33;
+    --warn-bg:#f5e79c;   --warn-fg:#7a5a00;
+    --reg-bg:#f8d4b8;    --reg-fg:#8c3e12;
+    --bad-bg:#f1b7a3;    --bad-fg:#8c2310;
+    --seg-bg:#dcc8e3;    --seg-fg:#4e2a65;
+    --sun-bg:#e5e2d6;    --sun-fg:#555045;
+
+    --font-display-serif:"Rockwell Nova",Georgia,serif;
+    --font-display-sans:"Neulis Sans",system-ui,sans-serif;
+    --font-body:"Arimo",system-ui,sans-serif;
+
+    --type-hero:72px; --type-h1:48px; --type-h2:36px; --type-h3:24px;
+    --type-body:16px; --type-small:14px; --type-eyebrow:12px;
+
+    --sp-1:4px; --sp-2:8px; --sp-3:16px; --sp-4:24px;
+    --sp-5:32px; --sp-6:48px; --sp-7:64px; --sp-8:96px;
+
+    --r-soft:8px; --r-card:16px; --r-sheet:28px; --r-pill:999px;
+    --stroke-thin:1px; --stroke-med:1.5px; --stroke-bold:2px;
+
+    --ease-out:cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-snap:cubic-bezier(0.2, 0.8, 0.2, 1);
+    --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);
+    --t-fast:140ms; --t-med:240ms; --t-slow:380ms;
+
+    --page-bg:var(--ns-bege-quente);
+    --page-bg-meta:#ede9dd;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--page-bg);
+    color:var(--ns-preto);
+    font-family:var(--font-body);
+    font-weight:400;
+    font-size:var(--type-body);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    padding:var(--sp-5) var(--sp-4);
+    transition:background var(--t-slow) var(--ease-out);
+    min-height:100vh;
+  }
+  ::selection{background:var(--ns-amarelo);color:var(--ns-preto)}
+
+  .skip{position:absolute;left:-9999px;background:var(--ns-preto);color:var(--ns-branco);padding:10px 14px;font-weight:700;z-index:200}
+  .skip:focus{left:16px;top:16px;outline:none}
+
+  a{color:inherit}
+  *:focus-visible{outline:none;box-shadow:0 0 0 2px var(--ns-branco-pure), 0 0 0 4px var(--ns-laranja);border-radius:2px;}
+
+  .tnum, table.t td, table.t th, .kpi .value, .chip strong{
+    font-variant-numeric:tabular-nums;
+    font-feature-settings:"tnum" 1;
+  }
+
+  .sheet{
+    max-width:1180px;
+    margin:0 auto;
+    background:var(--ns-branco-pure);
+    border-radius:var(--r-sheet);
+    overflow:hidden;
+    box-shadow:
+      0 75px 150px -25px rgba(0,0,0,0.50),
+      0 40px 80px -12px rgba(0,0,0,0.35),
+      0 16px 36px -6px rgba(0,0,0,0.22),
+      0 5px 12px rgba(0,0,0,0.13);
+    position:relative;
+    isolation:isolate;
+  }
+
+  h1,.h1{font-family:var(--font-display-serif);font-weight:700;font-size:clamp(40px,5vw,var(--type-hero));line-height:1.0;letter-spacing:-0.02em;margin:0;}
+  h2,.h2{font-family:var(--font-display-sans);font-weight:700;font-size:clamp(28px,3.6vw,var(--type-h1));line-height:1.05;letter-spacing:-0.01em;margin:0;}
+  h3,.h3{font-family:var(--font-display-sans);font-weight:600;font-size:var(--type-h3);line-height:1.2;margin:0;}
+  p{font-family:var(--font-body);font-weight:400;font-size:var(--type-body);line-height:1.6;margin:0}
+
+  .eyebrow{font-family:var(--font-display-sans);font-weight:600;font-size:var(--type-eyebrow);letter-spacing:0.08em;text-transform:uppercase;margin:0;}
+
+  .pill{display:inline-flex;align-items:center;padding:var(--sp-2) var(--sp-3);border-radius:var(--r-pill);font-family:var(--font-body);font-weight:700;font-size:var(--type-small);border:var(--stroke-med) solid currentColor;line-height:1;background:transparent;transition:transform var(--t-fast) var(--ease-out);}
+  @media (hover:hover) and (pointer:fine){ .pill:hover{transform:translateY(-1px)} }
+
+  .hero{background:var(--ns-verde);color:var(--ns-branco);padding:var(--sp-6) var(--sp-5) var(--sp-7);position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(230,230,230,0.06) 1px, transparent 0);background-size:24px 24px;pointer-events:none;}
+  .hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;}
+  .hero-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--sp-4);margin-bottom:var(--sp-7);}
+  .hero-logo{display:inline-flex;align-items:center;height:44px;}
+  .hero-logo img{height:44px;width:auto;display:block;transition:transform var(--t-med) var(--ease-out);}
+  @media (hover:hover) and (pointer:fine){ .hero-logo:hover img{transform:scale(1.04)} }
+  .hero-title-block{display:grid;gap:var(--sp-3);max-width:880px;}
+  .hero-eyebrow{color:var(--ns-amarelo);display:inline-flex;align-items:center;gap:var(--sp-2);}
+  .hero-eyebrow .star{color:var(--ns-amarelo);font-size:14px;line-height:1;}
+  .hero h1{color:var(--ns-branco);margin-top:var(--sp-1);font-size:clamp(32px,4.2vw,58px);line-height:1.05;white-space:nowrap;}
+  @media (max-width:600px){ .hero h1{white-space:normal;font-size:clamp(26px,7vw,40px);} }
+  .hero .hero-sub{font-family:var(--font-display-serif);font-weight:400;font-size:44px;line-height:1.1;color:var(--ns-branco);opacity:.85;margin-top:-4px;letter-spacing:0.01em;}
+  .hero .hero-sub em{font-style:italic;color:var(--ns-amarelo);font-weight:700;opacity:1;}
+  .hero h1 .hero-date{color:var(--ns-amarelo);font-family:inherit;font-weight:inherit;font-size:inherit;letter-spacing:inherit;white-space:nowrap;}
+  .hero h1 .hero-dot{display:inline-block;width:0.18em;height:0.18em;border-radius:50%;background:var(--ns-amarelo);vertical-align:middle;position:relative;top:-0.08em;margin:0 0.12em;}
+  .hero-pills{display:flex;flex-wrap:wrap;gap:var(--sp-2);margin-top:var(--sp-5);}
+  .hero-pills .pill{color:var(--ns-branco);border-color:rgba(230,230,230,0.5);}
+  .hero-pills .pill strong{color:var(--ns-amarelo);font-weight:800;margin-right:6px;}
+
+  .body{background:var(--ns-branco);padding:var(--sp-7) var(--sp-5) var(--sp-5);}
+  .body-inner{max-width:1180px;margin:0 auto;}
+  .section-head{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);flex-wrap:wrap;margin:var(--sp-7) 0 var(--sp-4);}
+  .section-head:first-child{margin-top:0}
+  .section-head .eyebrow{color:var(--ns-verde);display:flex;align-items:center;gap:var(--sp-2);}
+  .section-head .eyebrow::before{content:"";width:24px;height:1.5px;background:var(--ns-verde);display:inline-block;}
+  .section-head .section-meta{font-family:var(--font-display-serif);font-style:italic;font-size:14px;color:var(--ns-preto);opacity:.5;}
+
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+  @media (max-width:780px){.kpis{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.kpis{grid-template-columns:1fr}}
+
+  .kpi{border-radius:var(--r-card);padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-2);min-height:180px;color:var(--ns-branco);transition:transform var(--t-med) var(--ease-out);position:relative;overflow:hidden;}
+  @media (hover:hover) and (pointer:fine){ .kpi:hover{transform:translateY(-3px)} }
+  .kpi .label{ color:inherit; opacity:0.95; }
+  .kpi .value{font-family:var(--font-display-serif);font-weight:700;font-size:48px;line-height:1;letter-spacing:-0.02em;margin-top:auto;}
+  .kpi .delta{font-family:var(--font-body);font-size:13px;font-weight:400;margin-top:var(--sp-2);opacity:.85;}
+  .kpi.k-verde{background:var(--ns-verde)} .kpi.k-azul{background:var(--ns-azul)}
+  .kpi.k-laranja{background:var(--ns-laranja)} .kpi.k-lilas{background:var(--ns-lilas)}
+  .kpi.k-preto{background:var(--ns-preto)} .kpi.k-amarelo{background:var(--ns-amarelo);color:var(--ns-preto)}
+  .kpi.k-amarelo .delta{opacity:.7}
+
+  .stagger > *{opacity:0;transform:translateY(8px);animation:enter var(--t-slow) var(--ease-out) forwards;}
+  .stagger > *:nth-child(1){animation-delay:0ms} .stagger > *:nth-child(2){animation-delay:60ms}
+  .stagger > *:nth-child(3){animation-delay:120ms} .stagger > *:nth-child(4){animation-delay:180ms}
+  .stagger > *:nth-child(5){animation-delay:240ms} .stagger > *:nth-child(6){animation-delay:300ms}
+  @keyframes enter{to{opacity:1;transform:translateY(0)}}
+
+  .analise{background:var(--ns-branco-pure);border-radius:var(--r-card);padding:var(--sp-5) var(--sp-6);position:relative;overflow:hidden;}
+  .analise::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--ns-verde);}
+  .analise p{font-size:17px;line-height:1.6;max-width:none;color:var(--ns-preto);}
+  .analise .ic{font-family:var(--font-display-serif);font-style:italic;color:var(--ns-laranja);font-weight:700;}
+
+  .destaques{display:grid;gap:var(--sp-3)}
+  .destaque{display:grid;grid-template-columns:88px 1fr;background:var(--ns-branco-pure);border-radius:var(--r-card);overflow:hidden;transition:transform var(--t-fast) var(--ease-out);}
+  @media (hover:hover) and (pointer:fine){ .destaque:hover{transform:translateY(-2px)} }
+  .destaque .badge{display:flex;align-items:center;justify-content:center;color:var(--ns-branco);font-weight:800;font-size:38px;line-height:1;font-family:var(--font-display-sans);}
+  .destaque .badge.b-verde{background:var(--ns-verde)}
+  .destaque .badge.b-azul{background:var(--ns-azul)}
+  .destaque .badge.b-amarelo{background:var(--ns-amarelo);color:var(--ns-preto)}
+  .destaque .body-d{padding:var(--sp-4) var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-2);justify-content:center;}
+  .destaque h3{color:var(--ns-preto);font-weight:700;font-size:18px;line-height:1.3;}
+  .destaque .sub{font-family:var(--font-body);font-style:italic;font-size:14.5px;color:var(--ns-preto);opacity:0.65;line-height:1.45;}
+
+  .toggle{margin:0 0 var(--sp-3);filter:drop-shadow(0 6px 14px rgba(0,0,0,0.08)) drop-shadow(0 1px 2px rgba(0,0,0,0.04));}
+  .toggle:last-of-type{margin-bottom:0}
+  .toggle > summary{list-style:none;cursor:pointer;user-select:none;background:var(--ns-verde-deep);color:var(--ns-branco);border-radius:var(--r-card);padding:var(--sp-4) var(--sp-5);display:flex;align-items:center;justify-content:space-between;gap:var(--sp-4);transition:background var(--t-fast) var(--ease-out);}
+  .toggle > summary::-webkit-details-marker{display:none}
+  .toggle > summary::marker{display:none;content:""}
+  @media (hover:hover) and (pointer:fine){ .toggle > summary:hover{background:var(--ns-verde)} }
+  .toggle[open] > summary{border-radius:var(--r-card) var(--r-card) 0 0;}
+
+  .summary-left{display:flex;align-items:center;gap:var(--sp-3);flex:1 1 auto;min-width:0;}
+  .summary-eyebrow{ color:var(--ns-amarelo); }
+  .summary-title{font-family:var(--font-display-sans);font-weight:700;font-size:20px;color:var(--ns-branco);line-height:1.15;letter-spacing:-0.01em;}
+  .summary-right{display:inline-flex;align-items:center;gap:var(--sp-3);flex-shrink:0;}
+  .count-pill{color:var(--ns-amarelo);font-family:var(--font-body);font-weight:700;font-size:12px;padding:6px 12px;border-radius:var(--r-pill);border:var(--stroke-med) solid var(--ns-amarelo);line-height:1;white-space:nowrap;}
+  .chev{width:18px;height:18px;display:inline-block;transition:transform var(--t-med) var(--ease-out);flex-shrink:0;color:var(--ns-amarelo);}
+  .chev svg{width:100%;height:100%;display:block}
+  .toggle[open] > summary .chev{transform:rotate(180deg)}
+
+  .toggle-body{background:var(--ns-branco-pure);border-radius:0 0 var(--r-card) var(--r-card);padding:var(--sp-3);}
+  .toggle[open] > .toggle-body{animation:toggleIn var(--t-slow) var(--ease-out);}
+  @keyframes toggleIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--ns-rule) transparent;}
+  .table-wrap::-webkit-scrollbar{height:8px}
+  .table-wrap::-webkit-scrollbar-thumb{background:var(--ns-rule);border-radius:4px}
+
+  table.t{width:100%;border-collapse:collapse;font-family:var(--font-body);font-size:13px;background:var(--ns-branco-pure);}
+  table.t thead th{background:var(--ns-verde);color:var(--ns-branco);font-family:var(--font-display-sans);font-weight:700;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;text-align:center;padding:14px 8px;vertical-align:middle;white-space:nowrap;border-right:1px solid rgba(230,230,230,0.12);}
+  table.t thead th:last-child{border-right:none}
+  table.t thead th:first-child{text-align:left;padding-left:14px}
+  table.t tbody td{padding:11px 8px;border-bottom:1px solid var(--ns-rule);border-right:1px solid var(--ns-rule);text-align:center;vertical-align:middle;color:var(--ns-preto);transition:background var(--t-fast) var(--ease-out);}
+  table.t tbody td:last-child{border-right:none}
+  table.t tbody tr:last-child td{border-bottom:none}
+  @media (hover:hover) and (pointer:fine){ table.t tbody tr:hover td:not([class*="c-"]){background:rgba(13,13,13,0.025)!important} }
+  table.t tbody td.l{text-align:left;padding-left:14px}
+  table.t tbody td.subject{text-align:left;padding-left:14px;font-style:italic;font-weight:700;opacity:.85;font-size:12.5px}
+  table.t tbody td.note{text-align:left;padding-left:14px;font-size:12px;color:var(--ns-preto)}
+  table.t tbody tr.alt td{background:#f6f5f2}
+  table.t tbody tr td.col-mes{font-family:var(--font-display-sans);font-weight:700;text-align:left;padding-left:14px;}
+  table.t tbody tr.is-current td.col-mes{color:var(--ns-verde-deep);text-shadow:0 2px 6px rgba(0,0,0,0.20), 0 1px 0 rgba(0,0,0,0.08);}
+
+  table.t tbody tr.row-total td{background:rgba(12,89,82,0.04);border-top:1.5px solid var(--ns-verde-deep);border-bottom:none;border-right:1px solid var(--ns-rule);font-family:var(--font-display-sans);font-weight:700;color:var(--ns-verde-deep);padding-top:14px;padding-bottom:14px;}
+  table.t tbody tr.row-total td:last-child{border-right:none}
+  table.t tbody tr.row-total td.l{font-family:var(--font-display-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.04em;font-size:11px;color:var(--ns-preto);opacity:.8;}
+  table.t tbody tr.row-total td.note{font-family:var(--font-body);font-style:normal;color:var(--ns-preto);opacity:1;font-weight:400;font-size:12px;text-transform:none;letter-spacing:0;}
+
+  td.c-good{background:var(--good-bg)!important;color:var(--good-fg);font-weight:700}
+  td.c-bom {background:var(--bom-bg)!important;color:var(--bom-fg);font-weight:700}
+  td.c-warn{background:var(--warn-bg)!important;color:var(--warn-fg);font-weight:700}
+  td.c-reg {background:var(--reg-bg)!important;color:var(--reg-fg);font-weight:700}
+  td.c-bad {background:var(--bad-bg)!important;color:var(--bad-fg);font-weight:700}
+  td.c-seg {background:var(--seg-bg)!important;color:var(--seg-fg);font-weight:700}
+
+  .status{display:inline-flex;align-items:center;padding:5px 10px;border-radius:var(--r-pill);font-family:var(--font-body);font-weight:700;font-size:11px;line-height:1;white-space:nowrap;border:var(--stroke-med) solid;}
+  .st-good{background:var(--good-bg);border-color:var(--good-fg);color:var(--good-fg)}
+  .st-bom {background:var(--bom-bg); border-color:var(--bom-fg); color:var(--bom-fg)}
+  .st-warn{background:var(--warn-bg);border-color:var(--warn-fg);color:var(--warn-fg)}
+  .st-reg {background:var(--reg-bg); border-color:var(--reg-fg); color:var(--reg-fg)}
+  .st-bad {background:var(--bad-bg); border-color:var(--bad-fg); color:var(--bad-fg)}
+  .st-seg {background:var(--seg-bg); border-color:var(--seg-fg); color:var(--seg-fg)}
+  .st-sun {background:var(--sun-bg); border-color:var(--sun-fg); color:var(--sun-fg)}
+
+  .legenda-card{margin-top:var(--sp-5);padding:var(--sp-4) 0 0;background:transparent;border-top:1px solid var(--ns-rule);}
+  .legenda-card h4{font-family:var(--font-display-sans);font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ns-preto);opacity:.45;margin:0 0 var(--sp-3);}
+  .legenda-grid{display:flex;flex-direction:column;gap:10px;max-width:560px;}
+  .legenda-grid .row{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;}
+  .legenda-grid .desc{color:var(--ns-preto);opacity:.6;font-size:12px;line-height:1.4;font-family:var(--font-body);}
+
+  .footer{background:var(--ns-preto);color:var(--ns-branco);padding:var(--sp-6) var(--sp-5);position:relative;overflow:hidden;}
+  .footer-face{position:absolute;right:-70px;top:50%;transform:translateY(-50%) rotate(-8deg);height:auto;width:280px;z-index:2;pointer-events:none;transition:transform var(--t-slow) var(--ease-out);}
+  @media (hover:hover) and (pointer:fine){ .footer:hover .footer-face{transform:translateY(-50%) rotate(2deg) scale(1.03)} }
+  @media (max-width:780px){ .footer-face{position:static;transform:rotate(-6deg);width:180px;margin:var(--sp-4) auto 0;display:block;} }
+  .footer-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:var(--sp-5);}
+  .footer-tagline{font-family:var(--font-display-serif);font-weight:700;font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-0.02em;color:var(--ns-branco);margin:0;display:flex;align-items:center;flex-wrap:wrap;gap:var(--sp-3);}
+  .footer-tagline em{font-style:italic;color:var(--ns-amarelo);}
+  .footer-mid{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-4);flex-wrap:wrap;margin:0;}
+  .footer-logo{display:inline-flex;align-items:center;}
+  .footer-logo img{height:28px;width:auto;display:block;transition:transform var(--t-med) var(--ease-out);}
+  @media (hover:hover) and (pointer:fine){ .footer-logo:hover img{transform:scale(1.04)} }
+
+  .hero-month-switcher{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;justify-content:flex-end;}
+  .hero-month-switcher .label{font-family:var(--font-display-sans);font-weight:600;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ns-branco);opacity:.55;margin-right:var(--sp-2);}
+  .hero-month{font-family:var(--font-display-sans);font-weight:600;font-size:13px;letter-spacing:0.02em;padding:8px 16px;border-radius:var(--r-pill);border:var(--stroke-med) solid rgba(230,230,230,0.4);background:transparent;color:var(--ns-branco);cursor:pointer;transition:all var(--t-fast) var(--ease-out);line-height:1;white-space:nowrap;}
+  .hero-month:hover{border-color:var(--ns-amarelo);color:var(--ns-amarelo);transform:translateY(-1px);}
+  .hero-month.active{background:var(--ns-amarelo);border-color:var(--ns-amarelo);color:var(--ns-verde-deep);}
+  .hero-month.active:hover{background:var(--ns-branco-pure);border-color:var(--ns-branco-pure);color:var(--ns-verde-deep);}
+  [data-month-block][hidden]{display:none}
+  [data-month-block]{animation:panelIn var(--t-med) var(--ease-out);}
+  @keyframes panelIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+  @media (max-width:600px){
+    body{padding:var(--sp-3) var(--sp-3)}
+    .hero{padding:var(--sp-5) var(--sp-4) var(--sp-6)}
+    .body{padding:var(--sp-6) var(--sp-4) var(--sp-4)}
+    .hero-top{gap:var(--sp-3); margin-bottom:var(--sp-6)}
+    .hero-month-switcher{width:100%; justify-content:flex-start}
+    .hero-month-switcher .label{margin-right:var(--sp-1)}
+    .kpi{padding:var(--sp-4); min-height:140px}
+    .kpi .value{font-size:clamp(28px, 8.5vw, 38px);line-height:1.05;word-break:break-word;overflow-wrap:anywhere;}
+    .kpi .delta{font-size:12px}
+    .analise{padding:var(--sp-4) var(--sp-4) var(--sp-4) var(--sp-5)}
+    .analise::before{width:4px}
+    .analise p{font-size:15.5px;line-height:1.55}
+    .destaque{grid-template-columns:1fr;grid-template-rows:auto auto;}
+    .destaque .badge{min-height:64px;height:auto;padding:14px 0;font-size:28px;}
+    .destaque .body-d{padding:var(--sp-3) var(--sp-4) var(--sp-4);}
+    .toggle > summary{flex-wrap:wrap;padding:var(--sp-3) var(--sp-4);gap:var(--sp-2);align-items:flex-start;}
+    .summary-left{flex:1 1 100%;gap:var(--sp-2);align-items:flex-start;flex-wrap:wrap;}
+    .summary-title{font-size:17px;overflow-wrap:anywhere;word-break:break-word;}
+    .summary-right{flex:1 1 100%;justify-content:space-between;gap:var(--sp-2);}
+    .count-pill{font-size:11px;padding:5px 10px;white-space:normal;line-height:1.2;}
+    table.t thead th{padding:10px 6px;font-size:10px}
+    table.t tbody td{padding:9px 6px;font-size:12px}
+    table.t tbody td.l, table.t tbody td.subject, table.t tbody td.note, table.t tbody td.col-mes{padding-left:10px}
+    .section-head{margin:var(--sp-6) 0 var(--sp-3); gap:var(--sp-2)}
+    .toggle-body{padding:var(--sp-2)}
+    .footer{padding:var(--sp-5) var(--sp-4) var(--sp-7)}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;scroll-behavior:auto!important;}
+    .stagger > *{opacity:1;transform:none}
+  }
+
+  @media print{
+    body{background:#fff;padding:0}
+    .sheet{max-width:none;border-radius:0;box-shadow:none;overflow:visible;}
+    .hero{padding:24px;background:var(--ns-verde)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .body{padding:24px 0}
+    .footer{padding:24px;background:var(--ns-preto)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .skip{display:none}
+    .stagger > *{opacity:1;transform:none;animation:none}
+    .kpi,.destaque,.analise,.toggle,.legenda-card{break-inside:avoid;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    @page{margin:12mm 10mm}
+  }
+</style>
+</head>
+<body>
+
+<a href="#conteudo" class="skip">Saltar para o conteúdo</a>
+
+<div class="sheet">
+
+  <!-- HERO VERDE -->
+  <header class="hero" role="banner">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <a class="hero-logo" href="https://notspam.studio" aria-label="notspam.studio">
+          <img src="logo-notspam-branco.png" alt="notspam.studio" />
+        </a>
+        <nav class="hero-month-switcher" aria-label="Selecionar mês do relatório">
+          <span class="label">Mês</span>
+          <button type="button" class="hero-month active" data-month="mar-2026" aria-current="true">Março 2026</button>
+        </nav>
+      </div>
+
+      <div class="hero-title-block" data-month-block="mar-2026">
+        <p class="eyebrow hero-eyebrow"><span class="star">✦</span> Performance Email Marketing</p>
+        <h1>Relatório <span class="hero-dot" aria-hidden="true"></span> <span class="hero-date">março 2026</span></h1>
+        <p class="hero-sub"><em>ZOLF</em></p>
+
+        <div class="hero-pills">
+          <span class="pill"><strong>6</strong>&nbsp;campanhas</span>
+          <span class="pill"><strong>3</strong>&nbsp;flows activos</span>
+          <span class="pill"><strong>3.828</strong>&nbsp;subscritores</span>
+          <span class="pill"><strong>23.732</strong>&nbsp;envios</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CORPO -->
+  <main class="body" id="conteudo">
+    <div class="body-inner">
+
+    <div data-month-block="mar-2026">
+
+      <!-- KPIs -->
+      <div class="section-head">
+        <p class="eyebrow">O mês em seis números</p>
+      </div>
+
+      <div class="kpis stagger" role="list">
+        <article class="kpi k-verde" role="listitem">
+          <p class="eyebrow label">Delivery rate</p>
+          <div class="value">99,62%</div>
+          <p class="delta">Combinado campanhas + flows</p>
+        </article>
+        <article class="kpi k-lilas" role="listitem">
+          <p class="eyebrow label">Crescimento da base</p>
+          <div class="value">+156</div>
+          <p class="delta">+3,7% · 3.828 subs.</p>
+        </article>
+        <article class="kpi k-azul" role="listitem">
+          <p class="eyebrow label">Taxa de abertura</p>
+          <div class="value">59,06%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-preto" role="listitem">
+          <p class="eyebrow label">Taxa de clique</p>
+          <div class="value">6,06%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-laranja" role="listitem">
+          <p class="eyebrow label">Conversões</p>
+          <div class="value">46</div>
+          <p class="delta">22 campanhas · 24 flows</p>
+        </article>
+        <article class="kpi k-amarelo" role="listitem">
+          <p class="eyebrow label">Receita atribuída</p>
+          <div class="value">3.724,40€</div>
+          <p class="delta">35% campanhas · 65% flows</p>
+        </article>
+      </div>
+
+      <!-- ANÁLISE -->
+      <div class="section-head">
+        <p class="eyebrow">O que dizem os números</p>
+      </div>
+      <div class="analise">
+        <p>Março fecha com uma base muito <span class="ic">engaged</span>: 67,73% de Taxa de Abertura nas campanhas e €3.724,40 de receita atribuída. A <span class="ic">Mensagem CEO</span> provou que o tom autêntico do fundador converte (72,49% OR, €978,50), e os flows asseguram 65% da receita total, com <span class="ic">Checkout Abandonado</span> a liderar pela eficiência: €7,21 por recipiente.</p>
+        <p style="margin-top:var(--sp-3)">A base cresceu em 156 novos inscritos via popup, mas o submit rate ficou em 0,60% (Poor pelos benchmarks do Klaviyo): há margem clara para otimizar o criativo. Próximo passo, subir a conversão nas campanhas de tom mais filosófico e testar o popup.</p>
+      </div>
+
+      <!-- DESTAQUES -->
+      <div class="section-head">
+        <p class="eyebrow">Destaques do mês</p>
+      </div>
+      <div class="destaques stagger">
+        <article class="destaque">
+          <div class="badge b-verde" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>'Mensagem CEO' foi a campanha mais forte do mês</h3>
+            <p class="sub">OR 72,49%, CR 5,50% e €978,50 de receita. O tom autêntico do fundador valida-se nos números, justifica reforçar este registo editorial em Abril.</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-azul" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>Checkout Abandonado: o flow com maior densidade</h3>
+            <p class="sub">Apenas 173 envios geraram €1.218,20: AOV €121,82 e Rev/rec €7,21, o melhor do mês.</p>
+            <p class="sub">A intenção quente do checkout converte 7× mais por contacto que o Welcome (€1,83) e Browse (€0,96). Replicar o padrão noutros pontos de fricção (Browse Abandonment, Post-Purchase).</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-amarelo" aria-hidden="true">↑</div>
+          <div class="body-d">
+            <h3>Popup somou 156 inscritos, mas submit rate é Poor (0,60%)</h3>
+            <p class="sub">26K viram o formulário e só 156 submeteram. Espaço claro para testar copy, oferta de entrada e timing do trigger em Abril.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- DETALHE -->
+      <div class="section-head">
+        <p class="eyebrow">Detalhe</p>
+      </div>
+
+      <!-- 01 · EVOLUÇÃO MENSAL -->
+      <details class="toggle" open>
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">01</span>
+            <span class="summary-title">Evolução mensal</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">1 mês · ponto de partida</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Evolução mensal">
+              <thead>
+                <tr>
+                  <th>Mês</th><th>Envios</th><th>Campanhas</th><th>Entregues</th>
+                  <th>Aberturas</th><th>Cliques</th><th>Unsub</th><th>Subscritos</th>
+                  <th>Crescim.</th><th>Receita</th><th>Conversão</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="is-current"><td class="col-mes">mar. 2026</td><td>23.732</td><td>6</td><td>99,45%</td><td class="c-good">59,06%</td><td class="c-good">6,06%</td><td>0,18%</td><td>3.828</td><td class="c-bom">+3,7%</td><td>3.724,40€</td><td>46</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 02 · CAMPANHAS -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">02</span>
+            <span class="summary-title">Campanhas</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">6 campanhas · março 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Campanhas de março 2026">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Campanha</th>
+                  <th style="text-align:left;padding-left:14px">Subject Line</th>
+                  <th>Data</th><th>Envios</th><th>Entregues</th>
+                  <th>Aberturas</th><th>Cliques</th><th>Unsub</th><th>Spam</th>
+                  <th>Receita</th><th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">01'Mar | Tailoring I</td><td class="subject">Tem um momento importante a chegar?</td><td>05 mar.</td><td>3.750</td><td>99,55%</td><td class="c-good">68,04%</td><td class="c-warn">1,21%</td><td>0,16%</td><td>0,03%</td><td>427,50€</td><td><span class="status st-warn">↑ A Melhorar</span></td><td class="note">OR excelente, mas CR e receita baixos; copy filosófica sem CTA forte</td></tr>
+                <tr class="alt"><td class="l">02'Mar | Dia do pai</td><td class="subject">Homens que marcam pela presença</td><td>09 mar.</td><td>3.749</td><td>99,55%</td><td class="c-good">68,36%</td><td class="c-good">3,32%</td><td>0,05%</td><td>0,00%</td><td>768,90€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">OR e CR fortes; tema relevante converte sem ser óbvio</td></tr>
+                <tr><td class="l">03'Mar | Tailoring II</td><td class="subject">Como nasce um fato por medida</td><td>12 mar.</td><td>3.752</td><td>99,63%</td><td class="c-good">66,13%</td><td class="c-warn">1,20%</td><td>0,05%</td><td>0,00%</td><td>169,80€</td><td><span class="status st-warn">↑ A Melhorar</span></td><td class="note">Tema repete o primeiro; CR não acompanha o OR</td></tr>
+                <tr class="alt"><td class="l">04'Mar | Não defendemos saldos</td><td class="subject">Esta é a nossa filosofia</td><td>19 mar.</td><td>3.824</td><td>99,69%</td><td class="c-good">64,66%</td><td class="c-good">3,54%</td><td>0,08%</td><td>0,00%</td><td>0,00€</td><td><span class="status st-reg">→ Regular</span></td><td class="note">CR 3,54% sem receita: brand building, não conversão directa</td></tr>
+                <tr><td class="l">05'Mar | A primavera chegou</td><td class="subject">Menos peças, mais versatilidade</td><td>21 mar.</td><td>3.747</td><td>99,71%</td><td class="c-good">66,65%</td><td class="c-good">3,35%</td><td>0,05%</td><td>0,00%</td><td>179,70€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">OR e CR sólidos; tema sazonal funcionou</td></tr>
+                <tr class="alt"><td class="l">06'Mar | Mensagem CEO</td><td class="subject">Uma mensagem do fundador</td><td>26 mar.</td><td>3.828</td><td>99,71%</td><td class="c-good">72,49%</td><td class="c-good">5,50%</td><td>0,08%</td><td>0,00%</td><td>978,50€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">🌟 Top do mês; tom autêntico do fundador converte</td></tr>
+                <tr class="row-total"><td class="l" colspan="3">Total Março · 6 campanhas</td><td>22.650</td><td>99,64%</td><td>67,73%</td><td>3,03%</td><td>0,08%</td><td>0,01%</td><td>2.524,40€</td><td></td><td class="note">Receita Klaviyo atribuída (Conversion Summary): €1.298,00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 03 · AUTOMATISMOS · VISÃO GERAL -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">03</span>
+            <span class="summary-title">Automatismos · visão geral</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">8 métricas · março 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Visão geral dos flows">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Métrica</th>
+                  <th>Março 2026</th><th>vs período anterior</th><th>Status</th><th>Benchmark</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Destinatários</td><td>1.082</td><td>+407,98%</td><td><span class="status st-reg">→ Regular</span></td><td>—</td><td class="note">Volume de trigger a subir, base de flows ainda pequena</td></tr>
+                <tr class="alt"><td class="l">Entregues</td><td>99,26%</td><td>—</td><td><span class="status st-bom">✓ Bom</span></td><td>&gt;98%</td><td class="note">Base limpa, sem ruído de envio</td></tr>
+                <tr><td class="l">Aberturas</td><td>50,38%</td><td>+7,79%</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;35%</td><td class="note">Média simples dos 3 flows; engagement muito acima do benchmark</td></tr>
+                <tr class="alt"><td class="l">Cliques</td><td>9,09%</td><td>+24,83%</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;3%</td><td class="note">CR forte, intenção quente</td></tr>
+                <tr><td class="l">Conversões</td><td>2,24%</td><td>+376,55%</td><td><span class="status st-warn">↑ A Melhorar</span></td><td>&gt;3%</td><td class="note">A subir muito, ainda margem para chegar ao benchmark</td></tr>
+                <tr class="alt"><td class="l">Spam</td><td>0,00%</td><td>−73,33%</td><td><span class="status st-good">✓ Excelente</span></td><td>&lt;0,01%</td><td class="note">Reputação de envio excelente</td></tr>
+                <tr><td class="l">Unsubscribe</td><td>0,28%</td><td>−28,57%</td><td><span class="status st-bom">✓ Bom</span></td><td>&lt;0,30%</td><td class="note">A descer, no limite do benchmark</td></tr>
+                <tr class="alt"><td class="l">Receita</td><td>2.426,40€</td><td>—</td><td>—</td><td>—</td><td class="note">65% da receita total do mês</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 04 · PERFORMANCE POR FLOW -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">04</span>
+            <span class="summary-title">Performance por flow</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">3 flows · março 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Performance por flow">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Flow</th>
+                  <th>Destinatários</th><th>Entregues</th><th>Aberturas</th><th>Cliques</th>
+                  <th>Conversão</th><th>Receita</th><th>Receita/destinatário</th>
+                  <th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Welcome Flow</td><td>397</td><td>98,99%</td><td class="c-good">47,84%</td><td class="c-good">13,74%</td><td>8 (2,04%)</td><td>718,90€</td><td>1,83€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">CR 13,74% é excecional; flow de aquisição a converter bem. AOV €89,86</td></tr>
+                <tr class="alt"><td class="l">Abandono Página</td><td>512</td><td>100,00%</td><td class="c-good">65,43%</td><td class="c-good">8,79%</td><td>6 (1,17%)</td><td>489,30€</td><td>0,96€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">OR 65% forte, mas conversão dilui em volume. AOV €81,55</td></tr>
+                <tr><td class="l">Checkout Abandonado</td><td>173</td><td>97,69%</td><td class="c-warn">37,87%</td><td class="c-good">4,73%</td><td class="c-good">10 (5,92%)</td><td>1.218,20€</td><td class="c-good">7,21€</td><td><span class="status st-seg">⭐ Segmentado</span></td><td class="note">🌟 Maior receita do mês; AOV €121,82, intenção alta</td></tr>
+                <tr class="row-total"><td class="l" colspan="2">Total Março · 3 flows</td><td>99,26%</td><td>50,38%</td><td>9,09%</td><td>24 (2,24%)</td><td>2.426,40€</td><td>2,24€</td><td></td><td class="note">Checkout Abandonado converte 7× mais por contacto que Welcome</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+    </div><!-- /[data-month-block] -->
+
+      <!-- LEGENDA -->
+      <div class="legenda-card">
+        <h4>Chave de leitura</h4>
+        <div class="legenda-grid">
+          <div class="row">
+            <span class="status st-good">✓ Excelente</span>
+            <span class="desc">Acima do benchmark</span>
+          </div>
+          <div class="row">
+            <span class="status st-bom">✓ Bom</span>
+            <span class="desc">Dentro do benchmark</span>
+          </div>
+          <div class="row">
+            <span class="status st-warn">↑ A Melhorar</span>
+            <span class="desc">Margem clara para crescer</span>
+          </div>
+          <div class="row">
+            <span class="status st-reg">→ Regular</span>
+            <span class="desc">Aceitável, primeira leitura</span>
+          </div>
+          <div class="row">
+            <span class="status st-seg">⭐ Segmentado</span>
+            <span class="desc">Segmento específico, não comparar à base geral</span>
+          </div>
+          <div class="row">
+            <span class="status st-bad">✗ Fraco</span>
+            <span class="desc">Acção corretiva necessária</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER PRETO -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+
+      <h2 class="footer-tagline">
+        <span>Até ao <em>próximo mês!</em></span>
+      </h2>
+
+      <img class="footer-face" src="assets/face-notspam.png" alt="" aria-hidden="true">
+
+      <div class="footer-mid">
+        <a href="https://notspam.studio" class="footer-logo" aria-label="notspam.studio">
+          <img src="logo-notspam-branco.png" alt="notspam.studio" />
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+</div><!-- /.sheet -->
+
+<script>
+  (function(){
+    const buttons = document.querySelectorAll('.hero-month');
+    if (!buttons.length) return;
+    const blocks = document.querySelectorAll('[data-month-block]');
+
+    function show(month){
+      buttons.forEach(b => {
+        const active = b.dataset.month === month;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+      blocks.forEach(el => {
+        el.hidden = el.dataset.monthBlock !== month;
+      });
+      document.querySelectorAll('details.toggle').forEach(d => { d.open = false; });
+      const first = document.querySelector('[data-month-block]:not([hidden]) details.toggle');
+      if (first) first.open = true;
+    }
+
+    buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.month)));
+  })();
+
+  (function(){
+    const allDetails = () => document.querySelectorAll('details.toggle');
+    const allMonths  = () => document.querySelectorAll('[data-month-block]');
+    window.addEventListener('beforeprint', () => {
+      allDetails().forEach(d => { d.dataset.wasOpen = d.open ? '1' : '0'; d.open = true; });
+      allMonths().forEach(m => { m.dataset.wasHidden = m.hidden ? '1' : '0'; m.hidden = false; });
+    });
+    window.addEventListener('afterprint', () => {
+      allDetails().forEach(d => { d.open = d.dataset.wasOpen === '1'; delete d.dataset.wasOpen; });
+      allMonths().forEach(m => { m.hidden = m.dataset.wasHidden === '1'; delete m.dataset.wasHidden; });
+    });
+  })();
+</script>
+
+</body>
+</html>
