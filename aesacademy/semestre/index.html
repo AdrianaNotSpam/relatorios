@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#0c5952" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" type="image/png" href="/assets/favicon.png" />
+<title>AESACADEMY · Relatório de semestre · 1.º semestre 2026</title>
+<style>
+  @font-face{font-family:"Rockwell Nova";src:url("/fonts/RockwellNova-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+  @font-face{font-family:"Rockwell Nova";src:url("/fonts/RockwellNova-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  :root{
+    --verde:#0c5952; --verde-deep:#08423d; --branco:#fdfdfb;
+    --preto:#0d0d0d; --laranja:#e14c22; --azul:#4f67b1; --lilas:#bf90c6; --amarelo:#d7d55c;
+    --muted:#5a6a67; --faint:#8a9793;
+    --rule:rgba(12,89,82,0.14); --rule-soft:rgba(12,89,82,0.08);
+    --pos:#0c5952; --neg:#e14c22;
+    --serif:"Rockwell Nova",Georgia,"Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  .wrap{background:var(--verde);min-height:100vh;padding:40px 20px 80px;font-family:var(--sans);color:var(--preto);line-height:1.55}
+  .sheet{max-width:1080px;margin:0 auto;background:var(--branco);border-radius:26px;padding:56px clamp(24px,5vw,64px);box-shadow:0 30px 80px rgba(0,0,0,0.28)}
+  .tnum{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--laranja);font-weight:700;margin:0 0 10px}
+  h1{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4.4vw,46px);line-height:1.05;margin:0;text-wrap:balance;letter-spacing:-.01em}
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(21px,2.6vw,26px);margin:0 0 4px;letter-spacing:-.01em}
+  .lead{color:var(--muted);font-size:16px;max-width:62ch;margin:14px 0 0}
+  .masthead{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:2px solid var(--preto);padding-bottom:20px;margin-bottom:36px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:.02em}
+  .brand span{color:var(--muted);font-family:var(--sans);font-weight:500;font-size:12px;display:block;letter-spacing:.16em;text-transform:uppercase;margin-top:4px}
+  .period{text-align:right;font-size:12px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;line-height:1.7}
+  .period b{color:var(--preto);font-size:15px;letter-spacing:0;text-transform:none;display:block;font-family:var(--serif)}
+  section{margin-top:52px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;border-bottom:1px solid var(--rule);padding-bottom:12px}
+  .sec-num{font-family:var(--serif);font-size:14px;color:var(--laranja);font-weight:700}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--rule);border-radius:14px;overflow:hidden;margin-top:32px}
+  .kpi{padding:22px 20px;border-right:1px solid var(--rule)}
+  .kpi:last-child{border-right:none}
+  .kpi .k-lab{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .kpi .k-val{font-family:var(--serif);font-size:34px;font-weight:700;line-height:1.05;margin-top:8px}
+  .kpi .k-sub{font-size:12.5px;color:var(--muted);margin-top:6px}
+  .callout{background:var(--verde);color:var(--branco);border-radius:16px;padding:26px 28px;margin-top:30px}
+  .bars{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:end;height:220px;margin-top:8px;padding-top:10px}
+  .bar-col{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:8px}
+  .bar{width:74%;max-width:58px;border-radius:6px 6px 0 0;background:var(--azul);position:relative}
+  .bar.peak{background:var(--verde)}
+  .bar.low{background:var(--laranja)}
+  .bar-val{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
+  .bar-lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .tbl-wrap{overflow-x:auto;margin-top:6px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:560px}
+  th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--rule-soft)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1.5px solid var(--rule)}
+  tbody tr:last-child td{border-bottom:none}
+  .row-strong td{font-weight:700}
+  td.neg{background:#f1b7a3;color:#8c2310;font-weight:700}
+  td.pos{background:#d9e7d1;color:#2e5d22;font-weight:700}
+  .caption{font-size:12px;color:var(--faint);margin-top:14px;font-style:italic}
+  .reads{display:grid;gap:2px;margin-top:8px;counter-reset:r}
+  .read{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--rule-soft)}
+  .read:last-child{border-bottom:none}
+  .read .n{counter-increment:r;font-family:var(--serif);font-size:26px;font-weight:700;color:var(--laranja);line-height:1}
+  .read .n::before{content:"0" counter(r)}
+  .read h3{margin:0 0 6px;font-size:16px;font-family:var(--sans);font-weight:700}
+  .read p{margin:0;color:var(--muted);font-size:14.5px;max-width:64ch}
+  .foot{margin-top:56px;border-top:2px solid var(--preto);padding-top:18px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:680px){
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .kpi:nth-child(2){border-right:none}
+    .kpi:nth-child(1),.kpi:nth-child(2){border-bottom:1px solid var(--rule)}
+    .bars{gap:7px;height:180px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sheet">
+
+    <div class="masthead">
+      <div class="brand">AESACADEMY<span>notspam.studio</span></div>
+      <div class="period">Relatório de performance<b>1.º semestre 2026</b>janeiro a junho</div>
+    </div>
+
+    <p class="eyebrow">Visão de semestre</p>
+    <p class="lead" style="font-size:19px;color:var(--preto);max-width:70ch">Este foi o primeiro semestre completo de email marketing da Aesacademy, e o balanço é positivo. Em seis meses enviámos 178 060 emails em 43 campanhas, com uma abertura média de 42,62%, muito acima da média do setor (25-30%), e uma entregabilidade que fechou junho no melhor valor de sempre (99,20%).</p>
+    <p class="lead" style="font-size:19px;color:var(--preto);max-width:70ch;margin-top:14px">Pelo meio houve um período de ajuste. Em fevereiro e março tentámos chegar a mais gente da base, incluindo os contactos parados, mas percebemos que não era o caminho: a abertura desceu e a estrutura não respondeu. A partir de abril voltámos a concentrar-nos em quem está ativo e a conta recuperou de forma sólida.</p>
+    <p class="lead" style="font-size:19px;color:var(--preto);max-width:70ch;margin-top:14px">Também percebemos que estar sempre em venda estava a prejudicar a conta. Passámos a dar mais espaço ao conteúdo e ao valor antes da venda direta. O clique desceu, mas de forma intencional, em troca de uma base mais saudável, que abre e que deixou de sair.</p>
+
+    <div class="kpis tnum">
+      <div class="kpi"><div class="k-lab">Envios totais</div><div class="k-val">178 060</div><div class="k-sub">43 campanhas no semestre</div></div>
+      <div class="kpi"><div class="k-lab">Abertura média</div><div class="k-val">42,62%</div><div class="k-sub">média mensal &middot; benchmark setor 25-30%</div></div>
+      <div class="kpi"><div class="k-lab">Clique médio</div><div class="k-val">2,19%</div><div class="k-sub">média mensal &middot; benchmark 2-5%</div></div>
+      <div class="kpi"><div class="k-lab">Entregabilidade</div><div class="k-val">97,97%</div><div class="k-sub">média mensal &middot; junho a 99,20%</div></div>
+    </div>
+
+    <div class="callout" style="padding:24px 30px">
+      <p class="eyebrow" style="color:var(--amarelo);margin:0 0 6px">Análise detalhada</p>
+      <h2 style="color:var(--branco);font-family:var(--serif);font-weight:700;font-size:clamp(24px,3.6vw,32px);line-height:1.1;margin:0;letter-spacing:-.01em">O semestre em detalhe, secção a secção</h2>
+    </div>
+
+    <!-- 1. Volume de envios -->
+    <section>
+      <div class="sec-head"><span class="sec-num">01</span><div><h2>Volume de envios</h2></div></div>
+      <p class="lead" style="margin-top:0">Em fevereiro e março aumentámos bastante o volume, com um pico de 55 214 envios num único mês. A intenção era reativar o máximo de contactos parados na base e trazer de volta quem há muito não interagia. A estrutura, porém, não respondeu como esperávamos, e a partir de abril voltámos a concentrar os envios em quem está ativo, indo buscar os inativos aos poucos.</p>
+      <div class="bars tnum">
+        <div class="bar-col"><span class="bar-val">3,4k</span><div class="bar" style="height:6%"></div><span class="bar-lab">Jan</span></div>
+        <div class="bar-col"><span class="bar-val">36,3k</span><div class="bar low" style="height:66%"></div><span class="bar-lab">Fev</span></div>
+        <div class="bar-col"><span class="bar-val">55,2k</span><div class="bar low" style="height:100%"></div><span class="bar-lab">Mar</span></div>
+        <div class="bar-col"><span class="bar-val">25,7k</span><div class="bar peak" style="height:47%"></div><span class="bar-lab">Abr</span></div>
+        <div class="bar-col"><span class="bar-val">24,3k</span><div class="bar peak" style="height:44%"></div><span class="bar-lab">Mai</span></div>
+        <div class="bar-col"><span class="bar-val">33,2k</span><div class="bar peak" style="height:60%"></div><span class="bar-lab">Jun</span></div>
+      </div>
+      <p class="caption">A laranja marca o esforço de fevereiro-março para reativar a base inativa; o verde marca o volume controlado a partir de abril, focado nos ativos. Menos envios, para quem está mais atento, é o que sustenta a recuperação.</p>
+    </section>
+
+    <!-- 2. Abertura ao longo do semestre -->
+    <section>
+      <div class="sec-head"><span class="sec-num">02</span><div><h2>Abertura ao longo do semestre</h2></div></div>
+      <p class="lead" style="margin-top:0">A abertura é o espelho direto da saúde do domínio. Caiu ao mínimo em março (26,03%), quando alargámos os envios à base inativa, e recuperou de imediato assim que voltámos ao foco nos ativos, subindo de novo para perto dos 50%.</p>
+      <div class="bars tnum">
+        <div class="bar-col"><span class="bar-val">54,6%</span><div class="bar peak" style="height:91%"></div><span class="bar-lab">Jan</span></div>
+        <div class="bar-col"><span class="bar-val">30,2%</span><div class="bar low" style="height:50%"></div><span class="bar-lab">Fev</span></div>
+        <div class="bar-col"><span class="bar-val">26,0%</span><div class="bar low" style="height:43%"></div><span class="bar-lab">Mar</span></div>
+        <div class="bar-col"><span class="bar-val">49,8%</span><div class="bar peak" style="height:83%"></div><span class="bar-lab">Abr</span></div>
+        <div class="bar-col"><span class="bar-val">49,9%</span><div class="bar peak" style="height:83%"></div><span class="bar-lab">Mai</span></div>
+        <div class="bar-col"><span class="bar-val">45,1%</span><div class="bar peak" style="height:75%"></div><span class="bar-lab">Jun</span></div>
+      </div>
+      <p class="caption">A quebra de fevereiro e março veio de estarmos a enviar para a base inativa. Assim que voltámos a focar os envios em quem está ativo, em abril, a abertura recuperou. O problema não era o conteúdo, era para quem estávamos a comunicar.</p>
+    </section>
+
+    <!-- 3. Engagement detalhado -->
+    <section>
+      <div class="sec-head"><span class="sec-num">03</span><div><h2>Engagement detalhado</h2></div></div>
+      <div class="tbl-wrap"><table class="tnum">
+        <thead><tr><th>Métrica</th><th>Jan</th><th>Fev</th><th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th></tr></thead>
+        <tbody>
+          <tr class="row-strong"><td>Campanhas</td><td>6</td><td>8</td><td>8</td><td>8</td><td>6</td><td>7</td></tr>
+          <tr><td>Envios</td><td>3 440</td><td>36 287</td><td>55 214</td><td>25 684</td><td>24 268</td><td>33 167</td></tr>
+          <tr><td>Entregabilidade</td><td>97,97%</td><td class="neg">95,98%</td><td class="neg">96,77%</td><td>98,96%</td><td>98,95%</td><td class="pos">99,20%</td></tr>
+          <tr><td>Abertura</td><td class="pos">54,63%</td><td>30,18%</td><td class="neg">26,03%</td><td>49,84%</td><td>49,89%</td><td>45,13%</td></tr>
+          <tr><td>Clique</td><td>3,59%</td><td class="pos">3,82%</td><td>2,24%</td><td>1,13%</td><td>1,33%</td><td>1,00%</td></tr>
+          <tr><td>Unsub</td><td>0,33%</td><td class="neg">0,58%</td><td>0,30%</td><td>0,35%</td><td>0,28%</td><td class="pos">0,20%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="caption">Taxas por mês (abertura, clique e unsub sobre entregues). A verde os melhores valores de cada linha, a laranja os que exigem atenção.</p>
+    </section>
+
+    <!-- 4. Saúde da base -->
+    <section>
+      <div class="sec-head"><span class="sec-num">04</span><div><h2>Saúde da base</h2></div></div>
+      <p class="lead" style="margin-top:0">O cancelamento (unsub) é o sinal mais honesto de fadiga. Subiu no mês de maior pressão (0,58% em fevereiro) e desceu ao longo da recuperação até ao mínimo de 0,20% em junho, o valor mais saudável do semestre. A base não só voltou a abrir, como parou de sair.</p>
+      <div class="bars tnum">
+        <div class="bar-col"><span class="bar-val">0,33%</span><div class="bar" style="height:57%"></div><span class="bar-lab">Jan</span></div>
+        <div class="bar-col"><span class="bar-val">0,58%</span><div class="bar low" style="height:100%"></div><span class="bar-lab">Fev</span></div>
+        <div class="bar-col"><span class="bar-val">0,30%</span><div class="bar" style="height:52%"></div><span class="bar-lab">Mar</span></div>
+        <div class="bar-col"><span class="bar-val">0,35%</span><div class="bar" style="height:60%"></div><span class="bar-lab">Abr</span></div>
+        <div class="bar-col"><span class="bar-val">0,28%</span><div class="bar" style="height:48%"></div><span class="bar-lab">Mai</span></div>
+        <div class="bar-col"><span class="bar-val">0,20%</span><div class="bar peak" style="height:34%"></div><span class="bar-lab">Jun</span></div>
+      </div>
+      <p class="caption">Referência saudável abaixo de 0,30%: fechámos o semestre bem dentro, sinal de uma relação sã com a base.</p>
+    </section>
+
+    <!-- 5. Temas que melhor resultaram -->
+    <section>
+      <div class="sec-head"><span class="sec-num">05</span><div><h2>Os temas que melhor resultaram</h2></div></div>
+      <p class="lead" style="margin-top:0">Ao longo do semestre um padrão ficou claro: ganham os assuntos com emoção, aspiração e histórias concretas; perdem os de tom negativo ou de venda direta. Estes foram os que mais mobilizaram a base ativa.</p>
+      <div class="tbl-wrap"><table class="tnum">
+        <thead><tr><th>Assunto</th><th>Tema</th><th>Abertura</th><th>Clique</th></tr></thead>
+        <tbody>
+          <tr class="row-strong"><td>"3 semanas depois, foi contratado."</td><td>História com resultado</td><td>73,43%</td><td class="pos">9,72%</td></tr>
+          <tr><td>"A tua carreira pode mudar em março"</td><td>Aspiração / transformação</td><td>62,16%</td><td class="pos">5,50%</td></tr>
+          <tr><td>"Neste Dia dos Namorados, não reserves mesa."</td><td>Sazonal / ocasião</td><td>28,95%</td><td class="pos">4,16%</td></tr>
+          <tr><td>"A sobremesa que todos vão querer fotografar"</td><td>Desejo / sensorial</td><td>58,10%</td><td>2,89%</td></tr>
+          <tr><td>"Dois cozinheiros e um segredo."</td><td>Curiosidade</td><td>51,70%</td><td>1,41%</td></tr>
+          <tr><td>"O que cozinhar em abril (segundo a natureza)."</td><td>Conteúdo educativo</td><td>55,83%</td><td>0,65%</td></tr>
+        </tbody>
+      </table></div>
+      <p class="caption">No lado oposto, os assuntos de tom negativo ou de pura venda tiveram a pior abertura do semestre: "Paixão não paga contas, não é?" (19,66%) e "A tua equipa de sala está a custar-te clientes" (16,49%). A lição para o segundo semestre é clara: falar de transformação, desejo e histórias reais, e usar o conteúdo útil como porta de entrada para a venda.</p>
+    </section>
+
+    <!-- Leitura estratégica -->
+    <section>
+      <div class="sec-head"><span class="sec-num">&mdash;</span><div><h2>O que dizem os números</h2></div></div>
+      <div class="reads">
+        <div class="read"><span class="n"></span><div><h3>Reativar a base inativa em massa não resultou</h3><p>Em fevereiro e março alargámos os envios para tentar recuperar contactos parados, até um pico de 55 mil. A abertura desceu ao mínimo (26%): os inativos, contactados em massa, não reagem como a base ativa. Foi o sinal que nos fez voltar ao foco em quem está atento.</p></div></div>
+        <div class="read"><span class="n"></span><div><h3>A recuperação foi rápida assim que voltámos aos ativos</h3><p>A partir de abril concentrámos os envios em cerca de 6 000 contactos ativos e passámos a alimentar os restantes aos poucos. A abertura voltou aos 50% e a entregabilidade recuperou para perto dos 99%. O problema era de cadência e de foco, e a disciplina de envio resolveu-o.</p></div></div>
+        <div class="read"><span class="n"></span><div><h3>A viragem para conteúdo trouxe a base de volta</h3><p>Depois de março, mudámos a abordagem: valor educativo primeiro (uma receita, um conteúdo), o convite à formação no fim. Foi esta decisão, e não só o foco nos ativos, que devolveu a atenção da base e travou os cancelamentos.</p></div></div>
+        <div class="read"><span class="n"></span><div><h3>A base fecha o semestre no melhor momento</h3><p>Junho junta a melhor entregabilidade (99,20%) e o unsub mais baixo (0,20%) de todo o período. A conta está saudável e pronta para escalar sem repetir os erros de fevereiro-março.</p></div></div>
+        <div class="read"><span class="n"></span><div><h3>Do clique imediato à relação sustentável</h3><p>O clique caiu nos meses recentes, mas por escolha: a viragem para conteúdo trocou cliques diretos por uma base que abre e não sai. O próximo passo é desenhar CTAs que convertam essa atenção sem regressar à venda agressiva.</p></div></div>
+        <div class="read"><span class="n"></span><div><h3>O caminho para os inativos: o melhor de cada mês</h3><p>Continuamos a trabalhar a base ativa e os segmentos específicos, como fizemos ao longo destes meses. Para os inativos, a abordagem muda: uma vez por mês escolhemos a campanha que melhor resultou e enviamos só essa a quem está parado. É assim que recuperamos novas pessoas aos poucos, sem repetir o envio em massa que não funcionou.</p></div></div>
+      </div>
+    </section>
+
+    <div class="foot">
+      <span>AESACADEMY &middot; notspam.studio</span>
+      <span>Fonte: GoHighLevel (campanhas) &middot; taxas em média mensal simples &middot; jul 2026</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
