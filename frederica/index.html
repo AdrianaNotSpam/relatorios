@@ -233,8 +233,8 @@
   .chart-explain{position:absolute;inset:0;z-index:2;border-radius:inherit;background:rgba(13,13,13,0.86);color:#fff;padding:var(--sp-5) var(--sp-4) var(--sp-4);display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity var(--t-fast) var(--ease-out)}
   .chart-explain p{margin:0;font-size:13.5px;line-height:1.55}
   .chart-explain .ce-title{font-family:var(--font-display-sans);font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.7}
-  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}
-  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}
+  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}}
+  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}}
   table.t tbody tr.grp td{background:rgba(12,89,82,0.13)!important;color:var(--ns-verde-deep);border-top:1.5px solid var(--ns-verde-deep);text-align:left;padding:8px 14px;font-family:var(--font-display-sans);font-weight:600;font-size:10.5px;letter-spacing:0.12em;text-transform:uppercase;border-right:none}
   table.t tbody tr.sub-row td{background:rgba(12,89,82,0.035)}
   table.t tbody td.l.sub{padding-left:34px;position:relative}
@@ -258,6 +258,9 @@
     .hero-month-switcher .label{flex:0 0 auto}
     .hero-month{flex:0 0 auto;padding:6px 11px;font-size:12px}
     .hero-month:hover{transform:none}
+    .hero h1{white-space:normal!important;font-size:clamp(26px,7.5vw,40px)!important}
+    .hero h1 .hero-date{white-space:nowrap}
+    .hero .hero-sub{font-size:clamp(24px,7vw,44px)!important;overflow-wrap:anywhere}
   }
   /* /mobile-fix */
 </style>
