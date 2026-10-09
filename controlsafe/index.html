@@ -1248,8 +1248,8 @@
   .chart-explain{position:absolute;inset:0;z-index:2;border-radius:inherit;background:rgba(13,13,13,0.86);color:#fff;padding:28px 20px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .2s ease}
   .chart-explain p{margin:0;font-size:13.5px;line-height:1.55}
   .chart-explain .ce-title{font-family:var(--font-display-sans,sans-serif);font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.7}
-  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}
-  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}
+  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}}
+  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}}
   /* /chart-help */
   /* mobile-fix */
   .chart-card svg .pt{cursor:pointer}
@@ -1266,6 +1266,9 @@
     .hero-month-switcher .label{flex:0 0 auto}
     .hero-month{flex:0 0 auto;padding:6px 11px;font-size:12px}
     .hero-month:hover{transform:none}
+    .hero h1{white-space:normal!important;font-size:clamp(26px,7.5vw,40px)!important}
+    .hero h1 .hero-date{white-space:nowrap}
+    .hero .hero-sub{font-size:clamp(24px,7vw,44px)!important;overflow-wrap:anywhere}
   }
   /* /mobile-fix */
 </style>
