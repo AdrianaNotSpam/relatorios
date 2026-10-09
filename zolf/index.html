@@ -322,6 +322,23 @@
     .kpi,.destaque,.analise,.toggle,.legenda-card{break-inside:avoid;page-break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
     @page{margin:12mm 10mm}
   }
+  /* mobile-fix */
+  .chart-card svg .pt{cursor:pointer}
+  .chart-card svg .pt.on .tip{opacity:1}
+  .chart-card.ce-open .chart-explain{opacity:1;pointer-events:auto;cursor:pointer}
+  .chart-card.ce-open .chart-help{background:#fff;color:#0d0d0d}
+  @media (max-width:760px){
+    .table-wrap{max-height:78vh;overflow:auto;-webkit-overflow-scrolling:touch}
+    table.t thead th{position:sticky;top:0;z-index:2}
+    table.t tbody td.l, table.t tbody td.subject{min-width:150px}
+    table.t tbody td.note{min-width:200px}
+    .hero-month-switcher{flex-wrap:nowrap;overflow-x:auto;width:100%;justify-content:flex-start;scrollbar-width:none;padding:2px 0 4px;-webkit-overflow-scrolling:touch}
+    .hero-month-switcher::-webkit-scrollbar{display:none}
+    .hero-month-switcher .label{flex:0 0 auto}
+    .hero-month{flex:0 0 auto;padding:6px 11px;font-size:12px}
+    .hero-month:hover{transform:none}
+  }
+  /* /mobile-fix */
 </style>
 </head>
 <body>
@@ -2299,5 +2316,25 @@
   })();
 </script>
 
+<!-- mobile-fix -->
+<script>
+(function(){
+  function closeAll(except){
+    document.querySelectorAll('.chart-card.ce-open').forEach(function(c){ if(c!==except) c.classList.remove('ce-open'); });
+  }
+  document.addEventListener('click', function(e){
+    var help = e.target.closest ? e.target.closest('.chart-help') : null;
+    if (help){
+      var card = help.closest('.chart-card'); var open = card.classList.contains('ce-open');
+      closeAll(); if(!open) card.classList.add('ce-open'); help.blur(); e.preventDefault(); return;
+    }
+    closeAll();
+    var pt = e.target.closest ? e.target.closest('.chart-card svg .pt') : null;
+    document.querySelectorAll('.chart-card svg .pt.on').forEach(function(p){ if(p!==pt) p.classList.remove('on'); });
+    if (pt) pt.classList.toggle('on');
+  });
+})();
+</script>
+<!-- /mobile-fix -->
 </body>
 </html>
