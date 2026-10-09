@@ -1245,8 +1245,8 @@
   .chart-explain{position:absolute;inset:0;z-index:2;border-radius:inherit;background:rgba(13,13,13,0.86);color:#fff;padding:28px 20px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .2s ease}
   .chart-explain p{margin:0;font-size:13.5px;line-height:1.55}
   .chart-explain .ce-title{font-family:var(--font-display-sans,sans-serif);font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.7}
-  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}}
-  @media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}}
+  @media (hover:hover){@media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}}}
+  @media (hover:hover){@media (hover:hover){@media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}}}
   /* /chart-help */
   /* mobile-fix */
   .chart-card svg .pt{cursor:pointer}
@@ -1291,12 +1291,12 @@
         </a>
         <nav class="hero-month-switcher" aria-label="Selecionar mês do relatório">
           <span class="label">Mês</span>
-          <button type="button" class="hero-month active" data-month="set-2026" aria-current="true">Setembro 2026</button>
-          <button type="button" class="hero-month" data-month="ago-2026" aria-current="false">Agosto 2026</button>
-          <button type="button" class="hero-month" data-month="jul-2026" aria-current="false">Julho 2026</button>
-          <button type="button" class="hero-month" data-month="jun-2026" aria-current="false">Junho 2026</button>
-          <button type="button" class="hero-month" data-month="mai-2026" aria-current="false">Maio 2026</button>
-          <button type="button" class="hero-month" data-month="abr-2026" aria-current="false">Abril 2026</button>
+          <button type="button" class="hero-month active" data-month="set-2026" aria-current="true" aria-label="Setembro 2026">09/26</button>
+          <button type="button" class="hero-month" data-month="ago-2026" aria-current="false" aria-label="Agosto 2026">08/26</button>
+          <button type="button" class="hero-month" data-month="jul-2026" aria-current="false" aria-label="Julho 2026">07/26</button>
+          <button type="button" class="hero-month" data-month="jun-2026" aria-current="false" aria-label="Junho 2026">06/26</button>
+          <button type="button" class="hero-month" data-month="mai-2026" aria-current="false" aria-label="Maio 2026">05/26</button>
+          <button type="button" class="hero-month" data-month="abr-2026" aria-current="false" aria-label="Abril 2026">04/26</button>
         </nav>
       </div>
 
