@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0C5952">
+<title>Gato Preto · Ponto de situação</title>
+<link rel="icon" href="/assets/favicon.png">
+<style>
+@font-face{font-family:"Rockwell Nova";src:url("/fonts/RockwellNova-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Rockwell Nova";src:url("/fonts/RockwellNova-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Neulis Sans";src:url("/fonts/NeulisSans-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Neulis Sans";src:url("/fonts/NeulisSans-Medium.otf") format("opentype");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Neulis Sans";src:url("/fonts/NeulisSans-SemiBold.otf") format("opentype");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Arimo";src:url("/fonts/Arimo-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Arimo";src:url("/fonts/Arimo-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+
+:root {
+  --font-anthropic-sans: "Arimo", system-ui, sans-serif;
+  --font-anthropic-serif: "Rockwell Nova", Georgia, serif;
+  --cds-font-size-caption: .8125rem; --cds-font-size-body: .9375rem; --cds-font-size-heading: 1.0625rem; --cds-font-size-title: 1.75rem;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 14px; --cds-gap-lg: 20px; --cds-gap-xl: 32px;
+  --cds-pad-xs: 4px; --cds-pad-sm: 10px; --cds-pad-md: 14px; --cds-pad-lg: 20px; --cds-pad-xl: 28px;
+  --cds-radius: 12px; --cds-dur-slow: .4s; --cds-ease-out: cubic-bezier(.2,.8,.2,1);
+  --cds-chart-status-critical: #E14C22; --cds-shadow-popover: 0 6px 20px rgba(13,13,13,.12);
+  color-scheme: light;
+}
+html, body { margin: 0; background: #E6E6E6; }
+body { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); -webkit-text-size-adjust: 100%; }
+.gp h2, .gp h3, .gp .gp-item .t { font-family: "Neulis Sans", "Arimo", system-ui, sans-serif; }
+.dash-skeleton { }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+</head>
+<body>
+<div id="dash-root">
+<style>
+#dash-root { --dash-gutter: 0; }
+.gp {
+  /* paleta notspam.studio, visual único claro (não segue o tema escuro) */
+  --ns-laranja: #E14C22; --ns-azul: #4F67B1; --ns-verde: #0C5952; --ns-lilas: #BF90C6; --ns-amarelo: #D7D55C; --ns-branco: #E6E6E6; --ns-preto: #0D0D0D;
+  --gp-c0: var(--ns-verde); --gp-c1: var(--ns-laranja); --gp-c2: var(--ns-lilas);
+  --gp-ok: var(--ns-verde); --gp-bad: var(--ns-laranja); --gp-opp: var(--ns-azul); --gp-accent: var(--ns-verde);
+  --color-fg: var(--ns-preto); --color-fg-muted: #55574f; --color-panel: #F5F5F2; --color-border-line: #cfd0c8;
+  --cds-chart-grid: #d6d7cf; --cds-chart-axis: #9a9b93; --cds-surface-popover: #ffffff; --cds-border: #cfd0c8; --cds-text-secondary: #55574f;
+  color-scheme: light; background: var(--ns-branco); color: var(--color-fg);
+  padding-block: var(--cds-pad-lg) var(--cds-pad-xl);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.gp, .gp * { box-sizing: border-box; }
+.gp { grid-template-columns: minmax(0, 1fr); overflow-x: hidden; }
+.gp > * { width: 100%; max-width: 76rem; margin-inline: auto; min-width: 0; }
+.gp .gp-sec, .gp .gp-cols, .gp .gp-grid2, .gp .gp-kpis { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 640px) {
+  .gp .gp-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 900px) {
+  .gp .gp-kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .gp .gp-grid2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gp .gp-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.gp-sec > *, .gp-card, .gp-item, .gp-kpi { min-width: 0; }
+.gp-item .x, .gp-item .t, .gp-take { overflow-wrap: anywhere; }
+.gp-head { background: var(--ns-verde); color: #ffffff; border-radius: var(--cds-radius); padding: var(--cds-pad-xl) var(--cds-pad-lg); }
+.gp-head .gp-take { color: #ffffff; }
+.gp-logo { height: 44px; width: auto; max-width: 100%; display: block; margin-bottom: var(--cds-gap-md); }
+.gp-head .gp-take b { color: var(--ns-amarelo); }
+.gp { display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); }
+.gp-head { display: grid; gap: var(--cds-gap-sm); }
+.gp-head h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.gp-take { font-size: var(--cds-font-size-body); line-height: 1.55; max-width: 65ch; margin: 0; }
+.gp-take b { font-weight: 600; }
+.gp-meta { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+.gp-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); gap: var(--cds-gap-md); }
+.gp-kpi { background: var(--color-panel); border: 1px solid var(--color-border-line); border-top: 3px solid var(--gp-accent); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-xs); align-content: start; }
+.gp-kpi .lab { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gp-kpi .num { color: var(--gp-accent); font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; line-height: 1.1; }
+.gp-kpi .sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gp-sec { display: grid; gap: var(--cds-gap-md); }
+.gp-sec > h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+.gp-sec > .note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; max-width: 70ch; }
+.gp-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); gap: var(--cds-gap-md); align-items: start; }
+.gp-col { display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.gp-col h3 { margin: 0; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); display: flex; align-items: center; gap: var(--cds-gap-sm); padding-bottom: var(--cds-pad-xs); border-bottom: 2px solid var(--gp-tone); }
+.gp-col h3 .dot { width: .5rem; height: .5rem; border-radius: 50%; background: var(--gp-tone); }
+.gp-col[data-tipo="positivo"] { --gp-tone: var(--gp-ok); }
+.gp-col[data-tipo="alerta"] { --gp-tone: var(--gp-bad); }
+.gp-col[data-tipo="oportunidade"] { --gp-tone: var(--gp-opp); }
+.gp-item { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); display: grid; gap: var(--cds-gap-xs); min-height: 4rem; }
+.gp-item .t { font-weight: var(--cds-font-weight-medium); font-size: var(--cds-font-size-body); margin: 0; }
+.gp-item .x { font-size: var(--cds-font-size-caption); line-height: 1.5; margin: 0; color: var(--color-fg); }
+.gp-tags { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+.gp-pill { font-size: var(--cds-font-size-caption); padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); line-height: 1.6; }
+.gp-pill.alta { color: #ffffff; background: var(--gp-tone); border-color: var(--gp-tone); }
+.gp-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.gp-card h3 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.gp-card .note { margin: 0; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gp-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+.gp-chart { position: relative; min-height: 240px; }
+.gp-chart.sm { min-height: 200px; }
+.gp-chart svg { display: block; overflow: visible; }
+.gp-chart text { font-size: var(--cds-font-size-caption); fill: var(--color-fg-muted); font-family: var(--font-anthropic-sans); }
+.gp-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.gp-legend span { display: inline-flex; align-items: center; gap: var(--cds-gap-xs); }
+.gp-legend i { width: .625rem; height: .625rem; border-radius: 2px; display: inline-block; }
+.gp-tip { position: absolute; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); pointer-events: none; white-space: nowrap; z-index: 2; }
+.gp-tip .d { color: var(--cds-text-secondary); }
+.gp-tip .r { display: flex; align-items: center; gap: var(--cds-gap-xs); font-variant-numeric: tabular-nums; }
+.gp-tip .r i { width: .5rem; height: .5rem; border-radius: 2px; }
+.gp-tw { overflow-x: auto; }
+.gp-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.gp-table th { text-align: right; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.gp-table td { text-align: right; padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+.gp-table th:first-child, .gp-table td:first-child { text-align: left; white-space: normal; }
+.gp-bar { display: inline-block; height: .5rem; border-radius: 4px; background: var(--gp-bar, currentColor); vertical-align: middle; margin-right: var(--cds-gap-xs); }
+.gp-table .muted { color: var(--color-fg-muted); }
+.gp-failed { display: flex; align-items: center; justify-content: center; gap: var(--cds-gap-xs); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: inherit; }
+.gp-failed::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (prefers-reduced-motion: no-preference) {
+  .gp-item { animation: gpIn var(--cds-dur-slow) var(--cds-ease-out) both; }
+  @keyframes gpIn { from { opacity: .4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+
+<div class="gp">
+  <header class="gp-head" id="topo">
+    <img class="gp-logo" src="/assets/logo-notspam-branco.png" alt="notspam.studio" width="180" height="44">
+    <h1>Gato Preto · Ponto de situação</h1>
+    <p class="gp-take" id="takeaway">
+      Na receita que o Klaviyo atribui ao email, os flows trazem <b data-source="totais" data-row="0" data-field="flows_share" class="dash-skeleton">—</b>
+      e o Welcome PT sozinho <b data-source="welcome_peso" data-row="0" data-field="share" class="dash-skeleton">—</b>.
+      Os flows foram redesenhados em junho; as campanhas e a captação estão a perder força, e há vários flows decididos ou propostos que ainda não existem.
+    </p>
+  </header>
+
+  <section class="gp-kpis" id="numeros">
+    <div class="gp-kpi"><span class="lab">Base ativa · PT com consentimento</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Público PT (com consentimento)" data-field="setembro">—</span><span class="sub">em abril: <span data-source="base" data-where="metrica=Público PT (com consentimento)" data-field="abril" class="dash-skeleton">—</span></span></div>
+    <div class="gp-kpi"><span class="lab">Interage com os emails</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Engaged 60 dias" data-field="setembro">—</span><span class="sub"><span data-source="envolvimento" data-row="0" data-field="share" class="dash-skeleton">—</span> da base ativa abriu ou clicou nos últimos 60 dias · em abril: <span data-source="base" data-where="metrica=Engaged 60 dias" data-field="abril" class="dash-skeleton">—</span></span></div>
+    <div class="gp-kpi"><span class="lab">Por recuperar · PT sem permissão</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Portugal sem permissão" data-field="setembro">—</span><span class="sub">campanhas de recuperação por entregar</span></div>
+    <div class="gp-kpi"><span class="lab">Abertura mediana campanhas PT · setembro</span><span class="num dash-skeleton" data-source="campanhas_pt" data-where="mes=2026-09-01" data-field="abertura_mediana">—</span><span class="sub">janeiro: <span data-source="campanhas_pt" data-where="mes=2026-01-01" data-field="abertura_mediana" class="dash-skeleton">—</span></span></div>
+  </section>
+
+  <section class="gp-sec" id="leitura">
+    <h2>Leitura</h2>
+    <p class="note">Cruzamento dos números do Klaviyo com o que está combinado e proposto no Basecamp e nas várias reuniões.</p>
+    <div class="gp-cols" data-source="leitura">
+      <div class="gp-col" data-tipo="positivo" id="positivos"><h3><span class="dot"></span>Pontos positivos</h3><div class="gp-list"></div></div>
+      <div class="gp-col" data-tipo="alerta" id="alertas"><h3><span class="dot"></span>Pontos de alerta</h3><div class="gp-list"></div></div>
+      <div class="gp-col" data-tipo="oportunidade" id="oportunidades"><h3><span class="dot"></span>Espaços de oportunidade</h3><div class="gp-list"></div></div>
+    </div>
+  </section>
+
+  <section class="gp-sec" id="receita">
+    <h2>Resultados</h2>
+    <div class="gp-card">
+      <h3>Receita de email por mês</h3>
+      <p class="note">Flows e campanhas, com o peso do email na loja por cima de cada barra.</p>
+      <div class="gp-legend"><span><i style="background: var(--gp-c0)"></i>Flows</span><span><i style="background: var(--gp-c1)"></i>Campanhas</span></div>
+      <div class="gp-chart" id="ch-receita" data-source="mensal"></div>
+    </div>
+    <div class="gp-card">
+      <h3>Flows: abertura e cliques</h3>
+      <p class="note">Todos os flows, por mês, ponderados pelos destinatários de cada um.</p>
+      <div class="gp-legend"><span><i style="background: var(--gp-c0)"></i>Abertura</span><span><i style="background: var(--gp-c1)"></i>CTR</span></div>
+      <div class="gp-chart sm" id="ch-flows" data-source="flows_mensal"></div>
+    </div>
+  </section>
+
+  <section class="gp-sec" id="campanhas">
+    <h2>Campanhas PT</h2>
+    <div class="gp-grid2">
+      <div class="gp-card">
+        <h3>Abertura e cliques</h3>
+        <p class="note">Mediana dos envios PT de cada mês.</p>
+        <div class="gp-legend"><span><i style="background: var(--gp-c0)"></i>Abertura</span><span><i style="background: var(--gp-c1)"></i>CTR</span></div>
+        <div class="gp-chart sm" id="ch-camp" data-source="campanhas_pt"></div>
+      </div>
+      <div class="gp-card">
+        <h3>Audiência e encomendas</h3>
+        <p class="note">Destinatários somados no mês e encomendas atribuídas às campanhas.</p>
+        <div class="gp-chart sm" id="ch-camp2" data-source="campanhas_pt"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gp-sec" id="base">
+    <h2>Base e entregabilidade</h2>
+    <div class="gp-grid2">
+      <div class="gp-card">
+        <h3>Subscrições novas de email</h3>
+        <div class="gp-chart sm" id="ch-subs" data-source="mensal"></div>
+      </div>
+      <div class="gp-card">
+        <h3>Bounce e spam</h3>
+        <p class="note">O bounce manteve-se estável durante quase todo o ano, com o pico em julho. O spam esteve baixo na maior parte dos meses e subiu em setembro. As duas subidas coincidem com o crescimento da base sem filtro de envolvimento: há cada vez mais emails a seguir para quem não abre.</p>
+        <div class="gp-legend"><span><i style="background: var(--gp-c0)"></i>Bounce</span><span><i style="background: var(--gp-c2)"></i>Spam</span></div>
+        <div class="gp-chart sm" id="ch-entreg" data-source="mensal"></div>
+      </div>
+    </div>
+    <div class="gp-card">
+      <h3>Base comunicável</h3>
+      <p class="note">Tamanho dos segmentos e listas em abril (reunião de 02/04) e no fim de setembro.</p>
+      <div class="gp-tw">
+        <table class="gp-table" id="tb-base" data-source="base" data-row-key="metrica">
+          <thead><tr><th data-field="metrica">Segmento</th><th data-field="abril">Abril 2026</th><th data-field="setembro">Setembro 2026</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+window.dash = (function () {
+  const D = {"mensal": [{"mes": "2026-01-01", "loja": 298850, "encomendas_loja": 966, "email": 60963, "flows": 52840, "campanhas": 7067, "subscricoes": 3748, "emails_recebidos": 137809, "bounce_rate": 0.00462, "spam_rate": 0.000102, "unsub_rate": 0.00456}, {"mes": "2026-02-01", "loja": 159953, "encomendas_loja": 519, "email": 61511, "flows": 55017, "campanhas": 10212, "subscricoes": 4076, "emails_recebidos": 235106, "bounce_rate": 0.00459, "spam_rate": 5.5e-05, "unsub_rate": 0.00339}, {"mes": "2026-03-01", "loja": 213497, "encomendas_loja": 630, "email": 73821, "flows": 61025, "campanhas": 8860, "subscricoes": 4170, "emails_recebidos": 201391, "bounce_rate": 0.00474, "spam_rate": 0.000199, "unsub_rate": 0.00326}, {"mes": "2026-04-01", "loja": 124840, "encomendas_loja": 528, "email": 39672, "flows": 27513, "campanhas": 13143, "subscricoes": 910, "emails_recebidos": 314247, "bounce_rate": 0.00376, "spam_rate": 5.1e-05, "unsub_rate": 0.00193}, {"mes": "2026-05-01", "loja": 237797, "encomendas_loja": 632, "email": 82290, "flows": 65823, "campanhas": 16944, "subscricoes": 2020, "emails_recebidos": 363468, "bounce_rate": 0.00392, "spam_rate": 5.2e-05, "unsub_rate": 0.00155}, {"mes": "2026-06-01", "loja": 295060, "encomendas_loja": 677, "email": 100025, "flows": 93237, "campanhas": 6749, "subscricoes": 2647, "emails_recebidos": 307189, "bounce_rate": 0.00364, "spam_rate": 9.8e-05, "unsub_rate": 0.00174}, {"mes": "2026-07-01", "loja": 357094, "encomendas_loja": 811, "email": 118573, "flows": 106466, "campanhas": 15034, "subscricoes": 2378, "emails_recebidos": 412956, "bounce_rate": 0.00579, "spam_rate": 8.7e-05, "unsub_rate": 0.00223}, {"mes": "2026-08-01", "loja": 408923, "encomendas_loja": 974, "email": 129568, "flows": 122897, "campanhas": 7267, "subscricoes": 3311, "emails_recebidos": 199608, "bounce_rate": 0.00525, "spam_rate": 9e-05, "unsub_rate": 0.00367}, {"mes": "2026-09-01", "loja": 318095, "encomendas_loja": 810, "email": 105478, "flows": 98111, "campanhas": 5981, "subscricoes": 3093, "emails_recebidos": 209642, "bounce_rate": 0.00426, "spam_rate": 0.000153, "unsub_rate": 0.00322}], "campanhas_pt": [{"mes": "2026-01-01", "envios": 5, "destinatarios": 121399, "abertura_mediana": 0.311, "ctr_mediano": 0.0298, "encomendas": 32, "receita": 7067}, {"mes": "2026-02-01", "envios": 8, "destinatarios": 209328, "abertura_mediana": 0.2905, "ctr_mediano": 0.0236, "encomendas": 37, "receita": 10191}, {"mes": "2026-03-01", "envios": 6, "destinatarios": 175065, "abertura_mediana": 0.284, "ctr_mediano": 0.0157, "encomendas": 22, "receita": 8298}, {"mes": "2026-04-01", "envios": 10, "destinatarios": 299100, "abertura_mediana": 0.2675, "ctr_mediano": 0.0162, "encomendas": 63, "receita": 13110}, {"mes": "2026-05-01", "envios": 11, "destinatarios": 344502, "abertura_mediana": 0.242, "ctr_mediano": 0.0129, "encomendas": 67, "receita": 16489}, {"mes": "2026-06-01", "envios": 9, "destinatarios": 287653, "abertura_mediana": 0.241, "ctr_mediano": 0.0102, "encomendas": 31, "receita": 6749}, {"mes": "2026-07-01", "envios": 11, "destinatarios": 389021, "abertura_mediana": 0.229, "ctr_mediano": 0.0127, "encomendas": 68, "receita": 15034}, {"mes": "2026-08-01", "envios": 5, "destinatarios": 180804, "abertura_mediana": 0.23, "ctr_mediano": 0.0116, "encomendas": 24, "receita": 7267}, {"mes": "2026-09-01", "envios": 5, "destinatarios": 191454, "abertura_mediana": 0.187, "ctr_mediano": 0.0147, "encomendas": 25, "receita": 5791}], "flows": [{"flow": "PT | Welcome Series", "destinatarios": 56300, "receita_ano": 472767, "rpr": 8.4}, {"flow": "PT | Abandoned Checkout (versão 11/6)", "destinatarios": 7806, "receita_ano": 99076, "rpr": 12.69}, {"flow": "PT | Product Abandonment", "destinatarios": 16646, "receita_ano": 25049, "rpr": 1.5}, {"flow": "PT | Abandoned Cart", "destinatarios": 1212, "receita_ano": 11384, "rpr": 9.39}, {"flow": "PT | Welcome Series (footer)", "destinatarios": 186, "receita_ano": 4436, "rpr": 23.85}, {"flow": "ES | Abandoned Checkout (Tag)", "destinatarios": 818, "receita_ano": 4232, "rpr": 5.17}, {"flow": "Status: INPROGRESS", "destinatarios": 1346, "receita_ano": 2034, "rpr": 1.51}, {"flow": "ES | Welcome Series (footer)", "destinatarios": 62, "receita_ano": 206, "rpr": 3.32}, {"flow": "[ Técnico ] Adição lista", "destinatarios": 0, "receita_ano": 0, "rpr": null}, {"flow": "ES | Welcome Series", "destinatarios": 153, "receita_ano": 0, "rpr": 0.0}], "flows_mensal": [{"mes": "2026-01-01", "destinatarios": 12371, "abertura": 0.3851, "ctr": 0.0768}, {"mes": "2026-02-01", "destinatarios": 17720, "abertura": 0.3804, "ctr": 0.0688}, {"mes": "2026-03-01", "destinatarios": 19619, "abertura": 0.3871, "ctr": 0.059}, {"mes": "2026-04-01", "destinatarios": 4860, "abertura": 0.4532, "ctr": 0.0767}, {"mes": "2026-05-01", "destinatarios": 7412, "abertura": 0.4389, "ctr": 0.0744}, {"mes": "2026-06-01", "destinatarios": 10797, "abertura": 0.4058, "ctr": 0.0631}, {"mes": "2026-07-01", "destinatarios": 10497, "abertura": 0.4083, "ctr": 0.07}, {"mes": "2026-08-01", "destinatarios": 12952, "abertura": 0.4102, "ctr": 0.0729}, {"mes": "2026-09-01", "destinatarios": 12366, "abertura": 0.3769, "ctr": 0.0622}], "leitura": [{"id": "p2", "tipo": "positivo", "prioridade": "alta", "titulo": "O Welcome PT é o motor da conta", "texto": "472,8 mil € de janeiro a setembro e 8,40 € por destinatário. É o flow que mais vende, e o primeiro email, com o código de 10%, é o que mais pesa.", "fonte": "Klaviyo"}, {"id": "p3", "tipo": "positivo", "prioridade": "alta", "titulo": "O checkout a 30 minutos resultou", "texto": "Decidido na reunião de 02/04 e no ar desde 11/06: 99,1 mil € até setembro e 12,69 € por destinatário, o melhor valor da conta. O ramo de sofás traz os tickets altos.", "fonte": "Klaviyo + Basecamp"}, {"id": "p7", "tipo": "positivo", "prioridade": "alta", "titulo": "Flows redesenhados em junho", "texto": "A 22/06 entraram templates novos nos flows (welcome, carrinho, checkout e abandono de produto, cada um com versão sofás e outros). Com isto ficaram resolvidos os pendentes de 20/03: o footer leva o prémio Cinco Estrelas 2026, o Email 2 do Welcome já não depende de uma coleção e o abandono de outros produtos tem template próprio.", "fonte": "Klaviyo + Basecamp"}, {"id": "p4", "tipo": "positivo", "prioridade": "média", "titulo": "Boa parte do plano de abril foi executada", "texto": "Carrinho abandonado no ar (22/06), flows simplificados em sofás + geral, SMS fora do checkout PT.", "fonte": "Klaviyo + Basecamp"}, {"id": "p5", "tipo": "positivo", "prioridade": "média", "titulo": "A base comunicável PT cresceu", "texto": "De 31.295 perfis com consentimento em abril para 38.175 no último envio de setembro.", "fonte": "Klaviyo"}, {"id": "p6", "tipo": "positivo", "prioridade": "média", "titulo": "Sofás e marca própria continuam a vender", "texto": "Sofás -40% faz 2 a 3,3 mil € por envio e \"Design by Gato Preto\" fez 3,9 mil €, o melhor envio de maio.", "fonte": "Klaviyo"}, {"id": "a1", "tipo": "alerta", "prioridade": "alta", "titulo": "Dependência do Welcome PT", "texto": "61% de toda a receita de email de janeiro a setembro passa por um único flow. Em abril recebeu um quinto das pessoas de março, e a receita do mês caiu para menos de metade.", "fonte": "Klaviyo"}, {"id": "a2", "tipo": "alerta", "prioridade": "alta", "titulo": "Campanhas PT a perder força", "texto": "As campanhas não estão a resultar, nem no público a que estão a ser enviadas, nem nos assuntos que estão a ser usados. A abertura mediana caiu de 31% em janeiro para 18,7% em setembro e o CTR de ~3% para ~1,5%. A base ativa cresceu sem filtro de envolvimento e os envolvidos desceram: em abril 65% abriu ou clicou nos 60 dias anteriores, em setembro só metade (de 21.215 para 19.716 pessoas).", "fonte": "Klaviyo"}, {"id": "a3", "tipo": "alerta", "prioridade": "média", "titulo": "Entregabilidade a vigiar", "texto": "Julho teve o bounce mais alto do ano (0,58%) e as queixas de spam subiram em setembro (0,015%). A equipa da Gato Preto não acompanha este KPI.", "fonte": "Klaviyo"}, {"id": "a4", "tipo": "alerta", "prioridade": "média", "titulo": "Captação abaixo do início do ano", "texto": "2 a 3,3 mil subscrições por mês desde maio, contra 3,7 a 4,2 mil em janeiro a março. O pop-up PT converte cerca de 2%. Os forms \"+30€ VALE\" estão parados em rascunho desde maio.", "fonte": "Klaviyo"}, {"id": "a6", "tipo": "alerta", "prioridade": "média", "titulo": "ES sem tração e FR inexistente", "texto": "O pop-up ES quase não tem visualizações e as campanhas ES fizeram 1.184 € em 9 meses. Os forms por mercado (/es, /fr) decididos em abril não avançaram.", "fonte": "Klaviyo + Basecamp"}, {"id": "a7", "tipo": "alerta", "prioridade": "baixa", "titulo": "Envios e integrações a confirmar", "texto": "\"Sandler\" (07/07) foi para uma lista entretanto apagada e teve 2,22% de unsubscribe no ES. Os eventos de back in stock da Swym caíram a zero em setembro.", "fonte": "Klaviyo"}, {"id": "o2", "tipo": "oportunidade", "prioridade": "alta", "titulo": "Flow de pós-compra", "texto": "Proposto no Basecamp a 20/03 (entrega, montagem, cuidados, cross-sell) e ainda por criar. É o flow em falta com mais potencial numa marca de mobiliário.", "fonte": "Basecamp + Klaviyo", "ordem": 3}, {"id": "o3", "tipo": "oportunidade", "prioridade": "alta", "titulo": "Campanhas por envolvimento e assuntos novos", "texto": "Enviar à base completa só nos momentos fortes (sofás, best-sellers) e o resto aos cerca de 20 mil envolvidos. Em paralelo, testar assuntos descritivos e emocionais em vez de fórmulas repetidas. Deve recuperar abertura e cliques e travar o bounce.", "fonte": "Klaviyo", "ordem": 2}, {"id": "o4", "tipo": "oportunidade", "prioridade": "média", "titulo": "Flow de pagamentos pendentes (Multibanco / MB WAY)", "texto": "Proposto a 20/03 com tags do Shopify Flow e lembretes por email. Não existe nenhum flow para estes pagamentos.", "fonte": "Basecamp", "ordem": 4}, {"id": "o5", "tipo": "oportunidade", "prioridade": "alta", "titulo": "Recuperar os 80 mil sem permissão", "texto": "Estratégia de 02/04 (convite + Meta custom audiences). Faltam as campanhas de recuperação destas pessoas, ainda por entregar.", "fonte": "Basecamp + Klaviyo", "ordem": 1}, {"id": "o6", "tipo": "oportunidade", "prioridade": "média", "titulo": "Captação pelo Instagram", "texto": "Klaviyo Social Marketing (palavra-chave em comentário ou DM, depois email e welcome), proposto a 11/05 e disponível desde 01/07. Ainda não foi testado.", "fonte": "Basecamp", "ordem": 9}, {"id": "o7", "tipo": "oportunidade", "prioridade": "baixa", "titulo": "Afinar o abandono de produto", "texto": "É o flow de vendas mais fraco por destinatário (1,50 € de janeiro a setembro).", "fonte": "Klaviyo", "ordem": 8}, {"id": "o8", "tipo": "oportunidade", "prioridade": "baixa", "titulo": "Flows de back in stock e wishlist", "texto": "A loja já tem a Swym (wishlist, back in stock, descida de preço) e nenhum flow do Klaviyo usa esses eventos.", "fonte": "Klaviyo", "ordem": 7}, {"id": "o9", "tipo": "oportunidade", "prioridade": "média", "titulo": "Flow de sunset", "texto": "Não existe flow de sunset: a limpeza da base de dados tem sido feita por mim, manualmente. Metade da base ativa não abre nem clica há 60 dias, e o bounce e o spam estão a subir. Um sunset automatiza essa limpeza: tenta reativar e, a quem não responder, deixa de enviar.", "fonte": "Klaviyo", "ordem": 5}, {"id": "o10", "tipo": "oportunidade", "prioridade": "média", "titulo": "Flow de winback e recompra", "texto": "Não há nenhum flow para clientes que deixam de comprar. Quem comprou um sofá ou um móvel de quarto é público natural para têxteis, decoração e mesa e cozinha nos meses seguintes.", "fonte": "Klaviyo", "ordem": 6}], "base": [{"metrica": "Público PT (com consentimento)", "abril": 31295, "setembro": 38175}, {"metrica": "Público ES (com consentimento)", "abril": 1506, "setembro": 1347}, {"metrica": "Engaged 60 dias", "abril": 21215, "setembro": 19716}, {"metrica": "Portugal sem permissão", "abril": 81047, "setembro": 80661}, {"metrica": "Lista WhatsApp", "abril": null, "setembro": 3840}]};
+  const calcs = {}, fns = [];
+  const api = {
+    data(id) {
+      if (calcs[id]) return { status: 'ok', data: calcs[id]() };
+      return D[id] ? { status: 'ok', data: D[id], columns: Object.keys(D[id][0] || {}) } : { status: 'missing', data: [] };
+    },
+    calc(id, o) { calcs[id] = () => o.fn(...o.inputs.map(i => api.data(i).data)); },
+    onData(fn) { fns.push(fn); fn(); },
+    colors: []
+  };
+  let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => fns.forEach(f => f()), 150); });
+  return api;
+})();
+</script>
+<script>
+const gpC = () => { const s = getComputedStyle(document.querySelector('.gp')); return ['--gp-c0', '--gp-c1', '--gp-c2'].map(v => s.getPropertyValue(v).trim()); };
+
+dash.calc('totais', {
+  inputs: ['mensal'],
+  title: 'Totais de 2026',
+  description: 'Soma de janeiro a setembro: receita de email, loja, peso na loja e peso dos flows.',
+  fn: (mensal) => {
+    const r = mensal.filter(d => d.mes >= '2026-01-01');
+    const email = d3.sum(r, d => d.email), loja = d3.sum(r, d => d.loja), flows = d3.sum(r, d => d.flows);
+    return [{ email, loja, share: email / loja, flows, flows_share: flows / email }];
+  }
+});
+dash.calc('welcome_peso', {
+  inputs: ['flows', 'mensal'],
+  title: 'Peso do Welcome PT',
+  description: 'Receita do Welcome PT no ano sobre a receita de email de janeiro a setembro.',
+  fn: (flows, mensal) => {
+    const w = flows.find(d => d.flow === 'PT | Welcome Series');
+    const email = d3.sum(mensal.filter(d => d.mes >= '2026-01-01'), d => d.email);
+    return [{ share: w ? w.receita_ano / email : null }];
+  }
+});
+
+dash.calc('envolvimento', {
+  inputs: ['base'],
+  title: 'Peso dos envolvidos na base ativa',
+  description: 'Engaged 60 dias sobre a base ativa (Público PT + Público ES) em setembro.',
+  fn: (base) => {
+    const v = (m) => (base.find(d => d.metrica === m) || {}).setembro;
+    return [{ share: v('Engaged 60 dias') / (v('Público PT (com consentimento)') + v('Público ES (com consentimento)')) }];
+  }
+});
+
+const eur = new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 });
+const eurC = (v) => v >= 100000 ? new Intl.NumberFormat('pt-PT', { maximumFractionDigits: 1 }).format(v / 1000) + ' mil €' : eur.format(v);
+const int = new Intl.NumberFormat('pt-PT');
+const pct = (v, d = 1) => v == null ? '—' : new Intl.NumberFormat('pt-PT', { style: 'percent', minimumFractionDigits: d, maximumFractionDigits: d }).format(v);
+const MES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const mesLab = (s) => MES[+s.slice(5, 7) - 1] + (s.slice(0, 4) === '2025' ? ' 25' : '');
+window.gpFmt = { eur, eurC, int, pct, mesLab };
+
+function failed(el, st) {
+  el.innerHTML = '';
+  if (st === 'error') { const f = document.createElement('div'); f.className = 'gp-failed'; f.textContent = 'Failed to load'; el.appendChild(f); }
+}
+
+function fill(sel, fmt) {
+  document.querySelectorAll(sel).forEach(el => {
+    const id = el.dataset.source, d = dash.data(id);
+    if (d.status !== 'ok') { if (d.status === 'error') el.textContent = '—'; return; }
+    let row;
+    if (el.dataset.row != null) row = d.data[+el.dataset.row];
+    else if (el.dataset.where) { const [k, v] = el.dataset.where.split('='); row = d.data.find(r => String(r[k]) === v); }
+    el.classList.remove('dash-skeleton');
+    const v = row ? row[el.dataset.field] : null;
+    el.textContent = v == null ? '—' : fmt(el.dataset.field, v);
+  });
+}
+const fmtField = (f, v) => /share|abertura|ctr/.test(f) ? pct(v) : /abril|setembro/.test(f) ? int.format(v) : eurC(v);
+
+function tooltip(box) {
+  let t = box.querySelector('.gp-tip');
+  if (!t) { t = document.createElement('div'); t.className = 'gp-tip'; t.hidden = true; box.appendChild(t); }
+  return {
+    show(x, y, title, lines) {
+      t.innerHTML = '';
+      const h = document.createElement('div'); h.className = 'd'; h.textContent = title; t.appendChild(h);
+      lines.forEach(([c, n, v]) => { const r = document.createElement('div'); r.className = 'r'; const i = document.createElement('i'); i.style.background = c; r.appendChild(i); const s = document.createElement('span'); s.textContent = n + ': ' + v; r.appendChild(s); t.appendChild(r); });
+      t.hidden = false;
+      const bw = box.clientWidth, tw = t.offsetWidth;
+      t.style.left = Math.max(0, Math.min(bw - tw, x - tw / 2)) + 'px';
+      t.style.top = Math.max(0, y - t.offsetHeight - 8) + 'px';
+    },
+    hide() { t.hidden = true; }
+  };
+}
+
+function measure(svg, texts) {
+  const g = svg.append('g').attr('opacity', 0);
+  const w = d3.max(texts, s => g.append('text').text(s).node().getComputedTextLength()) || 0;
+  g.remove(); return w;
+}
+
+function drawReceita() {
+  const box = document.getElementById('ch-receita'), d = dash.data('mensal');
+  if (d.status !== 'ok') { failed(box, d.status); return; }
+  box.querySelector('svg')?.remove();
+  const rows = d.data.filter(r => r.mes >= '2026-01-01');
+  const W = box.clientWidth, H = 240;
+  const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+  const yMax = d3.max(rows, r => r.flows + r.campanhas);
+  const y = d3.scaleLinear([0, yMax * 1.12], [H - 24, 18]).nice();
+  const ticks = y.ticks(4);
+  const ml = measure(svg, ticks.map(t => eurC(t))) + 8;
+  const x = d3.scaleBand(rows.map(r => r.mes), [ml, W]).padding(0.28);
+  svg.append('g').selectAll('line').data(ticks).join('line').attr('x1', ml).attr('x2', W).attr('y1', y).attr('y2', y).attr('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(ticks).join('text').attr('x', ml - 6).attr('y', t => y(t) + 4).attr('text-anchor', 'end').text(t => eurC(t));
+  const bw = Math.min(32, x.bandwidth());
+  const g = svg.append('g');
+  const tip = tooltip(box);
+  rows.forEach(r => {
+    const cx = x(r.mes) + x.bandwidth() / 2, x0 = cx - bw / 2;
+    const gg = g.append('g');
+    gg.append('rect').attr('x', x0).attr('width', bw).attr('y', y(r.flows)).attr('height', y(0) - y(r.flows)).attr('rx', 4).attr('fill', gpC()[0]).attr('opacity', r.parcial ? 0.55 : 1);
+    gg.append('rect').attr('x', x0).attr('width', bw).attr('y', y(r.flows + r.campanhas)).attr('height', y(r.flows) - y(r.flows + r.campanhas)).attr('rx', 4).attr('fill', gpC()[1]).attr('opacity', r.parcial ? 0.55 : 1);
+    svg.append('text').attr('x', cx).attr('y', y(r.flows + r.campanhas) - 5).attr('text-anchor', 'middle').text(pct(r.email / r.loja, 0));
+    svg.append('text').attr('x', cx).attr('y', H - 6).attr('text-anchor', 'middle').text(mesLab(r.mes) + (r.parcial ? '*' : ''));
+    gg.append('rect').attr('x', x(r.mes)).attr('width', x.bandwidth()).attr('y', 0).attr('height', H - 24).attr('fill', 'transparent')
+      .on('mousemove', () => tip.show(cx, y(r.flows + r.campanhas), mesLab(r.mes) + ' 2026' + (r.parcial ? ' (até dia 23)' : ''), [[gpC()[0], 'Flows', eur.format(r.flows)], [gpC()[1], 'Campanhas', eur.format(r.campanhas)], ['var(--color-border-line)', 'Loja', eur.format(r.loja)]]))
+      .on('mouseleave', () => tip.hide());
+  });
+}
+
+function lineChart(boxId, rows, series, opts) {
+  const box = document.getElementById(boxId);
+  box.querySelector('svg')?.remove();
+  const W = box.clientWidth, H = 200;
+  const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+  const dates = rows.map(r => new Date(r.mes));
+  const left = series.filter(s => !s.right), right = series.filter(s => s.right);
+  const yL = d3.scaleLinear([0, d3.max(left, s => d3.max(rows, r => r[s.f])) * 1.1], [H - 24, 12]).nice();
+  const yR = right.length ? d3.scaleLinear([0, d3.max(right, s => d3.max(rows, r => r[s.f])) * 1.1], [H - 24, 12]).nice() : null;
+  const tl = yL.ticks(4), tr = yR ? yR.ticks(4) : [];
+  const ml = measure(svg, tl.map(t => opts.fmtL(t))) + 8;
+  const mr = yR ? measure(svg, tr.map(t => opts.fmtR(t))) + 8 : 12;
+  const x = d3.scaleUtc(d3.extent(dates), [ml + 6, W - mr - 6]);
+  svg.append('g').selectAll('line').data(tl).join('line').attr('x1', ml).attr('x2', W - mr).attr('y1', yL).attr('y2', yL).attr('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(tl).join('text').attr('x', ml - 6).attr('y', t => yL(t) + 4).attr('text-anchor', 'end').text(t => opts.fmtL(t));
+  if (yR) svg.append('g').selectAll('text').data(tr).join('text').attr('x', W - mr + 6).attr('y', t => yR(t) + 4).text(t => opts.fmtR(t));
+  const step = W < 420 ? 2 : 1;
+  svg.append('g').selectAll('text').data(rows.filter((r, i) => i % step === 0)).join('text').attr('x', r => x(new Date(r.mes))).attr('y', H - 6).attr('text-anchor', 'middle').text(r => mesLab(r.mes));
+  series.forEach(s => {
+    const y = s.right ? yR : yL;
+    svg.append('path').datum(rows).attr('fill', 'none').attr('stroke', s.c).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round')
+      .attr('d', d3.line().x(r => x(new Date(r.mes))).y(r => y(r[s.f])));
+    const last = rows[rows.length - 1];
+    svg.append('circle').attr('cx', x(new Date(last.mes))).attr('cy', y(last[s.f])).attr('r', 3.5).attr('fill', s.c);
+  });
+  const tip = tooltip(box), band = (W - ml - mr) / Math.max(1, rows.length - 1);
+  rows.forEach(r => {
+    const cx = x(new Date(r.mes));
+    svg.append('rect').attr('x', cx - band / 2).attr('width', band).attr('y', 0).attr('height', H - 24).attr('fill', 'transparent')
+      .on('mousemove', () => tip.show(cx, 20, mesLab(r.mes) + ' ' + r.mes.slice(0, 4), series.map(s => [s.c, s.n, s.fmt(r[s.f])])))
+      .on('mouseleave', () => tip.hide());
+  });
+}
+
+function barChart(boxId, rows, f, color, fmt, hi) {
+  const box = document.getElementById(boxId);
+  box.querySelector('svg')?.remove();
+  const W = box.clientWidth, H = 200;
+  const svg = d3.select(box).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+  const y = d3.scaleLinear([0, d3.max(rows, r => r[f]) * 1.1], [H - 24, 12]).nice();
+  const t = y.ticks(4), ml = measure(svg, t.map(fmt)) + 8;
+  const x = d3.scaleBand(rows.map(r => r.mes), [ml, W]).padding(0.28), bw = Math.min(28, x.bandwidth());
+  svg.append('g').selectAll('line').data(t).join('line').attr('x1', ml).attr('x2', W).attr('y1', y).attr('y2', y).attr('stroke', 'var(--cds-chart-grid)');
+  svg.append('g').selectAll('text').data(t).join('text').attr('x', ml - 6).attr('y', v => y(v) + 4).attr('text-anchor', 'end').text(fmt);
+  const tip = tooltip(box), step = W < 420 ? 2 : 1;
+  rows.forEach((r, i) => {
+    const cx = x(r.mes) + x.bandwidth() / 2;
+    svg.append('rect').attr('x', cx - bw / 2).attr('width', bw).attr('y', y(r[f])).attr('height', y(0) - y(r[f])).attr('rx', 4)
+      .attr('fill', hi && hi(r) ? 'var(--cds-chart-status-critical)' : color).attr('opacity', r.parcial ? 0.55 : 1);
+    if (i % step === 0) svg.append('text').attr('x', cx).attr('y', H - 6).attr('text-anchor', 'middle').text(mesLab(r.mes) + (r.parcial ? '*' : ''));
+    svg.append('rect').attr('x', x(r.mes)).attr('width', x.bandwidth()).attr('y', 0).attr('height', H - 24).attr('fill', 'transparent')
+      .on('mousemove', () => tip.show(cx, y(r[f]), mesLab(r.mes) + ' ' + r.mes.slice(0, 4) + (r.parcial ? ' (até dia 23)' : ''), [[color, 'Valor', fmt(r[f])]]))
+      .on('mouseleave', () => tip.hide());
+  });
+}
+
+function drawLeitura() {
+  const d = dash.data('leitura');
+  document.querySelectorAll('.gp-col').forEach(col => {
+    const list = col.querySelector('.gp-list');
+    list.innerHTML = '';
+    if (d.status !== 'ok') { if (d.status === 'error') failed(list, 'error'); return; }
+    list.style.display = 'grid'; list.style.gap = 'var(--cds-gap-sm)';
+    const ord = { alta: 0, 'média': 1, baixa: 2 };
+    d.data.filter(r => r.tipo === col.dataset.tipo).sort((a, b) => ((a.ordem ?? 99) - (b.ordem ?? 99)) || (ord[a.prioridade] - ord[b.prioridade])).forEach(r => {
+      const it = document.createElement('article'); it.className = 'gp-item'; it.id = 'ponto-' + r.id;
+      const t = document.createElement('p'); t.className = 't'; t.textContent = r.titulo;
+      t.dataset.source = 'leitura'; t.dataset.where = 'id=' + r.id; t.dataset.field = 'titulo';
+      const x = document.createElement('p'); x.className = 'x'; x.textContent = r.texto;
+      x.dataset.source = 'leitura'; x.dataset.where = 'id=' + r.id; x.dataset.field = 'texto';
+      const tags = document.createElement('div'); tags.className = 'gp-tags';
+      const p = document.createElement('span'); p.className = 'gp-pill ' + (r.prioridade === 'alta' ? 'alta' : ''); p.textContent = 'Prioridade ' + r.prioridade;
+      p.dataset.source = 'leitura'; p.dataset.where = 'id=' + r.id; p.dataset.field = 'prioridade';
+      const f = document.createElement('span'); f.className = 'gp-pill'; f.textContent = r.fonte;
+      f.dataset.source = 'leitura'; f.dataset.where = 'id=' + r.id; f.dataset.field = 'fonte';
+      tags.append(p, f); it.append(t, x, tags); list.appendChild(it);
+    });
+  });
+}
+
+function drawFlows() {
+  const d = dash.data('flows'), tb = document.querySelector('#tb-flows tbody');
+  tb.innerHTML = '';
+  if (d.status !== 'ok') return;
+  const max = d3.max(d.data, r => r.receita_ano) || 1;
+  d.data.forEach(r => {
+    const tr = document.createElement('tr');
+    const cells = [
+      r.flow,
+      null,
+      eur.format(r.receita_90d),
+      int.format(r.destinatarios_90d),
+      r.rpr_90d == null ? '—' : r.rpr_90d.toLocaleString('pt-PT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €',
+      pct(r.abertura_90d), pct(r.ctr_90d, 2), pct(r.unsub_90d, 2)
+    ];
+    cells.forEach((c, i) => {
+      const td = document.createElement('td');
+      if (i === 1) {
+        const b = document.createElement('span'); b.className = 'gp-bar'; b.style.width = Math.max(2, 64 * r.receita_ano / max) + 'px'; b.style.setProperty('--gp-bar', gpC()[0]);
+        td.appendChild(b); td.appendChild(document.createTextNode(eur.format(r.receita_ano)));
+      } else td.textContent = c;
+      if (i > 1 && r.destinatarios_90d === 0) td.className = 'muted';
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+}
+
+function drawBase() {
+  const d = dash.data('base'), tb = document.querySelector('#tb-base tbody');
+  tb.innerHTML = '';
+  if (d.status !== 'ok') return;
+  d.data.forEach(r => {
+    const tr = document.createElement('tr');
+    [r.metrica, r.abril == null ? 'sem registo' : int.format(r.abril), int.format(r.setembro)].forEach((c, i) => { const td = document.createElement('td'); td.textContent = c; if (i === 1 && r.abril == null) td.className = 'muted'; tr.appendChild(td); });
+    tb.appendChild(tr);
+  });
+}
+
+dash.onData(() => {
+  fill('#takeaway [data-source], .gp-kpis [data-source]', fmtField);
+  drawLeitura();
+  drawReceita();
+  const fm = dash.data('flows_mensal');
+  if (fm.status !== 'ok') failed(document.getElementById('ch-flows'), fm.status);
+  else lineChart('ch-flows', fm.data, [
+    { f: 'abertura', n: 'Abertura', c: gpC()[0], fmt: v => pct(v) },
+    { f: 'ctr', n: 'CTR', c: gpC()[1], right: true, fmt: v => pct(v, 2) }
+  ], { fmtL: v => pct(v, 0), fmtR: v => pct(v, 1) });
+  drawBase();
+  const c = dash.data('campanhas_pt');
+  ['ch-camp', 'ch-camp2'].forEach(id => { if (c.status !== 'ok') failed(document.getElementById(id), c.status); });
+  if (c.status === 'ok') {
+    lineChart('ch-camp', c.data, [
+      { f: 'abertura_mediana', n: 'Abertura', c: gpC()[0], fmt: v => pct(v) },
+      { f: 'ctr_mediano', n: 'CTR', c: gpC()[1], right: true, fmt: v => pct(v, 2) }
+    ], { fmtL: v => pct(v, 0), fmtR: v => pct(v, 1) });
+    lineChart('ch-camp2', c.data, [
+      { f: 'destinatarios', n: 'Destinatários', c: gpC()[0], fmt: v => int.format(v) },
+      { f: 'encomendas', n: 'Encomendas', c: gpC()[1], right: true, fmt: v => int.format(v) }
+    ], { fmtL: v => new Intl.NumberFormat('pt-PT', { notation: 'compact', maximumFractionDigits: 0 }).format(v), fmtR: v => int.format(v) });
+  }
+  const m = dash.data('mensal');
+  ['ch-subs', 'ch-entreg'].forEach(id => { if (m.status !== 'ok') failed(document.getElementById(id), m.status); });
+  if (m.status === 'ok') {
+    barChart('ch-subs', m.data, 'subscricoes', gpC()[0], v => int.format(v), r => r.mes === '2026-04-01');
+    lineChart('ch-entreg', m.data, [
+      { f: 'bounce_rate', n: 'Bounce', c: gpC()[0], fmt: v => pct(v, 2) },
+      { f: 'spam_rate', n: 'Spam', c: gpC()[2], right: true, fmt: v => pct(v, 3) }
+    ], { fmtL: v => pct(v, 1), fmtR: v => pct(v, 3) });
+  }
+});
+</script>
+
+</div>
+<script>if (document.fonts) document.fonts.ready.then(() => window.dispatchEvent(new Event('resize')));</script>
+</body>
+</html>
