@@ -138,7 +138,7 @@ body { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area
   </header>
 
   <section class="gp-kpis" id="numeros">
-    <div class="gp-kpi"><span class="lab">Base ativa · PT com consentimento</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Público PT (com consentimento)" data-field="setembro">—</span><span class="sub">em abril: <span data-source="base" data-where="metrica=Público PT (com consentimento)" data-field="abril" class="dash-skeleton">—</span></span></div>
+    <div class="gp-kpi"><span class="lab">Base ativa · com consentimento</span><span class="num dash-skeleton" data-source="base_total" data-row="0" data-field="setembro">—</span><span class="sub">PT: <span data-source="base" data-where="metrica=Público PT (com consentimento)" data-field="setembro" class="dash-skeleton">—</span> · ES: <span data-source="base" data-where="metrica=Público ES (com consentimento)" data-field="setembro" class="dash-skeleton">—</span></span><span class="sub">em abril: <span data-source="base_total" data-row="0" data-field="abril" class="dash-skeleton">—</span></span></div>
     <div class="gp-kpi"><span class="lab">Interage com os emails</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Engaged 60 dias" data-field="setembro">—</span><span class="sub"><span data-source="envolvimento" data-row="0" data-field="share" class="dash-skeleton">—</span> da base ativa abriu ou clicou nos últimos 60 dias · em abril: <span data-source="base" data-where="metrica=Engaged 60 dias" data-field="abril" class="dash-skeleton">—</span></span></div>
     <div class="gp-kpi"><span class="lab">Por recuperar · PT sem permissão</span><span class="num dash-skeleton" data-source="base" data-where="metrica=Portugal sem permissão" data-field="setembro">—</span><span class="sub">campanhas de recuperação por entregar</span></div>
     <div class="gp-kpi"><span class="lab">Abertura mediana campanhas PT · setembro</span><span class="num dash-skeleton" data-source="campanhas_pt" data-where="mes=2026-09-01" data-field="abertura_mediana">—</span><span class="sub">janeiro: <span data-source="campanhas_pt" data-where="mes=2026-01-01" data-field="abertura_mediana" class="dash-skeleton">—</span></span></div>
@@ -252,6 +252,17 @@ dash.calc('welcome_peso', {
     const w = flows.find(d => d.flow === 'PT | Welcome Series');
     const email = d3.sum(mensal.filter(d => d.mes >= '2026-01-01'), d => d.email);
     return [{ share: w ? w.receita_ano / email : null }];
+  }
+});
+
+dash.calc('base_total', {
+  inputs: ['base'],
+  title: 'Base ativa total',
+  description: 'Público PT + Público ES com consentimento, em abril e em setembro.',
+  fn: (base) => {
+    const pt = base.find(d => d.metrica === 'Público PT (com consentimento)') || {};
+    const es = base.find(d => d.metrica === 'Público ES (com consentimento)') || {};
+    return [{ abril: pt.abril + es.abril, setembro: pt.setembro + es.setembro }];
   }
 });
 
