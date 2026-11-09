@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="assets/favicon.png" />
 <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
 <link rel="apple-touch-icon" href="assets/favicon.png" />
-<title>ZOLF · Performance Email Marketing · setembro 2026</title>
+<title>ZOLF · Performance Email Marketing · outubro 2026</title>
 <!--
   Relatório mensal cumulativo ZOLF · Março + Abril 2026.
   Base no template V3 (folha branca sobre fundo bege).
@@ -342,6 +342,15 @@
     .hero .hero-sub{font-size:clamp(24px,7vw,44px)!important;overflow-wrap:anywhere}
   }
   /* /mobile-fix */
+  /* chart-help */
+  .chart-card{position:relative}
+  .chart-help{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;margin-left:6px;padding:0;border-radius:6px;border:none;background:rgba(13,13,13,0.06);color:rgba(13,13,13,0.6);cursor:help;vertical-align:-5px;position:relative;z-index:3;transition:background .15s ease,color .15s ease}
+  .chart-explain{position:absolute;inset:0;z-index:2;border-radius:inherit;background:rgba(13,13,13,0.86);color:#fff;padding:28px 20px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;opacity:0;pointer-events:none;transition:opacity .2s ease}
+  .chart-explain p{margin:0;font-size:13.5px;line-height:1.55}
+  .chart-explain .ce-title{font-family:var(--font-display-sans,sans-serif);font-weight:600;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:.7}
+  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-explain{opacity:1}}
+  @media (hover:hover){.chart-card:has(.chart-help:hover) .chart-help{background:#fff;color:#0d0d0d}}
+  /* /chart-help */
 </style>
 </head>
 <body>
@@ -359,7 +368,8 @@
         </a>
         <nav class="hero-month-switcher" aria-label="Selecionar mês do relatório">
           <span class="label">Mês</span>
-          <button type="button" class="hero-month active" data-month="set-2026" aria-current="true" aria-label="Setembro 2026">09/26</button>
+          <button type="button" class="hero-month active" data-month="out-2026" aria-current="true" aria-label="Outubro 2026">10/26</button>
+          <button type="button" class="hero-month" data-month="set-2026" aria-current="false" aria-label="Setembro 2026">09/26</button>
           <button type="button" class="hero-month" data-month="ago-2026" aria-current="false" aria-label="Agosto 2026">08/26</button>
           <button type="button" class="hero-month" data-month="jul-2026" aria-current="false" aria-label="Julho 2026">07/26</button>
           <button type="button" class="hero-month" data-month="jun-2026" aria-current="false" aria-label="Junho 2026">06/26</button>
@@ -371,7 +381,20 @@
 
       <!-- HERO TITLE · ABRIL -->
       <!-- HERO TITLE · MAIO -->
-      <div class="hero-title-block" data-month-block="set-2026">
+      <div class="hero-title-block" data-month-block="out-2026">
+        <p class="eyebrow hero-eyebrow"><span class="star">✦</span> Performance Email Marketing</p>
+        <h1>Relatório <span class="hero-dot" aria-hidden="true"></span> <span class="hero-date">outubro 2026</span></h1>
+        <p class="hero-sub"><em>ZOLF</em></p>
+
+        <div class="hero-pills">
+          <span class="pill"><strong>8</strong>&nbsp;campanhas</span>
+          <span class="pill"><strong>4</strong>&nbsp;flows ativos</span>
+          <span class="pill"><strong>5.793</strong>&nbsp;subscritores</span>
+          <span class="pill"><strong>23.463</strong>&nbsp;envios</span>
+        </div>
+      </div>
+
+      <div class="hero-title-block" data-month-block="set-2026" hidden>
         <p class="eyebrow hero-eyebrow"><span class="star">✦</span> Performance Email Marketing</p>
         <h1>Relatório <span class="hero-dot" aria-hidden="true"></span> <span class="hero-date">setembro 2026</span></h1>
         <p class="hero-sub"><em>ZOLF</em></p>
@@ -475,7 +498,281 @@
     <!-- ============================================================
          MÊS · AGOSTO 2026
          ============================================================ -->
-    <div data-month-block="set-2026">
+    <div data-month-block="out-2026">
+
+      <!-- KPIs -->
+      <div class="section-head">
+        <p class="eyebrow">O mês em seis números</p>
+      </div>
+
+      <div class="kpis stagger" role="list">
+        <article class="kpi k-verde" role="listitem">
+          <p class="eyebrow label">Delivery rate</p>
+          <div class="value">99,49%</div>
+          <p class="delta">Combinado campanhas + flows</p>
+        </article>
+        <article class="kpi k-lilas" role="listitem">
+          <p class="eyebrow label">Crescimento da base</p>
+          <div class="value">+149</div>
+          <p class="delta">+2,4% · 5.793 subscritores</p>
+        </article>
+        <article class="kpi k-azul" role="listitem">
+          <p class="eyebrow label">Taxa de abertura</p>
+          <div class="value">57,36%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-preto" role="listitem">
+          <p class="eyebrow label">Taxa de clique</p>
+          <div class="value">6,11%</div>
+          <p class="delta">Média campanhas + flows</p>
+        </article>
+        <article class="kpi k-laranja" role="listitem">
+          <p class="eyebrow label">Conversões</p>
+          <div class="value">29</div>
+          <p class="delta">19 campanhas · 10 flows</p>
+        </article>
+        <article class="kpi k-amarelo" role="listitem">
+          <p class="eyebrow label">Receita atribuída</p>
+          <div class="value">4.719,00€</div>
+          <p class="delta">71% campanhas · 29% flows</p>
+        </article>
+      </div>
+
+      <!-- ANÁLISE -->
+      <div class="section-head">
+        <p class="eyebrow">O que dizem os números</p>
+      </div>
+      <div class="analise">
+        <p>Outubro confirmou o que o calendário queria testar: enviar a quem já mostrou interesse rende mais por pessoa do que enviar a toda a base. A campanha do Denim Balloon foi só para quem tinha visto calças no site e rendeu 0,44€ por destinatário, mais do triplo dos 0,13€ das quatro campanhas à base geral. Tínhamos fixado a meta em 0,30€, por isso a segmentação por interesse continua nos próximos calendários.</p>
+        <p style="margin-top:var(--sp-3)">Nas campanhas à base, repetiu-se o padrão de setembro. Venderam as que mostravam peças concretas: as <span class="ic">Novidades</span> (709€ e o melhor clique do mês, 6,86%), as camisas e as calças. O guarda-roupa de outono, que partia de um tema de estação, ficou nos 210€. No total, as campanhas fizeram 3.331€, acima dos 1.798€ de setembro, com menos envios à base inteira.</p>
+        <p style="margin-top:var(--sp-3)">Três campanhas foram para segmentos geográficos: o convite para a feira de noivos de Viseu e as aberturas das lojas de Vila do Conde e Penafiel. O objetivo era levar pessoas à feira e às lojas, onde a venda acontece e não aparece na receita atribuída. Ainda assim, Penafiel trouxe 2 encomendas online.</p>
+        <p style="margin-top:var(--sp-3)">Nos <span class="ic">flows</span>, a receita desceu de 2.263€ para 1.388€, mas outubro não se compara com os meses anteriores. Entre 30 de setembro e 20 de outubro, as encomendas da loja deixaram de chegar ao Klaviyo, por um bloqueio na ligação ao site. Durante esse período, o <span class="ic">Checkout Abandonado</span> não conseguia excluir quem já tinha comprado, e por isso recebeu 319 pessoas, contra 112 em setembro. A ligação foi reposta a 20 de outubro e as encomendas em falta foram recuperadas, por isso a receita deste relatório já as inclui.</p>
+        <p style="margin-top:var(--sp-3)">O <span class="ic">pop-up</span> teve o melhor mês desde a reformulação de julho: 149 submissões e uma taxa de 0,82%, contra 102 e 0,48% em setembro, com menos visualizações. Mais gente a entrar significa mais gente no Welcome, que recebeu 364 pessoas contra 247. A taxa continua abaixo do intervalo normal para uma marca sem descontos (1% a 3%).</p>
+        <p style="margin-top:var(--sp-3)">A 20 de outubro, o flow <span class="ic">Sunset</span> suprimiu 524 contactos que não abriam um email há mais de cem dias. Com 149 entradas, estas 524 saídas e 23 cancelamentos, a base fechou em 5.793 subscritores. Em três meses saíram 1.168 inativos: a base é mais pequena, mas é quem lá está que abre (as campanhas à base geral abriram entre 65% e 68%). Para a voltar a fazer crescer, o passo seguinte é trazer os compradores que nunca subscreveram, com o convite que arrancou no início de novembro.</p>
+      </div>
+
+      <!-- DESTAQUES -->
+      <div class="section-head">
+        <p class="eyebrow">Destaques do mês</p>
+      </div>
+      <div class="destaques stagger">
+        <article class="destaque">
+          <div class="badge b-verde" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>A segmentação por interesse passou a meta</h3>
+            <p class="sub">O Denim Balloon, só para quem tinha visto calças no site, rendeu 0,44€ por destinatário, contra 0,13€ nas campanhas à base geral. A meta era 0,30€.</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-verde" aria-hidden="true">✓</div>
+          <div class="body-d">
+            <h3>Novidades: o melhor clique e a maior receita do mês</h3>
+            <p class="sub">6,86% de clique e 709€ em 3 encomendas, com um valor médio de 236€. Mostrar o que é novo continua a ser o formato que mais vende nesta base.</p>
+          </div>
+        </article>
+        <article class="destaque">
+          <div class="badge b-amarelo" aria-hidden="true">↑</div>
+          <div class="body-d">
+            <h3>O pop-up subiu, a base ainda desce</h3>
+            <p class="sub">149 entradas e uma taxa de 0,82%, a mais alta desde a reformulação de julho, contra 524 inativos suprimidos pelo Sunset. A base fechou em 5.793 subscritores.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- DETALHE -->
+      <div class="section-head">
+        <p class="eyebrow">Detalhe</p>
+      </div>
+
+      <!-- 01 · EVOLUÇÃO MENSAL -->
+      <details class="toggle" open>
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">01</span>
+            <span class="summary-title">Evolução mensal</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">8 meses · Mar + Abr + Mai + Jun + Jul + Ago + Set + Out</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Evolução mensal">
+              <thead>
+                <tr>
+                  <th>Mês</th><th>Envios</th><th>Campanhas</th><th>Entregues</th>
+                  <th>Aberturas</th><th>Cliques</th><th>Unsub</th><th>Subscritos</th>
+                  <th>Crescim.</th><th>Receita</th><th>Conversão</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="col-mes">mar. 2026</td><td>23.732</td><td>6</td><td>99,45%</td><td class="c-good">59,06%</td><td class="c-good">6,06%</td><td>0,18%</td><td>3.828</td><td class="c-bom">+3,7%</td><td>3.724,40€</td><td>46</td></tr>
+                <tr><td class="col-mes">abr. 2026</td><td>25.624</td><td>6</td><td>99,17%</td><td class="c-good">58,86%</td><td class="c-good">7,72%</td><td>0,05%</td><td>4.111</td><td class="c-good">+7,4%</td><td>8.397,67€</td><td>52</td></tr>
+                <tr><td class="col-mes">mai. 2026</td><td>30.152</td><td>6</td><td>99,31%</td><td class="c-good">60,20%</td><td class="c-good">8,56%</td><td>0,10%</td><td>6.054</td><td class="c-good">+47,3%</td><td>10.891,78€</td><td>77</td></tr>
+                <tr><td class="col-mes">jun. 2026</td><td>24.815</td><td>5</td><td>99,61%</td><td class="c-good">63,01%</td><td class="c-good">6,41%</td><td>0,06%</td><td>6.350</td><td class="c-bom">+4,9%</td><td>6.963,10€</td><td>56</td></tr>
+                <tr><td class="col-mes">jul. 2026</td><td>29.264</td><td>6</td><td>99,73%</td><td class="c-good">59,40%</td><td class="c-good">5,68%</td><td>0,07%</td><td>6.580</td><td class="c-bom">+3,6%</td><td>8.785,64€</td><td>61</td></tr>
+                <tr><td class="col-mes">ago. 2026</td><td>33.825</td><td>7</td><td>99,57%</td><td class="c-good">59,44%</td><td class="c-good">5,81%</td><td>0,09%</td><td>6.434</td><td class="c-bom">+3,3%</td><td>6.898,48€</td><td>45</td></tr>
+                <tr><td class="col-mes">set. 2026</td><td>29.112</td><td>7</td><td>99,68%</td><td class="c-good">60,21%</td><td class="c-good">5,90%</td><td>0,10%</td><td>6.191</td><td class="c-warn">+1,6%</td><td>4.060,99€</td><td>30</td></tr>
+                <tr class="is-current"><td class="col-mes">out. 2026</td><td>23.463</td><td>8</td><td>99,49%</td><td class="c-good">57,36%</td><td class="c-good">6,11%</td><td>0,21%</td><td>5.793</td><td class="c-warn">+2,4%</td><td>4.719,00€</td><td>29</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:var(--sp-3);font-size:12px;line-height:1.5;color:var(--ns-preto);opacity:.6">A coluna Crescim. conta as entradas novas do mês, as submissões dos pop-ups. Em outubro entraram 149 pessoas, saíram 524 pela limpeza do flow Sunset e 23 por cancelamento, pelo que a base líquida desceu de 6.191 para 5.793.</p>
+        </div>
+      </details>
+
+      <!-- 02 · CAMPANHAS -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">02</span>
+            <span class="summary-title">Campanhas</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">8 campanhas · outubro 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Campanhas de outubro 2026">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Campanha</th>
+                  <th style="text-align:left;padding-left:14px">Subject Line</th>
+                  <th>Data</th><th>Envios</th><th>Entregues</th>
+                  <th>Aberturas</th><th>Cliques</th><th>Unsub</th><th>Spam</th>
+                  <th>Receita</th><th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">01'Outubro | Camisas</td><td class="subject">Uma camisa, do escritório ao jantar</td><td>07 out.</td><td>4.532</td><td>99,58%</td><td class="c-good">65,41%</td><td class="c-good">4,23%</td><td>0,11%</td><td>0,00%</td><td>693,90€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">5 encomendas com AOV de 139€. Uma categoria em várias formas de peça, do escritório ao jantar</td></tr>
+                <tr class="alt"><td class="l">02'Outubro | Denim Balloon (segmento calças)</td><td class="subject">O caimento não se vê na fotografia</td><td>11 out.</td><td>857</td><td>99,53%</td><td class="c-good">56,74%</td><td class="c-good">3,28%</td><td>0,12%</td><td>0,00%</td><td>379,40€</td><td><span class="status st-seg">⭐ Segmentado</span></td><td class="note">🌟 O teste do mês. Só para quem viu calças no site: 0,44€ por destinatário, contra 0,13€ nas campanhas à base geral e acima da meta de 0,30€</td></tr>
+                <tr><td class="l">03'Outubro | Feira Noivos (Viseu)</td><td class="subject">Temos 2 convites para si</td><td>14 out.</td><td>64</td><td>100,00%</td><td>46,88%</td><td class="c-good">3,13%</td><td>1,56%</td><td>0,00%</td><td>209,70€</td><td><span class="status st-seg">⭐ Segmentado</span></td><td class="note">Convite para a feira de noivos, só para a zona de Viseu. O objetivo era a visita ao stand. Com 64 destinatários, 1 cancelamento dá 1,56%</td></tr>
+                <tr class="alt"><td class="l">04'Outubro | Guarda-roupa outono</td><td class="subject">As peças certas para este outono 🍂</td><td>15 out.</td><td>4.568</td><td>99,52%</td><td class="c-good">64,78%</td><td>2,75%</td><td>0,04%</td><td>0,02%</td><td>209,70€</td><td><span class="status st-warn">↑ A Melhorar</span></td><td class="note">Boa abertura, mas só 2 encomendas. Como o tricot em setembro, o tema de estação vende menos do que uma peça concreta</td></tr>
+                <tr><td class="l">05'Outubro | Novidades</td><td class="subject">As novidades que o frio pedia</td><td>22 out.</td><td>4.306</td><td>99,58%</td><td class="c-good">67,89%</td><td class="c-good">6,86%</td><td>0,05%</td><td>0,00%</td><td>709,30€</td><td><span class="status st-good">✓ Excelente</span></td><td class="note">🌟 Campanha do mês: o melhor clique e a maior receita, 3 encomendas com AOV de 236€</td></tr>
+                <tr class="alt"><td class="l">06'Outubro | Abertura loja Vila do Conde</td><td class="subject">Este sábado, a ZOLF chega a Vila do Conde</td><td>23 out.</td><td>1.347</td><td>98,66%</td><td>48,98%</td><td>1,43%</td><td>0,08%</td><td>0,15%</td><td>0,00€</td><td><span class="status st-seg">⭐ Segmentado</span></td><td class="note">Convite para a inauguração, só para a zona de Vila do Conde. O objetivo era a visita à loja, não a venda online</td></tr>
+                <tr><td class="l">07'Outubro | Calças</td><td class="subject">Sabe o que distingue uma boa calça?</td><td>27 out.</td><td>4.335</td><td>99,65%</td><td class="c-good">66,53%</td><td class="c-good">4,07%</td><td>0,05%</td><td>0,00%</td><td>669,20€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">3 encomendas com AOV de 223€. Foi à base sem quem já tinha recebido o Denim Balloon a 11/10</td></tr>
+                <tr class="alt"><td class="l">08'Outubro | Abertura loja Penafiel</td><td class="subject">Este sábado, a ZOLF chega a Penafiel</td><td>30 out.</td><td>1.651</td><td>99,09%</td><td>42,97%</td><td>0,92%</td><td>0,18%</td><td>0,00%</td><td>459,40€</td><td><span class="status st-seg">⭐ Segmentado</span></td><td class="note">Convite para a inauguração, só para a zona de Penafiel. Além da visita à loja, trouxe 2 encomendas online</td></tr>
+                <tr class="row-total"><td class="l" colspan="3">Total Outubro · 8 campanhas</td><td>21.660</td><td>99,45%</td><td>57,52%</td><td>3,33%</td><td>0,27%</td><td>0,02%</td><td>3.330,60€</td><td></td><td class="note">19 encomendas, AOV 175€</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 03 · AUTOMATISMOS · VISÃO GERAL -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">03</span>
+            <span class="summary-title">Automatismos · Set vs Out</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">8 métricas · evolução</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Visão geral dos flows · Setembro vs Outubro">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Métrica</th>
+                  <th>Setembro 2026</th><th>Outubro 2026</th><th>Variação</th><th>Status Out</th><th>Benchmark</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Destinatários</td><td>940</td><td>1.453</td><td>+54,6%</td><td></td><td>—</td><td class="note">Mais gente no Welcome, com o pop-up a captar mais, e o Checkout Abandonado a receber também quem já tinha comprado até 20/10</td></tr>
+                <tr class="alt"><td class="l">Entregues</td><td>99,26%</td><td>99,52%</td><td class="c-good">+0,26pp</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;98%</td><td class="note">Estável no nível habitual</td></tr>
+                <tr><td class="l">Aberturas</td><td>58,30%</td><td>57,19%</td><td>−1,11pp</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;35%</td><td class="note">Welcome e Abandono de Página estáveis; a descida vem do Checkout Abandonado (42,32%)</td></tr>
+                <tr class="alt"><td class="l">Cliques</td><td>10,00%</td><td>8,88%</td><td>−1,12pp</td><td><span class="status st-good">✓ Excelente</span></td><td>&gt;3%</td><td class="note">Quase o triplo do benchmark, puxado pelo Welcome (14,29%)</td></tr>
+                <tr><td class="l">Conversões</td><td>1,17%</td><td>0,69%</td><td>−0,48pp</td><td><span class="status st-warn">↑ A Melhorar</span></td><td>&gt;3%</td><td class="note">10 encomendas em 1.453 destinatários. O Checkout Abandonado recebeu compradores, que já não iam voltar a comprar</td></tr>
+                <tr class="alt"><td class="l">Spam</td><td>0,00%</td><td>0,07%</td><td>+0,07pp</td><td><span class="status st-warn">↑ A Melhorar</span></td><td>&lt;0,01%</td><td class="note">1 queixa de spam no mês, no Welcome</td></tr>
+                <tr><td class="l">Unsubscribe</td><td>0,11%</td><td>0,14%</td><td>+0,03pp</td><td><span class="status st-good">✓ Excelente</span></td><td>&lt;0,30%</td><td class="note">2 cancelamentos no mês, um no Welcome e outro no Checkout Abandonado</td></tr>
+                <tr class="alt"><td class="l">Receita</td><td>2.263,29€</td><td>1.388,40€</td><td>−38,7%</td><td>—</td><td>—</td><td class="note">Mês afetado pela falha na sincronização das encomendas entre 30/09 e 20/10. Ver o detalhe por flow</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:var(--sp-3);font-size:12px;line-height:1.5;color:var(--ns-preto);opacity:.6">Os valores acima excluem o flow Sunset, que serve para higiene da lista e não para vender. Aparece em detalhe na secção seguinte.</p>
+        </div>
+      </details>
+
+      <!-- 04 · PERFORMANCE POR FLOW -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">04</span>
+            <span class="summary-title">Performance por flow</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">4 flows · outubro 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Performance por flow · Outubro 2026">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Flow</th>
+                  <th>Destinatários</th><th>Entregues</th><th>Aberturas</th><th>Cliques</th>
+                  <th>Conversão</th><th>Receita</th><th>Receita/destinatário</th>
+                  <th>Status</th>
+                  <th style="text-align:left;padding-left:14px">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Abandono Página</td><td>770</td><td>100,00%</td><td class="c-good">61,04%</td><td class="c-good">8,18%</td><td>4 (0,52%)</td><td>679,10€</td><td>0,88€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">O flow que mais rendeu em outubro. O email "Não tem a certeza do tamanho?" fez 3 das 4 encomendas (539€). Recebeu 770 pessoas, contra 581</td></tr>
+                <tr class="alt"><td class="l">Welcome Flow</td><td>364</td><td>99,18%</td><td class="c-good">62,09%</td><td class="c-good">14,29%</td><td>3 (0,82%)</td><td>379,60€</td><td>1,04€</td><td><span class="status st-bom">✓ Bom</span></td><td class="note">Recebeu 364 pessoas, contra 247, com o pop-up a captar mais. As 3 encomendas vieram do email com a mensagem do Luís, que abriu a 75%</td></tr>
+                <tr><td class="l">Checkout Abandonado</td><td>319</td><td>98,74%</td><td class="c-good">42,32%</td><td class="c-good">4,39%</td><td>3 (0,94%)</td><td>329,70€</td><td>1,03€</td><td><span class="status st-reg">→ Regular</span></td><td class="note">Números afetados: até 20/10 o flow não conseguia excluir quem já tinha comprado e chegou a compradores. Com a sincronização reposta, volta a ser comparável em novembro</td></tr>
+                <tr class="alt"><td class="l">Sunset</td><td>350</td><td>99,72%</td><td>7,43%</td><td>1,43%</td><td>0 (0,00%)</td><td>0,00€</td><td>0,00€</td><td><span class="status st-sun">☾ Higiene</span></td><td class="note">Fala com quem não abre há mais de 100 dias. Levou à supressão de 524 contactos a 20 de outubro. Não conta para as médias</td></tr>
+                <tr class="row-total"><td class="l" colspan="2">Total Outubro · 3 flows de conversão</td><td>99,52%</td><td>57,19%</td><td>8,88%</td><td>10 (0,69%)</td><td>1.388,40€</td><td>0,96€</td><td></td><td class="note"></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <!-- 05 · CAPTAÇÃO · POP-UPS -->
+      <details class="toggle">
+        <summary>
+          <span class="summary-left">
+            <span class="summary-eyebrow eyebrow">05</span>
+            <span class="summary-title">Captação · Pop-ups</span>
+          </span>
+          <span class="summary-right">
+            <span class="count-pill">2 formulários · outubro 2026</span>
+            <span class="chev" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,5 7,9 11,5"/></svg></span>
+          </span>
+        </summary>
+        <div class="toggle-body">
+          <div class="table-wrap">
+            <table class="t" aria-label="Pop-ups de outubro 2026">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-left:14px">Pop-up</th>
+                  <th>Visualizações</th><th>Submissões</th><th>Taxa submissão</th>
+                  <th style="text-align:left;padding-left:14px">Nota</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="l">Pop-up principal · Armário Cápsula</td><td>17.224</td><td>143</td><td>0,83%</td><td class="note">A taxa mais alta desde a reformulação de julho, contra 0,48% em setembro. Mais 46% de submissões com menos 17% de visualizações</td></tr>
+                <tr class="alt"><td class="l">Exit Intent</td><td>1.025</td><td>6</td><td>0,59%</td><td class="note">Taxa estável, com pouco tráfego para fazer diferença</td></tr>
+                <tr class="row-total"><td class="l">Total · 2 pop-ups</td><td>18.249</td><td>149</td><td>0,82%</td><td class="note">Visualizações a descer face a setembro (−14,4%); a subida das submissões vem da taxa</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+    </div>
+    <!-- /[data-month-block="out-2026"] -->
+
+    <div data-month-block="set-2026" hidden>
 
       <!-- KPIs -->
       <div class="section-head">
